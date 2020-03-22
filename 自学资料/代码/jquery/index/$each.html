@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	//$.each();既可以遍历数组也可以遍历对象
+//	遍历对象
+var obj={
+	name:"jone",
+	setName:function(name){
+		this.name=name
+	}
+}
+console.log(obj);
+$.each(obj, function(key,value) {
+	console.log(key,value);
+});
+
+//得到数据的类型 ,相当于type of $.type(obj) 
+console.log($.type("$"));
+//去除字符串两边的空格 $.trim();
+console.log($.trim(" 年后 "));
+//判断是否是数组$.isArray();
+console.log($.isArray([]));//true
+//判断是否是函数  $.isFunction(obj);
+console.log($.isFunction("function(){}"),$.isFunction($));
+//解析json字符串转换为js对象/数组
+
+var jsonString ='{"name":"gaofeng","age":20}'; //json字符串
+var jsonobj ={"name":"gaofeng","age":20}; //json对象
+console.log(jsonString);
+console.log(jsonobj);
+//json字符串转换json对象
+console.log($.parseJSON(jsonString));
+
+//经常用的
+JSON.parse(jsonString) //json字符串转换js对象/数组
+JSON.stringify(jsObj/jsArr)//js对象/数组转化为json字符串
+</script>

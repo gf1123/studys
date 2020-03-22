@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+	</body>
+
+</html>
+<script type="text/javascript">
+	var obj = {
+		name: "gao",
+		age: 26,
+		card: ['visa', 'master'],
+		wife: {
+			name: "bcd",
+			son: {
+				name: "aaa"
+			}
+		}
+	}
+	var obj1 = {
+
+	}
+	deepClone(obj, obj1);
+//克隆对象
+	function deepClone(origin, target) {
+		//origin 克隆对象， target被克隆或者克隆出来的对象
+		var target = target || {},
+			toStr = Object.prototype.toString,
+			arrStr = "[object Array]";
+		for(var prop in origin) {
+			if(origin.hasOwnProperty(prop)) {
+				if(origin[prop] !== "null" && typeof(origin[prop]) == "object") {
+					target[prop] = toStr.call(origin[prop]) == arrStr ? [] : {};
+					deepClone(origin[prop], target[prop]);
+				} else {
+					target[prop] = origin[prop];
+				}
+			}
+		}
+		return target;
+	}
+</script>

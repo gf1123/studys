@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	function test(){
+//		arguments.callee 是引用 相当于在控制台输出 test
+		console.log(arguments.callee);
+		function demo(){
+//		arguments.callee 是引用 相当于在控制台输出 demo
+			console.log(arguments.callee);
+		}
+		demo();
+	}
+	test();
+</script>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>	</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script type="text/javascript">
+
+var arrs = ["零","壹","贰","叁","肆","伍","陆","柒","捌","玖"];
+
+function replaceReg2(reg,str){
+
+return str.replace(reg,function(m){return arrs[m];})
+
+}
+
+var reg = /\d/g;
+
+var str1 = '13889294444';
+
+var str2 = '12889293333';
+
+var str3 = '23445567';
+
+console.log(replaceReg2(reg,str1)); // 壹叁捌捌玖贰玖肆肆肆肆
+
+console.log(replaceReg2(reg,str2)); // 壹贰捌捌玖贰玖叁叁叁叁
+
+console.log(replaceReg2(reg,str3)); // 贰叁肆肆伍伍陆柒
+</script>

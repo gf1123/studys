@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	function Person(name,age){
+		this.name=name;
+		this.age=age
+	}
+	console.log(Person("gao",100))//此时this指向windo
+	//加 new  之后 this指向  新建的这个 person
+	var person= new Person("gao",100);
+	
+</script>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	var name="高峰";
+	//利用闭包和立即执行函数其私有性 解决 在大工程下 变量冲突问题。
+	var intit =(function(){
+		var name="付丽红";
+		function shuxing(){
+			console.log(name);
+		}
+	return	function (){
+			shuxing();
+		}
+	}())
+	// intit()执行
+</script>

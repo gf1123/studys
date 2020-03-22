@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<button id="button" >点击</button>
+</body>
+</html>
+<script type="text/javascript">
+
+	xmlhttp=null;
+		if (window.XMLHttpRequest)
+		  {// code for all new browsers
+		  xmlhttp=new XMLHttpRequest();
+		  }
+		else if (window.ActiveXObject)
+		  {// code for IE5 and IE6
+		  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+		  }
+	var btn = document.getElementById("button");
+	btn.onclick = function(){
+		if (xmlhttp!=null)
+		  {
+		  //xmlhttp.onreadystatechange=state_Change;
+		  xmlhttp.open("GET","FirstServlet",true);
+		  xmlhttp.send(null);
+		  }
+		else
+		  {
+		  alert("Your browser does not support XMLHTTP.");
+		  }
+	}
+</script>

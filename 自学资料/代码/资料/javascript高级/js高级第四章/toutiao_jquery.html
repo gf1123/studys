@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="toutiao.css">
+
+</head>
+<body>
+	<div id="box">
+		<div id="top">
+			<img src="logo.png">
+		</div>
+		<div id="nav">
+			<div id="scoll">
+				<ul id="ul">
+					<li id="tou" style="color:red">头条</li>
+					<li id="shehui">社会</li>
+					<li id="guonei">国内</li>
+					<li id="guoji">国际</li>
+					<li id="yule">娱乐</li>
+					<li id="tiyu">体育</li>
+					<li id="junshi">军事</li>
+					<li id="keji">科技</li>
+					<li id="caijing">财经</li>
+					<li id="shishang">时尚</li>
+				</ul>
+			</div>
+			
+		</div>
+		<div id="content">
+		<!-- 新闻内容 -->
+			
+		</div>
+	</div>
+	
+</body>
+</html>
+<script src="jquery-1.11.2.js" type="text/javascript"></script>
+<script src="template-native-debug.js"></script>
+<script type="text/javascript">
+	$(function(){
+
+		//首先显示头条新闻
+		jsonp("tou");
+		//var li = $("#ul>li")[0];
+		//alert($("#ul").css("width"));
+		var w = parseFloat($("#ul>li").innerWidth())*10 + 0;
+		var scoll = $("#scoll");
+		scoll.width(w);
+		var nav = $("#nav");
+
+		//导航栏的滑动
+		scoll.mousedown(function (event) {
+        	
+        	var pageX = event.pageX 
+
+        	var spaceX = pageX - this.offsetLeft;
+
+        	//
+	        document.onmousemove = function (event) {
+		            if($("#nav").innerWidth()-$("#scoll").innerWidth()<0){
+		            var pageX = event.pageX
+		            scoll.css("left", pageX - spaceX) ;
+		            var val = parseFloat(scoll.css("left"));
+		            if(val>=0){
+		            	scoll.css("left", 0) ;
+		            }
+		            else if(parseFloat(scoll.css("left")) < nav.innerWidth()-scoll.innerWidth()){
+		            	scoll.css("left",nav.innerWidth()-scoll.innerWidth());
+		            }
+	           }
+            //这句话是用来清楚选中内容的
+            	window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty();
+        	}	
+	        document.onmouseup = function() {
+	             document.onmousemove = null;
+	       }
+
+    	});
+
+    	//点击不同了栏目
+    	$("#ul").children().click(function(event){
+    		//改变栏目颜色
+    		$("#ul").children().css("color","black");
+    		$(this).css("color","#ed4040");
+    		$("#content").html("");
+    		jsonp(event.target.id);
+
+    	});
+
+		
+	});
+
+	function jsonp(key){
+		//显示指示器
+		$("#content").html("<div id='preloader_1'><span></span><span></span><span></span><span></span><span></span></div>");
+		var u = "http://localhost:8080/juhe/Index?type="+key+"&key=ec1306285755b759f6c3586848eb3f17";
+		$.ajax(  
+		    {  
+		        type:'get',  
+		        url : u, 
+		        dataType : 'jsonp',  
+		        jsonp:"callback",
+		        jsonpCallback:"callback",
+		        success  : function(data) {  
+		            //alert(data);
+		        },  
+		        error : function() {  
+		            alert('fail');  
+		        }  
+		    }  
+		); 
+	}
+	function callback(data){
+		console.log(data);
+		 if (data.error_code != 0) {
+		 	$("#content").html("这网速你是在冲浪吗?");
+            return;
+        }
+
+                        //
+        var html = template("newstpl",data.result);
+        $("#content").html(html);
+	}
+
+
+</script>
+<!-- 新闻模板 -->
+<script id="newstpl" type="text/html">
+        <% for (var i=0; i< data.length; i++) {  %>
+            <div class="news" onclick="window.open('<%= data[i].url%>');">
+            	<div class="content-title"><p><img class="content-img" src="<%=data[i].thumbnail_pic_s%>"><%= data[i].title%></p></div>
+            	<div class="clearFloat"></div>
+				<div class="content-author"><%= data[i].author_name%>&nbsp;&nbsp;<%= data[i].date%></div>
+				<hr style="margin-top:16px">
+            </div>
+        <% } %>
+</script>

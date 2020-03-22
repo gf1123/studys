@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+	</body>
+
+</html>
+<script type="text/javascript">
+	//克隆对象 start
+	function deepClone(origin, target) {
+		//origin 克隆对象， target被克隆或者克隆出来的对象
+		var target = target || {},
+			toStr = Object.prototype.toString,
+			arrStr = "[object Array]";
+		for(var prop in origin) {
+			if(origin.hasOwnProperty(prop)) {
+				if(origin[prop] !== "null" && typeof(origin[prop]) == "object") {
+					target[prop] = toStr.call(origin[prop]) == arrStr ? [] : {};
+					deepClone(origin[prop], target[prop]);
+				} else {
+					target[prop] = origin[prop];
+				}
+			}
+		}
+		return target;
+	}
+	//克隆对象 end
+	
+	//兼容 事件 方法start 如果有移除事件 需要使用函数里的 ie8一下
+	function addEvent(elem, type, handle) {
+		//elem === 对象(div) ，type=== 事件("click")，handle===执行函数(function(){})
+		if(elem.addEventListener) {
+			//ie9以上
+			elem.addEventListener(type, handle, false);
+		} else if(elem.attachEvent) {
+//			ie8一下用  移出事件时好使，
+//			elem.attachEvent("on" + type, handle);
+//			//ie8以上用的 操作this 时可用，移出事件时不好使
+			elem.attachEvent("on" + type, function() {
+				handle.call(elem);//操作this的,this指向自己，不是默认的指向全局
+			});
+			
+		} else {
+			//通用的
+			elem["on" + type] = handle;
+		}
+	}
+	//兼容 事件 方法end
+	
+	//兼容 事件  移除的方法 start
+	function removeEvent(elem, type, handler){
+	//elem===操作对象(div) type===事件("click") clallName===回调函数名字
+	//兼容  事件对象
+	//	var event = e || window.event;
+	//	//兼容  事件源对象
+	//	var target = event.target|| event.srcElement;
+		if(elem.removeEventListener) {
+			elem.removeEventListener(type, handler, false);
+		} else if(elem.detachEvent) {
+			elem.detachEvent("on" + type, handler);
+		} else {
+			elem["on" + type] = null;
+		}
+	}	
+	//兼容 事件 移除的方法 end	
+	
+	//封装 取消 事件 冒泡  strat
+	function stopBubble(event){
+		//event ===取消事件冒泡那个 事件对象
+		if(event.stopPropagation){
+			event.stopPropagation();
+		}else{
+			event.cancelBubble=true;
+		}
+	}
+	//封装 取消 事件 冒泡  end
+	
+	//默认事件 取消浏览器点击右键出菜单 start
+	function cancelHandler(event){
+		//oncontextmenu 事件是 右键
+		if(event.preventDefault){
+			//ie9以上
+			event.preventDefault();
+		}else{
+//			ie 9一下
+			event.returnValue=false;
+		}
+	}
+	//默认事件 取消浏览器 点击右键出菜单 end
+	
+	//查看滚动条的滚动距离 封装兼容性方法 start
+	function getScrollOffset() {
+		if(window.pageXoffset) {
+			return {
+				//ie9以上
+				x: window.pageXOffset,
+				y: window.pageYOffset
+			}
+		} else {
+			return {
+				//ie9以下 不包含 9
+				x: document.body.scrollLeft + document.documentElement.scrollLeft,
+				y: document.body.scrollTop + document.documentElement.scrollTop,
+			}
+		}
+	}
+	//查看滚动条的滚动距离 封装兼容性方法 end
+
+	//查看窗口width  height   start
+	function getViewportOffset() {
+		if(window.innerWidth) {
+			return {
+				w: window.innerWidth,
+				h: window.innerHeight
+			}
+		} else {
+			if(document.compateMode === "BackCompat") {
+				return {
+					w: document.body.clienWidth,
+					h: document.body.clienHeight
+				}
+			} else {
+				return {
+					w: document.documentElement.clientWidth,
+					h: document.documentElement.clientHeight
+				}
+			}
+		}
+	}
+	//查看窗口width  height   end
+
+	//class 获取节点 兼容解决方法  获取 class="class1"节点 start
+	function clas(ars,class1) {
+		var arr = new Array();//创建数组
+		if(document.getElementsByTagName) {
+			//ie9以上
+			arr = document.getElementsByTagName("class1");
+		} else {
+			var all = document.getElementsByTagName("*");
+			for(var i = 0; i < all.length; i++) {
+				if(all[i].className == "class1") {
+					arr.push(all[i]);
+				}
+			}
+
+		}
+		console.log(arr); //输出数组
+	}
+	//class 获取节点 兼容解决方法  获取 class="class1"节点 end
+	
+	//获取样式的 start
+	function getStyle(elem,prop){
+//		window.getComputedStyle(div,null)["left"] elem===div,prop===left,相当于div.style.left
+		if(window.getComputedStyle){
+			return window.getComputedStyle(elem,null)[prop];
+		}else{
+			return elem.currentStyle[prop]
+		}
+	}
+	//获取样式的 end
+	
+	//随机输入一个字符，返回字符的长度函数.中文返回2个英文返回1个	start
+	function retByteslen(strings){
+		var count=0;
+		for(var i=0;i<strings.length;i++){
+			if(strings.charCodeAt(i)<=255){
+				count++;
+			}else if(strings.charCodeAt(i)>255){
+				count+=2;
+			}
+		}
+		console.log(count)
+	}
+	//随机输入一个字符，返回字符的长度函数.中文返回2个英文返回1个	start
+	
+	//判断类型的 相当于 typeof属性 start
+	function type(target){
+		var template={
+			"[object Array]":"array",
+			"[object Object]":"object",
+			"[object Number]":"number - object",
+			"[object Boolean]":"boolean - objecct",
+			"[object String]":"string -object"
+		}
+		if(target ===null){
+			return "null";
+		}
+		if(typeof(target)=="object"){
+			//包装类 Object.prototype.to.String
+			var str =Object.prototype.toString.call(target);
+			return template[str];
+		}else{
+			return typeof(target);
+		}
+	}
+	//判断类型的 相当于 typeof属性 end
+	
+	//(去重数组)在原型上创建的 调用时直接 写上调用的 数  组名.unique即可  start
+	Array.prototype.unique=function(){
+		var temp={},arr=[],len=this.length;
+		for(var i=0;i<len;i++){
+			if(!temp[this[i]]){//加入i=0 this[o]=arr1[0]=1
+				temp[this[i]]="123";
+				arr.push(this[i]);//this指的是调用它的这个变量(对象)
+			}
+		}
+		return arr;
+	}
+	//在原型上创建的 调用时直接 写上调用的 数  组名.unique即可  end
+</script>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		div{
+			width: 2000px;
+			height: 1000px;
+		}
+	</style>
+	<body>
+		<div>	</div>
+	</body>
+</html>
+<script type="text/javascript">
+	/*//查看滚动条的滚动距离*/
+	/*//除了ie9以上可用的 window.pageXOffset/pageYOffset*/
+	/*ie8及ie8以下不兼容 document.body/documentElement.scrollLeft/scrollTop*/
+	/*兼容性比较混乱,用时取两个值相加,因为不可能存在同时有两个值,*/
+
+	/*查看滚动条的滚动距离 封装兼容性方法*/
+		function getScrollOffset(){
+		if(window.pageXoffset){
+			return {
+				//ie9以上
+				x:window.pageXOffset,
+				y:window.pageYOffset
+			}
+		}else{
+				return {
+					//ie9以下 不包含 9
+					x:document.body.scrollLeft+document.documentElement.scrollLeft,
+					y:document.body.scrollTop+document.documentElement.scrollTop,
+				}
+			}
+	}
+
+
+ 	//删除 文档 头部 （<!DOCTYPE html>）就是 怪异模式,添加上就是标准模式
+ 	/*查看窗口width  height*/
+ 		function getViewportOffset(){
+ 		if(window.innerWidth){
+ 			return{
+ 				w:window.innerWidth,
+ 				h:window.innerHeight
+ 			}
+ 		}else{
+ 			if(document.compateMode === "BackCompat"){
+ 				return{
+ 					w:document.body.clienWidth,
+ 					h:document.body.clienHeight
+ 				}
+ 			}else{
+ 				return {
+ 					w:document.documentElement.clientWidth,
+ 					h:document.documentElement.clientHeight
+ 				}
+ 			}
+ 		}
+ 	}
+ 
+	
+	/*//除了ie9一下可用的 window.pageXOffset/pageYOffset*/
+	/*ie8及ie8以下不兼容 document.body/documentElement.scrollLeft/scrollTop*/
+	/*兼容性比较混乱,用时取两个值相加,因为不可能存在同时有两个值,*/
+
+</script>

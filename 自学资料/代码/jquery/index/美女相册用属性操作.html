@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<style type="text/css">
+		*{
+			margin: 0 auto;
+			padding: 0;
+		}
+		ul{list-style-type: none; overflow: hidden;}
+		.border{
+			width: 500px;
+			height: 500px;
+			border:1px solid red;
+		}
+		.border ul li{
+			float: left;
+			width:70px;
+			height: 70px;
+			border:1px solid blue;
+			margin-left: 22px;
+		}
+		.content{
+			margin-top: 30px;
+		}
+		.content  img{
+			display: block;
+			width: 360px;
+			height: 360px;
+			border: 1px solid green;
+		}
+	</style>
+	<body>
+		<div class="border">
+			<ul>
+				<li><a href="../img/01big.jpg" title="第一个"><img src="../img/01.jpg" alt="" /></a></li>
+				<li><a href="../img/02big.jpg" title="第二个"><img src="../img/02.jpg" alt="" /></a></li>
+				<li><a href="../img/03big.jpg" title="第三个"><img src="../img/03.jpg" alt="" /></a></li>
+				<li><a href="../img/04big.jpg" title="第四个"><img src="../img/04.jpg" alt="" /></a></li>
+				<li><a href="../img/05big.jpg" title="第五个"><img src="../img/05.jpg" alt="" /></a></li>
+			</ul>
+			<div class="content">
+		
+				
+			</div>	
+			<span></span>
+		</div>
+
+	</body>
+</html>
+<script type="text/javascript">
+	$(function(){
+	$(".border li a").click(function(){
+		$(".content").empty();
+		var $aimg=$(this).attr("href");
+		var $titlea=$(this).attr("title");
+//		创建img标签
+		var $img =$("<img src=''>");
+//		给img标签添加src属性
+
+//		console.log($img);
+		//把img添加到。content里面
+		$(".content").append($img);
+		$(".content").find("img").attr("src",$aimg);
+		$(".content").next("span").text($titlea);
+		return false;
+	});
+	
+		
+		
+	})
+</script>

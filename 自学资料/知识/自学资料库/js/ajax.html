@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>使用ajax发送get请求验证用户名是否可用</title>
+		<base href="" />
+	</head>
+
+	<body>
+		用户名:<input type="text" name="username" onblur="checkUsername(this.value);" /><span id="nameTipMsg"></span><br /> 密码:
+		<input type="password" name="password" /><br />
+	</body>
+
+</html>
+<script type="text/javascript">
+	function ajaxs(name) {
+		//1.创建AJAX核心对象XMLHttpRequest(浏览器内置的，可以直接使用)
+		var xhr = null;
+		if(window.XMLHttpRequest) {
+			//兼容ie7,firefox,Chrome,Opera,Safari
+			xhr = new XMLHttpRequest();
+		} else {
+			//兼容ie6,ie5
+			xhr = new ActiveXObject("Microsft.XMLHTTP");
+		}
+
+		//2.注册回调函数
+		//XMLHttpRequest对象在请求和相应的过程当中，该对象的readState状态从0-4;
+//		0:请求未初始化            		 	  xhr.readyState == 0;
+//		1:服务器连接已建立     	          xhr.readyState == 1;
+//		2:请求已接收	   		      xhr.readyState == 2;
+//		3:请求处理中	  			  xhr.readyState == 3;
+//		4:请求已完成,且响应已就绪  		  xhr.readyState == 4;
+		xhr.onreadystatechange = function() {//xhr对象的readyState的值发生改变的时候，回调一次。
+			if(xhr.readyState==4 && xhr.status==200) {
+				//200代表正常显示
+				//在浏览器端使用xhr对象接收服务器端响应回来的文本
+				document.getElementById("nameTipMsg").innerHTML = xhr.responseText;
+			}
+		}
+		/*  method：请求的类型；GET 或 POST
+			url：文件在服务器上的位置
+			async：true（异步）或 false（同步）
+			*/
+		//3.开启服务器和浏览器的通道
+/*--------------------------------------------------------*/		
+		//post请求 需要多添加的
+// xhr.open("POST","test.html",true);  
+// xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");//多添加的头部
+// xhr.send("fname=Henry&lname=Ford");  //post请求参数放在send里面，即请求体
+/*--------------------------------------------------------*/	
+
+		//get请求出现的缓存解决方法?  答:在请求路径中添加时间戳（毫秒）
+
+		var timeStamp = new Date().getTime():
+		xhr.open("method", "aa.php?_="+timeStamp+"&username="+username, async);
+		//这里会开启通道不发送请求
+		//4.发送AJAX请求
+		xhr.send(string) //post请求时才使用字符串参数，否则不用带参数。
+	}
+</script>

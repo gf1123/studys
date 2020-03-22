@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<img src="http://www.google.com/1.jpg"/>
+	</body>
+</html>
+<script type="text/javascript">
+	//区别就是 onload  需要解析完并且 下载完所有的采取执行，而 jquery的那个 则是 只要页面解析完就可以去执行 也就是dom树建完。
+	//去掉 img 那个再试试就不一样了
+	$(function(){
+		alert("read ok");
+	})
+	window.onload=function(){
+		alert("onload ok");
+	}
+</script>

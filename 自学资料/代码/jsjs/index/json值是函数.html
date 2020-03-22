@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>菜鸟教程(runoob.com)</title>
+	</head>
+
+	<body>
+
+		<h2>字符串转换为函数</h2>
+
+		<p id="demo"></p>
+
+		<script>
+			var text = '{ "name":"Runoob", "alexa":"function () {return 10000;}", "site":"www.runoob.com"}';
+			var obj = JSON.parse(text);//把json转化为javascript 
+			obj.alexa = eval("("+obj.alexa+")");//输出为 function () {return 10000;} 加上（）是返回值
+console.log(obj.alexa)
+			document.getElementById("demo").innerHTML = obj.name + " Alexa 排名：" + obj.alexa();
+var a = eval(function(){return "你好"});
+console.log(a())
+		</script>
+
+	</body>
+
+</html>

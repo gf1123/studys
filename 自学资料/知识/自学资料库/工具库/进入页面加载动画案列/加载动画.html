@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Bootstrap 实例 - 模态框（Modal）插件</title>
+		<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+		<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="animation.css" />
+		<!--<script src="jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>-->
+	</head>
+	<style type="text/css">
+		body {
+			position: relative;
+		}
+		
+		.sk-spinner {
+			/*margin-top: 320px!important;*/
+		}
+
+
+	</style>
+
+	<body>
+
+		<h2>看控制台 </h2>
+		<!-- 按钮触发模态框 -->
+		<input type="test" name="" id="ipt" placeholder="输入盗墓笔记试试" />
+		<button class="btn btn-primary btn-lg" id="start">开始</button>
+		<ul>
+			<li></li>
+		</ul>
+
+		<!-- 模态框（Modal） -->
+		<div class="modal fade" id="myModal" aria-hidden="true" data-backdrop="static">
+			<div class="sk-spinner sk-spinner-three-bounce">
+				<div class="sk-bounce1"></div>
+				<div class="sk-bounce2"></div>
+				<div class="sk-bounce3"></div>
+			</div>
+		</div>
+	</body>
+
+</html>
+<script type="text/javascript">
+	$(function() {
+		$("#start").click(function() {
+							$('#myModal').modal('show');	
+			var ipt = $("#ipt").val();
+			if(ipt.length == 0) {
+				$("li").html("不能为空")
+				return false;
+			}
+
+			$('#myModal').modal('show');
+
+			//			else {
+
+			$.ajax({
+				url: "https://www.apiopen.top/novelInfoApi?",
+				type: "get",
+				dataType: "json",
+				data: {
+					"name": +ipt
+				},
+				success: function(data) {
+					setInterval(function(){$('#myModal').modal('hide');},500)
+					if(data) {
+						console.log(data);
+					} else {
+						console.log("else")
+						console.log(data.length)
+					}
+				},
+				error: function() {
+					$('#myModal').modal('hide');
+					$("li").html("404")
+
+				}
+
+			})
+			//			}
+
+		})
+
+	})
+</script>

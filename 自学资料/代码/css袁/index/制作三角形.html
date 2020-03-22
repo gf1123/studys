@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		/*原理*/
+		div:first-child{
+			width: 0;
+			height: 0;
+			border-width: 10px;
+			border-style: solid;
+			border-color: red blue green orange;
+		}
+		/*简化*/
+		div:last-child{
+			/*派他思想*/
+			width:0;
+			height: 0;
+			border:10px solid transparent;
+			border-right: 10px solid red;
+		}
+	</style>
+	<body>
+		<div></div>
+		<div></div>
+	</body>
+</html>

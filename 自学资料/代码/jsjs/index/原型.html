@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+	</body>
+
+</html>
+<script type="text/javascript">
+	//构造函数方法创建对象实例
+
+	function Person(name, age, gender) {
+
+		this.name = name;
+
+		this.age = age;
+
+		this.gender = gender;
+
+		this.say = function() {
+
+			alert(this.name);
+
+		}
+
+	}
+
+	var person1 = new Person('钟女士', 80, '女');
+
+	var person2 = new Person('张女士', 80, '女');
+
+	console.log(person2)
+
+	console.log(person1)
+
+
+//**********************************
+	//原型模式创建对象
+
+//	function Person() {
+//
+//	}
+//
+//	Person.prototype.name = '钟女士';
+//
+//	Person.prototype.age = 80;
+//
+//	Person.prototype.gender = '女';
+//
+//	var person1 = new Person();
+//
+//	console.log(person1)
+//
+//	//简写原型模式
+//
+//	Person.prototype = {
+//
+//		constructor: Person
+//
+//		name: '钟女士'，
+//
+//		age: 80,
+//
+//		gender: '女'
+//
+//	}
+</script>

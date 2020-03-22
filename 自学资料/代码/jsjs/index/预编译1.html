@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+	</body>
+
+</html>
+<script type="text/javascript">
+	//---------预编译步骤-------------
+	// 1. 创建AO对象
+	// 2. 找形参和变量声明,将变量和形参名作为AO属性名,值为undefined
+	// 3. 将实参值和形参统一
+	// 4. 在函数体里面找函数声明，值赋予函数体
+
+	//案列1
+	//		function test(a,b){
+	//			console.log(a);//1
+	//			c=0;
+	//			var c;
+	//			a=3;
+	//			b=2;
+	//			console.log(b)//2
+	//			function b(){}
+	//			function d(){}
+	//			console.log(b);//2 
+	//		}
+	//		test(1);
+	//案列2
+	function test(a, b) {
+		console.log(a); //f a(){}
+		console.log(b) //undefined
+		var b = 234; //b由undefined 变成234
+		console.log(b); //234
+		a = 123; //a 由函数体 变成 123
+		console.log(a); //123
+		function a() {}
+		var a;
+
+		b = 254; //b由234变成了254
+		var b = function() {} //b由254变成了函数体
+		console.log(a); //123
+		console.log(b); //f(){}
+	}
+	test(1);
+	//解析过程：案列2
+	//	AO{
+	//		a:undefined(1) 1(2)  function a(){}
+	//		b:undefined(1)
+	//		之后开始赋值了
+	//	}
+
+	//变量没有声明就使用 是 会报错(defined)
+	//		console.log(a);//变量  声明提升了 undefined
+	//		var a =123;
+	// 变量  声明提升
+	// 函数声明 整体提升
+
+	//未经声明就赋值 属于全局变量 
+
+	//  第一个
+	//	function bar(){
+	//		return foo;
+	//		foo= 10;
+	//		function foo(){}
+	//		var foo =11;
+	//	}
+	//	console.log(bar());//function foo(){}
+	//	
+	//	
+	//	//第二个
+	//	console.log(bar());//11
+	//	function bar(){
+	//		foo =10;        //第二步
+	//		function foo(){//第一步
+	//			
+	//		}
+	//		var foo =11;//第三步
+	//		return foo;//返回 11
+	//	}
+		function test(){
+		console.log(b);
+		if(a){
+			var b =100;
+		}
+		console.log(b);//100
+		c=234;
+		console.log(c)
+	}
+	var a;
+
+	test();
+		a=10;//test函数执行完之后在执行 a=10;
+	console.log(c);
+</script>

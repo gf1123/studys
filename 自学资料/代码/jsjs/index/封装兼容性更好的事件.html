@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>99O3d6l4egB0b7Y8UR3SIbt4YpAn49Qj
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="btn" style="width:100px;cursor: pointer;background: red; color: white;">点击事件</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var btn=document.getElementById("btn");
+//	btn.onclick=function(){
+//		alert("Aa")
+//	}
+	//谷歌等
+//		btn.addEventListener("click",function(){
+//			console.log("点击成功addEventListener")
+//		},false);
+// ie
+//		btn.attachEvent('onclick',function(){
+//			console.log("aaa")
+//		})
+	//兼容 事件
+//	function addEvent(elem,type,handle){
+//		if(elem.addEventListener){
+//			elem.addEventListener(type,handle,false);
+//		}else if(elem.attachEvent){
+//			elem.attachEvent("on"+type,function(){
+//				handle.call(elem);
+//			})
+//		}else{
+//			elem["on"+type]=handle;
+//		}
+//	}
+
+
+//---------------------移除
+//	//绑定事件
+//			btn.addEventListener("click",fn,false);
+//			function fn(){
+//			console.log("点击成功addEventListener")
+//		}
+//	//移除事件 
+//	//注意:函数那不能直接写函数，必须为 函数调用名称
+//	btn.removeEventListener("click",fn,false);
+	
+//	 ie
+//		btn.attachEvent('onclick',fa)
+//		function fa(){
+//			console.log("aaa")
+//		}
+//	btn.detachEvent("onclick",fa);
+	
+</script>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Document</title>
+</head>
+<style type="text/css">
+	*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+
+
+.box {
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  background: #ddd;
+  cursor: pointer;
+  box-shadow: 0 0 5px #ccc inset;
+} .box .fill {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  background: #03A9F4;
+  opacity: .5;
+  box-shadow: 0 0 5px #ccc;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.translate:hover .fill {
+  -webkit-transform: translate(45px, 1em);
+  transform: translate(45px, 1em);
+}
+
+
+
+
+
+
+</style>
+<body>
+<!-- translate-->
+
+
+  <div class="box translate">
+    <div class="fill"></div>
+  </div>
+
+</body>
+</html>

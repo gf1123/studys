@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <title>吉大正元UI前端框架V2.0  - 登录</title>
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <meta name="keywords" content="吉大正元UI前端框架V2.0">
+    <link href="css/animate.min.css" rel="stylesheet">
+<link href="css/login.css" rel="stylesheet">
+
+<script type="text/javascript">
+function OnEnter(field){ field.focus(); if(field.value == field.defaultValue){  field.value = ""; } }function OnExit(field){ if(field.value == ""){  field.value = field.defaultValue; } field.focus();}</script>
+
+</head>
+
+
+<body class="login_index">
+<div class="login_wrap">
+	<div class="top_box animated flipInX">
+    	<img src="img/logo.png"/> 
+    </div>
+  <div class="middle_box animated zoomIn">
+  	<div class="middle_box1">
+  		<h2 class="tit_h2"><a href="#">用户登录</a></h2>
+  	 	<p class="icon_yh icon_yh_tb"> </p>
+     	<div class="content_box animated zoomIn">
+    	  <input type="text" class="input_login" placeholder="用户名" />
+          <input type="password" class="input_login" placeholder="密码" />
+          <div class="dl3-p"><p>用户名或密码错误</p></div>
+            <button class="button_login">登录</button>
+            	<p class="forgot_password"><a href="">忘了密码？</a></p>	
+        </div>
+     </div>  
+  </div> 
+       <p class="foot_box">还没有账号？<a href="#">立即注册</a></p>    
+  </div>
+<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="js/jquery.placeholder.min.js"></script>
+</body>
+</html>
+

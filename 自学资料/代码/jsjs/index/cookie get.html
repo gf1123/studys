@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+    </body>
+</html>
+<script type="text/javascript">
+    //设置 cookie
+    setCookie({
+        name:"高峰",
+        age:21
+    },30);
+    
+    function setCookie(json,time){
+        var date = new Date(new Date().getTime() + time*24*60*60*1000 ).toUTCString();
+        for(var key in json){
+            document.cookie=key+"="+json[key]+"; expires="+ date;	
+
+        }
+    }
+    
+    //获取cookie
+//    console.log(getCookie("name"));
+    function getCookie(attr){
+        return document.cookie.match( new RegExp("(^|\\s)"+ attr + "=([^;]+)(;|$)"))[2];
+    }
+    //清除cookie
+//  removeCookie("name");
+     function removeCookie(attr){
+         var json ={};
+         json[attr]="";
+         setCookie(json,-1);
+     }
+</script>

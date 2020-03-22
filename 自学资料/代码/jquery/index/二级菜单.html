@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<style type="text/css">
+		* {
+			margin: 0 auto;
+			padding: 0;
+		}
+		
+		.clearfix:after {
+			content: "";
+			display: block;
+			height: 0;
+			line-height: 0;
+			clear: both;
+		}
+		
+		.wrap {
+			width: 500px;
+			background: lightblue;
+			text-align: center;
+		}
+		
+		ul {
+			list-style-type: none;
+		}
+		
+		a {
+			text-decoration: none;
+		}
+		
+		.wrap ul li ul {
+			display: none;
+			position: absolute;
+			top: 30px;
+			left: 0;
+		}
+		
+		.wrap ul li ul>li {
+			width: 100px;
+			line-height: 1.5;
+			background: red;
+		}
+		
+		.wrap>ul>li {
+			float: left;
+			position: relative;
+			margin-left: 25px;
+			background: royalblue;
+		}
+		
+		.wrap ul li a {
+			color: white;
+			display: block;
+			width: 100px;
+			line-height: 30px;
+			height: 30px;
+			text-align: center;
+		}
+	</style>
+
+	<body>
+		<div class="wrap">
+			<ul class="clearfix">
+				<li>
+					<a href="#">一级菜单1</a>
+					<ul>
+						<li>二级菜单1</li>
+						<li>二级菜单1</li>
+						<li>二级菜单1</li>
+						<li>二级菜单1</li>
+					</ul>
+				</li>
+				<li>
+					<a href="">一级菜单2</a>
+					<ul>
+						<li>二级菜单2</li>
+						<li>二级菜单2</li>
+						<li>二级菜单2</li>
+						<li>二级菜单2</li>
+					</ul>
+				</li>
+				<li>
+					<a href="">一级菜单3</a>
+					<ul>
+						<li>二级菜单3</li>
+						<li>二级菜单3</li>
+						<li>二级菜单3</li>
+						<li>二级菜单3</li>
+					</ul>
+				</li>
+				<li>
+					<a href="">一级菜单4</a>
+					<ul>
+						<li>二级菜单4</li>
+						<li>二级菜单4</li>
+						<li>二级菜单4</li>
+						<li>二级菜单4</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</body>
+
+</html>
+<script type="text/javascript">
+	$(function() {
+		var num=0;
+		$(".wrap>ul>li").hover(function() {
+			num++;
+			console.log(num);
+				$(this).children("ul").stop(true,false).slideDown(400);
+			},
+			function() {
+				$(this).children("ul").stop(true,false).slideUp(200);
+			})
+
+//mouseenter === mouseover  移入事件
+//mouseleave === mouseout  移出事件 
+
+//onmouseenter 和 onmouseleave 比mouseover和mouseout这个要好 .
+	})
+</script>

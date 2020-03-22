@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>ajax3</title>
+	</head>
+	<script src="jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.ajax {
+			width: 300px;
+			height: 250px;
+			background: lightsalmon;
+			margin: 50px auto;
+			padding-top: 10px;
+			text-align: center;
+		}
+		ul{
+			list-style-type: none;
+			overflow: hidden;
+			border: 1px soli red ;
+			background: green;
+			
+		}
+		li{
+			float: left;
+			width: 100%;
+			text-align: left;
+			color: white;
+			font-size: 16px;
+		}
+		/*li:hover{
+			background: red;
+		}*/
+	</style>
+
+	<body>
+		<div class="ajax">
+			<input type="text" name="" id="ipt" value="" />
+			<input type="button" name="" id="search" value="搜索" />
+			<ul id="demo"></ul>
+		</div>
+	</body>
+</html>
+
+<script type="text/javascript">
+	$("#ipt").keyup(function() {
+
+		var val = $(this).val();
+		if(val === "t"){
+			alert("不能输入t");
+			return;//不加return 程序会继续往下执行。
+		}
+		$.ajax({
+			type: "get",
+			url: "https://www.baidu.com/sugrec?prod=pc&cb=aa",
+			dataType: "jsonp",
+			jsonp: "cb",
+			//		data:"wd="+val,//字符串方法
+			data: {
+				wd: val
+			}, //json方法
+			success: function(datas) {
+				console.log(datas);
+				var data = datas.g;
+				//		console.log(data[0].q)
+				var lis = "";
+				if(data && data.length>0) {
+					for(var i = 0; i < data.length; i++) {
+
+						var datas = data[i].q;//实际值
+						$("#demo").empty();
+						var lis = lis + ("<li>" + datas + "</li>");
+					}
+					$("#demo").append(lis);
+
+					$("#demo").find("li").hover(function(){
+						$(this).css("backgroundColor","red");
+					},function(){
+						$(this).css("backgroundColor","blue");
+						
+					});
+				}
+				else{
+						$("#demo").empty();
+					
+					$("#demo").append("没有找到资料，请重试");
+				}
+			}
+
+		});
+	
+	})
+	
+	//	var a={};
+	//if(a){
+	//	console.log("true")
+	//}else{
+	//	console.log("false")
+	//}
+</script>

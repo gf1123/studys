@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		*{
+			margin: 0 auto;
+			padding: 0;
+		}
+		.box{
+			position: relative;
+			width: 500px;
+			margin-top: 200px;
+			
+		}
+		.box div{
+			position: absolute;
+			top: 0;
+			left: 0;
+			margin: auto;
+			width: 300px;
+			height: 300px;
+			border-radius: 50%;
+			transition: all 1s;
+		}
+		.box_1{
+			background:red;
+			z-index: 1;
+			backface-visibility: hidden;
+		}
+		.box_2{
+			
+
+			background: green;
+		}
+		.box div:hover{
+			transform: rotateY(180deg);
+		}
+	</style>
+	<body>
+		<div class="box">
+			<div class="box_1"></div>
+			<div class="box_2"></div>
+		</div>
+	</body>
+</html>

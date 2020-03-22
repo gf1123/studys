@@ -1,0 +1,44 @@
+			left: 0px;
+			transition: left 5s 1s ease; /*必须有初始值 left...*/
+			/*第一个值是值,第二个是持续时间,第三个为起始的延迟时间(延迟时间可以为负数，意思是提前进入状态) ,第三个是运动效果.*/
+		}
+
+
+
+
+
+
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		.fu{
+			width: 500px;
+			height: 300px;
+			border: 1px solid blue;
+		}
+		.div1{
+			width: 100px;
+			height: 100px;
+			background: red;
+			position: relative;
+			left: 0px;
+			transition: left 5s 1s ease; /*必须有初始值 left...*/
+			/*第一个值是值,第二个是持续时间,第三个为起始的延迟时间(延迟时间可以为负数，意思是提前进入状态) ,第三个是运动效果.*/
+		}
+	</style>
+	<body><div class="fu">
+		<div class="div1" id="div1"></div>
+		<button onclick="move()">移动</button>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var div1 = document.getElementById("div1");
+	function move(){
+		div1.style.left='300px';
+	}
+</script>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+	</body>
+
+</html>
+<script type="text/javascript">
+	//**************闭包案列 闭包触发
+	//闭包就是内部的变量(函数)被外部访问就会生成闭包
+	//	闭包缺点:闭包会导致原有作用域链不释放造成内存泄漏
+	//内存泄漏：能用的内存空间少，被占用的多。(比喻词：像泄漏一样)关注点在：内存剩余的越来越少。
+	
+	//	function test() {
+	//		var arr = [];
+	//		for(var i = 0; i < 10; i++) {
+	//			arr[i] = function() {//叫做赋值语句，function 执行只有被调用时才会执行。（）
+	//				console.log(i);
+	//			}
+	//		}
+	//		return arr;
+	//	}
+	//	//之所以为 10 是因为 只有执行时 function() {console.log(i);}才会执行。二arr[i]之所以会执行是因为不是函数体。
+	//	var myArr =test();
+	//	for(var j=0;j<10;j++){
+	//		myArr[j]();//()代表执行
+	//	}
+
+	//*********解决上面的闭包 及其原理
+	function test() {
+		var arr = [];
+		for(var i = 0; i < 10; i++) {
+			(function(n) { //立即执行函数
+				//每一个执行函数都一个唯一的n(i);
+				//立即执行函数的AO被里面的函数拿到了
+				//i代表实参，n代表形参
+				arr[n] = function() { //叫做赋值语句，function 执行只有被调用时才会执行。（）
+					console.log(n); //立即执行函数执行时找的不是 test AO得了，而是立即执行的 AO了。
+				}
+			}(i))
+		}
+		return arr;
+	}
+	//之所以为 10 是因为 只有执行时 function() {console.log(i);}才会执行。二arr[i]之所以会执行是因为不是函数体。
+	var myArr = test();
+	for(var j = 0; j < 10; j++) {
+		myArr[j](); //()代表执行
+	}
+</script>

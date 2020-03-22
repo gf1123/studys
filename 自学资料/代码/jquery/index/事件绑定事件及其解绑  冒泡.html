@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<style type="text/css">
+		.son{
+			width: 100px;
+			height: 100px;
+			border:1px solid red;
+		}
+		.cz{
+						width: 100px;
+			height: 100px;
+			border:1px solid blue;
+		}
+	</style>
+	<body>
+			<input type="button" name="" id="" value="点击div看控制台" />
+		<div class="son"></div>
+		<span>事件委托</span>			
+		<img src="../img/sj.png"/>
+		
+	</body>
+</html>
+<script type="text/javascript">
+	$(function(){
+		//所谓动态创建就是:在页面中加入了一个事件如下面列子的点击事件，按钮被点击后新建了一个div这个就是动态创建。
+		
+		//事件几种方式
+//		第一个不支持同时注册，也不支持动态注册，    $('div').click(function(){})
+//		第二个支持同时注册,不支持动态创建   		$("div").bind({mouseenter:function(){....},click:function(){......}})
+//		第三个支持同时注册,支持动态创建,事件委托,原理事件冒泡	$("父元素").delegate("子元素，子元素n",{mouseenter:function(){....},click:function(){......}})
+//		第四个第三个支持同时注册，支持动态创建  on方法    $("div").on({'click':function(){...},'mouseenter':function(){....}})
+			//简单注册  最常用的
+//			$("div").on("click",function(){.....})
+			//事件委托 原理 冒泡
+//			$("父元素").on("click","子元素,子元素n",function(){...})
+		
+//		解绑事件   $("div").unbind();//解绑所有
+		解绑事件   $("div").unbind("click");//解绑指定的
+		//同理 delegate
+		
+		
+		
+		//点击按钮新建一个div
+		$("input").on("click",function(){
+			var czdiv= $("<div class='cz'></div>");
+			czdiv.appendTo("body");
+		});
+		//给div添加事件
+		//不支持动态创建
+		$("div").bind({
+			mouseenter:function(){console.log("移入了");},
+			click:function(){console.log("点击了");}
+		})
+
+
+		//事件委托 
+		//支持动态注册的
+		// 先找到要添加元素的父元素，之后第一个参数 事件名称，第二个参数 可以触发的事件必须为子元素    第三个参数是执行函数
+//		$("body").on("click","div,span", function(){
+//			console.log("div被点击了");
+//		});
+	})
+</script>

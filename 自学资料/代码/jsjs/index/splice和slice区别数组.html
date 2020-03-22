@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	var arr = new Array(1,20,2,4,10,13,1); //实例化一个数组对象
+	//在3和4中间添加:我是可以自定义的
+	//数组 。splice(从第几位开始，截取多少的长度(截取几个)，在切口出添加数据)负数是倒数,以光标为主);
+	var splices = arr.splice(0, 1);
+	console.log(splices);
+	console.log(arr);	
+	
+	console.log("----------");
+	//slice(从第几位为开始截取,截取到哪个位置) // 不改变原数组 有点像复制出来那个位置那个字符了
+	//如果没有新的参数接收 是没有用处的
+	//和splice区别 splice是从第几位开始,截取几个,添加新参数顶替 改变原数组  有点像剪切出来那个字符一样
+	//slice是从第几位为开始截取,截取到哪个位置 必须有参数接收 不改变原数组
+	var slicearr= arr.slice(4,5);
+	console.log(slicearr);
+	console.log(arr);
+</script>

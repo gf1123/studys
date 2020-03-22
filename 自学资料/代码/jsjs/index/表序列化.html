@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Title</title>
+		<script src="jquery-3.2.1.min.js"></script>
+	</head>
+
+	<body>
+		<form action="" id="test1">
+			username: <input type="text" name="username"><br> 
+			password: <input type="password" name="password"><br>
+			<button id="submit">submit</button>
+		</form>
+	</body>
+	<script>
+		$('#submit').click(function() {
+			var form =$('#test1').serializeArray();
+			
+			var obj={};
+			$(form).each(function(){
+				console.log(this);
+				obj[this.name]=this.value;
+			})
+			obj.name="高峰";
+			obj.age=23;
+			//将json对象转化为json字符串
+			var jsonStiring=JSON.stringify(obj);
+			//输出的是json对象
+			console.log(obj);
+			//输出的是json字符串
+			console.log(jsonStiring);
+			
+			return false;
+			
+//			$.each(form,function(i,val){
+//				obj[this.name]=this.value;
+//			})
+//			console.log(form)
+			
+		});
+	</script>
+
+</html>

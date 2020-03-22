@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<style type="text/css">
+		#div1{
+			width: 200px;
+			height: 200px;
+			border: 1px solid red;
+			font-size: 2em;
+		}
+				#div2{
+			width: 200px;
+			height: 200px;
+			border: 1px solid blue;
+			font-size: 2em;
+		}
+	</style>
+	<body>
+		<img src="../img/clone.png"/><br />
+		<button>克隆</button>
+		<div id="div1">
+			<b>div1</b>
+			<span>lalala</span>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+//克隆节点 原理看页面
+$("button").click(function(){
+	var $clone=$("#div1").clone();
+	$clone.appendTo("body");
+	//默认为false  
+	//true 和 false  的区别在于,有事件时克隆的也会有事件
+	
+})
+
+$("#div1").click(function(){
+	var $clone=$("#div1").clone(true);
+	$clone.attr("id","div2");
+	$clone.appendTo("body");
+	//默认为false  
+	//true 和 false  的区别在于,有事件时克隆的也会有事件
+	
+})
+</script>

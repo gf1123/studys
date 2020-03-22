@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>登录页</title>
+
+    <meta name="keywords" content="登录页">
+    <meta name="description" content="登录页">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/style.min862f.css" rel="stylesheet">
+    <link href="css/login.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="js/jquery-1.9.0.min.js"></script>
+    <script type="text/javascript" src="js/login.js"></script>
+    <script>if(window.top !== window.self){ window.top.location = window.location;}</script>
+ 	<script type="text/javascript" src="js/jquery.placeholder.min.js"></script>
+</head>
+
+<body class="login3-bg">
+    <div class="header">
+           <div class="login2-title">
+    		<h1><img src="img/dyz-logo.png" alt=""></h1>
+           </div>
+           <!--新加-->
+           <div class="login2-title2">
+    		<h1><img src="img/dyz-logo.png" alt=""></h1>
+           </div>
+           <!--新加 end-->
+    </div> 
+    
+    <div class="canvas-animate">
+    	<div class="earth"><img src="img/earth.png" alt=""></div>
+        <div class="animate1-1 fadeInDown animated"><img src="img/animate1-1.png" alt=""></div>
+        <div class="animate1-2 animate2 flipInY animated"><img src="img/animate1-2.png" alt=""></div>
+        <div class="animate2-1 fadeInDown animated"><img src="img/animate2-1.png" alt=""></div>
+        <div class="animate2-2 animate2 flipInY animated"><img src="img/animate2-2.png" alt=""></div>
+        <div class="animate3-1 fadeInDown animated"><img src="img/animate3-1.png" alt=""></div>
+        <div class="animate3-2 animate2 flipInY animated"><img src="img/animate3-2.png" alt=""></div>
+        <div class="animate4-1 fadeInDown animated"><img src="img/animate4-1.png" alt=""></div>
+        <div class="animate4-2 animate2 flipInY animated"><img src="img/animate4-2.png" alt=""></div>
+        <div class="animate5-1 fadeInDown animated"><img src="img/animate5-1.png" alt=""></div>
+        <div class="animate5-2 animate2 flipInY animated"><img src="img/animate5-2.png" alt=""></div>
+        <div class="animate6-1 fadeInDown animated"><img src="img/animate6-1.png" alt=""></div>
+        <div class="animate6-2 animate2 flipInY animated"><img src="img/animate6-2.png" alt=""></div>
+    </div>
+    
+	<div class="login2-content animated fadeInDown h400">
+    	
+        
+        <div class="header-tab">
+           <div class="switch" id="switch">
+              <a class="switch_btn_focus" id="switch_qlogin" href="javascript:void(0);" tabindex="7">员工登录</a>
+			  <a class="switch_btn" id="switch_login" href="javascript:void(0);" tabindex="8">访客登录</a>
+              <div class="switch_bottom" id="switch_bottom"></div>
+           </div>
+        </div>
+        <!--员工登录-->
+        <div id="web_qr_login" style="display: block;">
+        <form class="login2-form" role="form" action="">
+            <!--<div class="form-group login2-email">
+                <img src="img/username.png" >
+            	<input type="username" class="form-control" value="请输入用户名" onfocus="if(value=='请输入用户名'){value=''}" onblur="if(value==''){value='请输入用户名'}" />
+            </div>-->
+            <div class="form-group login2-email">
+                <img src="img/password.png" >
+            	<input type="password" class="form-control" placeholder="请输入密码" />
+            </div>
+            <div class="form-group login2-email">
+                <img src="img/phone.png" >
+            	<input type="email" class="form-control" placeholder="请输入手机号" />
+            	<div class="login2-yzm"><a href="#">发送验证码</a></div>
+            </div>
+            <!--<div class="form-group login2-email">
+                <img src="img/message.png" >
+            	<select class="form-control form-control2">
+            	  <option>sina@qq.com</option>
+            	  <option>yangyang@126.com</option>
+            	</select>
+            </div>-->
+            <p class="text-muted text-center">
+            	<input type="checkbox">&nbsp;&nbsp;&nbsp;&nbsp;同意<a href="#">&nbsp;&nbsp;免责声明&nbsp;&nbsp;</a>条款
+            </p>
+            <button type="submit" class="btn btn-primary block full-width m-b">登 录</button>
+        </form>
+		</div>
+        <!--游客登录-->
+        <div id="qlogin" style="display: none;">
+        <form class="login2-form login2-email" role="form" action="">
+            <div class="form-group">
+                <img src="img/password.png" >
+            	<input type="password" class="form-control" placeholder="请输入密码" />
+            </div>
+            
+            <div class="form-group login2-email2">
+                <img src="img/message.png" >
+            	<input type="message" class="form-control" placeholder="请输入验证码" />
+            </div>
+            <p class="text-muted text-center">
+            	<input type="radio">&nbsp;&nbsp;&nbsp;&nbsp;同意<a href="#">&nbsp;&nbsp;免责声明&nbsp;&nbsp;</a>条款
+            </p>
+            <button type="submit" class="btn btn-primary btn-primary2 block full-width m-b">登 录</button><!--新加 类  btn-primary2-->
+            
+        </form>
+		</div>
+        <!--新加--><h2><img src="img/logo--.png" alt=""></h2><!--新加-end-->
+    </div>
+    <div id="large-header">
+    	<canvas id="demo-canvas" style="position:absolute;top:0; left:0;"></canvas>
+    </div>
+    <!--<script src="js/TweenLite.min.js"></script>
+    <script src="js/EasePack.min.js"></script>
+    <script src="js/rAF.js"></script>
+    <script src="js/demo-1.js"></script>-->
+</body>
+
+</html>

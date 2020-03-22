@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+//	$.each(数组或者对象,function(索引,值))
+//数组
+var arr=["red","green","blue","orange","yellow"];
+$.each(arr, function(i,val) {//索引值
+	console.log(i);
+	console.log(val);
+});
+console.log("----");
+//对象
+var obj={
+	name:"feng",
+	age:20,
+	sex:"meal"
+}
+$.each(obj,function(i,val){//属性值
+	console.log(i);
+	console.log(val);
+})
+</script>

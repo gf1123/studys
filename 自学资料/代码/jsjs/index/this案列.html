@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	var a=5;
+	function test(){
+		//var this= Object.creat(test.prototype) === this={__proto:test.prototype};
+		a=0
+		alert(a)
+		alert(this.a)
+		var a;
+		alert(a)
+	}
+	test();//0 5 0
+	new test()//0 undefined 0 相当于隐式加上了this={__proto:test.prototype};
+	
+	
+	var cc=3;
+	function inner(){
+		c=5;
+		console.log(c);
+		console.log("b");
+	} inner();
+</script>

@@ -1,0 +1,64 @@
+
+	<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+	</body>
+
+</html>
+<script type="text/javascript">
+	// call apply 改变 this指向
+	//apply 和call的区别，apply的实参必须传数组(传参列表不同)
+	//call 需要把实参按照形参的个数传进去
+	//apply 需要传一个arguments
+	//案列中就是用call来用别人的函数来实现自己的功能
+	//构造函数中 不 new的话 this指向 是 window
+	//test.call()代表执行
+	//test.call(obj,实参1，实参n);改变this指向
+	function Wheel(wheelSize, style) {
+		this.style = style;
+		this.wheelSize = wheelSize;
+	}
+
+	function Sit(c, stColor) {
+		this.c = c;
+		this.sitColor = stColor;
+	}
+
+	function Model(height, width, len) {
+		this.height = height;
+		this.width = width;
+		this.len = len;
+	}
+
+	function Car(wheelSize, style, c, sitColor, height, width, len) {
+		// this指向 car
+		this.name="高峰";
+		Wheel.apply(this,[wheelSize, style]);
+		Sit.apply(this,[c, sitColor]);
+		Model.apply(this,[height, width, len]);
+	}
+	var car = new Car(100, "美丽", "真皮", "red", 1800, 1900, 4900);
+	
+	
+	function foo(){
+		bar.apply(null,arguments);//bar(arguments); //[12345]
+	}
+	function bar(){
+		console.log(arguments);//[12345]
+	}
+foo(1,2,3,4,5);
+console.log("---")
+var fos ="123";
+function print(){
+	var fos= "456";
+	this.fos="789";
+	console.log(fos);
+}
+print();
+</script>

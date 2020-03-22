@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<style type="text/css">
+		* {
+			margin: 0 auto;
+			padding: 0;
+		}
+		
+		img {
+			display: block;
+		}
+		.main{
+			margin-top: 10px;
+		}
+		div {}
+	</style>
+
+	<body>
+		<div class="top"><img src="../img/top.png" /></div>
+		<div class="nav"><img src="../img/nav.png" /></div>
+		<div class="main"><img src="../img/content.png" /><img src="../img/content.png" / style="height: 2000px; width: 100%;"></div>
+	</body>
+
+</html>
+<script type="text/javascript">
+	//给页面设置滚动事件
+	$(window).scroll(function() {
+		//滚动条滚出距离
+		var $scrollTop = $(this).scrollTop();;
+		//头部高度
+		var $topHeight = $(".top").height();
+		//设置第二部分高度
+		var $navHeight=$(".nav").height();		
+		//判断
+		if($scrollTop >= $topHeight) {
+			//大于等于高度时
+			$(".nav").css({
+				position: "fixed",
+				left: 0,
+				top: 0
+			});
+			$(".main").css({
+				marginTop:$navHeight+10
+			})
+			
+		}else{
+//			小于高度时
+			$(".nav").css({
+				position: "static",
+				left: 0,
+				top: 0
+			});
+			$(".main").css({
+				marginTop:10
+			})
+		}
+
+		//console.log($topHeight)
+	})
+</script>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+
+
+<script type="text/javascript">
+	//立即执行函数 指被执行一次 之后就自动销毁 ,其余和匿名函数一样
+	//形式  (function(){}());  建议使用 
+		(function() {
+			var a = 123;
+			var b = 123;
+			console.log(a + b);
+			console.log("-----");
+		}());
+		
+	//需要返回值的  
+		var num =(function(a,b,c){
+		var d = a +b +c;
+		return d;
+		}(1,2,3));
+		console.log(num);
+		console.log("-----");
+	//***************只有   表达式  才能被 执行符号 执行 (括号的意思旧代表执行)************
+	function s(){
+		console.log("ss");
+	}
+	s();
+	//案例1  加上  + 号后就是表达式了
+	+ function s1(){
+		console.log("s1");
+		console.log("-----");
+		
+	}();
+	//案列2
+	- function s2(){
+		console.log("s2");
+		console.log("-----");
+	}();
+	//案列3  在这个回调值(s3)在这样情况下没有用  可以不放 看  s4
+	! function s3(){
+		console.log("s3");
+		console.log("-----");
+	}();
+	
+	! function (){
+		console.log("s4");
+		console.log("-----");
+	}();	
+</script>

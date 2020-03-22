@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script type="text/javascript">
+
+
+	var str = "abAdd33#";
+	console.log(checkUsername(str));
+	function checkUsername(str){
+		var bool = true;
+		var length = 0;
+		var p1 = /[A-Z]/g;
+		var p2 = /[a-z]/g;
+		var p3 = /[0-9]/g;
+
+		if(str.length<6 || str.length>10){
+			return false;
+		}
+		if (p1.test(str)) {
+			console.log(str.match(p1));
+			length+=str.match(p1).length;
+			if(p2.test(str)){
+				console.log(str.match(p2));
+				length+=str.match(p2).length;
+				if (p3.test(str)) {
+					console.log(str.match(p3));
+					length+=str.match(p3).length;
+				} else {
+					bool = false;
+				}
+			}
+			else{
+				bool = false;
+			}
+		}
+		else{
+			bool = false;
+		}
+		if(bool &&  str.length==length )
+			return true;
+		else
+			return false;
+	}
+
+	
+	
+</script>

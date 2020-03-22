@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script type="text/javascript">
+// 规则：字母和数字的混合
+
+// 正则如： /^(([a-z]+)([0-9]+)|([0-9]+([a-z]+)))[a-z0-9]*$/i
+
+// 分析：^([a-z]+)([0-9]+) 含义是 以1个或多个字母开头 后面紧跟1个或者多个数字
+
+//      ^([0-9]+([a-z]+)) 或者是以1个或者多个数字开头 后面紧跟1个或者多个字母
+
+//   [a-z0-9]*$ 后面还可以紧跟数字或者字母0个或者多个
+var reg = /^(([a-z]+)([0-9]+)|([0-9]+([a-z]+)))[a-z0-9]*$/i;
+
+var str1 = "aaaa";
+
+var str2 = "aa22";
+
+var str3 = "111sddtr";
+
+var str4 = "问问啊啊啊ass";
+
+var str5 = "1111ssdsd111sasddas";
+
+console.log(reg.test(str1));  //false
+
+console.log(reg.test(str2));  // true
+
+console.log(reg.test(str3));  // true
+
+console.log(reg.test(str4));  // false
+
+console.log(reg.test(str5));  // true
+</script>

@@ -1,0 +1,58 @@
+{
+  "id": "1489082",
+  "name": "豆瓣",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "647455",
+      "name": "播放",
+      "font_class": "bofang1",
+      "unicode": "e653",
+      "unicode_decimal": 58963
+    },
+    {
+      "icon_id": "1115082",
+      "name": "微信",
+      "font_class": "weixin1",
+      "unicode": "e63f",
+      "unicode_decimal": 58943
+    },
+    {
+      "icon_id": "1330569",
+      "name": "微信",
+      "font_class": "weixin",
+      "unicode": "e73b",
+      "unicode_decimal": 59195
+    },
+    {
+      "icon_id": "1330571",
+      "name": "微博",
+      "font_class": "weibo",
+      "unicode": "e73c",
+      "unicode_decimal": 59196
+    },
+    {
+      "icon_id": "3670102",
+      "name": "搜索",
+      "font_class": "tubiaolunkuo-",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "6036736",
+      "name": "正确",
+      "font_class": "zhengque",
+      "unicode": "e64a",
+      "unicode_decimal": 58954
+    },
+    {
+      "icon_id": "6536736",
+      "name": "播放",
+      "font_class": "bofang",
+      "unicode": "e667",
+      "unicode_decimal": 58983
+    }
+  ]
+}

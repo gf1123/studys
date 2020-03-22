@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<style type="text/css">
+		* {
+			margin: 0 auto;
+			padding: 0;
+		}
+		
+		.clearfix:after {
+			content: "";
+			display: block;
+			height: 0;
+			line-height: 0;
+			clear: both;
+		}
+		
+		.wrap {
+			width: 500px;
+			background: #000000;
+			text-align: center;
+		}
+		
+		.wrap li {
+			width: 150px;
+			margin: 0 3px;
+			border: 1px solid red;
+			background: #FFFFFF;
+			height: 100px;
+			line-height: 100px;
+			font-size: 2em;
+			float: left;
+		}
+		
+		ul {
+			list-style-type: none;
+		}
+		
+		a {
+			text-decoration: none;
+		}
+	</style>
+
+	<body>
+		<div class="wrap clearfix">
+			<ul>
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+				<li>6</li>
+			</ul>
+		</div>
+	</body>
+
+</html>
+<script type="text/javascript">
+	$(function() {
+		$(".wrap ul li").mouseenter(function() {
+			$(this).css("opacity", 1).siblings("li").css("opacity", 0.4)
+		})
+		$(".wrap").mouseleave(function() {
+			$(this).find("li").css("opacity", 1);
+//			find()后代选择器 相当于 ".wrap li"
+		})
+	})
+</script>

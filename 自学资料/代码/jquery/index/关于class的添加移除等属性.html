@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<style type="text/css">
+		.red{
+			background: red;
+		}
+		div{
+			width: 100px;
+			height: 100px;
+			background: #008000;
+			margin-top: 20px;
+		}
+	</style>
+	<body>
+		<button id="add">添加类</button>
+		<button id="remove">移除类</button>
+		<button id="has">判断类</button>
+		<button id="toggle">切换类</button>
+		<div class="none">div1</div>
+	</body>
+</html>
+<script type="text/javascript">
+	$(function(){
+		
+		$("#add").bind("click",function(){
+			//添加类
+			$("div").addClass("red");			
+		})
+		$("#remove").bind("click",function(){
+			//添加类
+			$("div").removeClass("red");			
+		})
+		$("#has").bind("click",function(){
+			//添加类
+			alert($("div").hasClass("red"));//返回 true 或者 false			
+		})	
+		$("#toggle").bind("click",function(){
+			//切换类  如果有就显示没有就添加
+			$("div").toggleClass("red");		
+		})		
+	})
+</script>

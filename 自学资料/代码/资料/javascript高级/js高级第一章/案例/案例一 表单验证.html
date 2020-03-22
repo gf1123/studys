@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style type="text/css">
+    body {
+        background: #ccc;
+    }
+
+    label {
+        width: 40px;
+        display: inline-block;
+    }
+
+    span {
+        color: red;
+    }
+
+    .container {
+        margin: 100px auto;
+        width: 400px;
+        padding: 50px;
+        line-height: 40px;
+        border: 1px solid #999;
+        background: #efefef;
+    }
+
+    span {
+        margin-left: 30px;
+        font-size: 12px;
+    }
+
+    .wrong {
+        color: red;
+    }
+
+    .right {
+        color: green;
+    }
+
+    .defau {
+        width: 200px;
+        height: 20px;
+    }
+
+    .de1 {
+        background-position: 0 -20px;
+    }
+</style>
+<script>
+
+    window.onload = function () {
+/*
+        // 获取输入框 当她失去焦点的时候 获取value 根据表达式 进行判断
+        var inpQQ = document.getElementById("inp1");
+        var regQQ = /^[1-9]\d{4,9}$/;
+        //QQ 有什么规律 开头不能是0的数字 5-10位
+
+        inpQQ.onblur = function () {
+            //获取value 根据表达式 进行判断
+            if(regQQ.test(this.value)){
+                //alert("正确");
+                this.nextSibling.innerHTML = "输入正确"; // 这个 的 下一个兄弟节点 的 内部HTML = “”
+                this.nextSibling.className = "right";//
+            }else{
+                //alert("错误");
+                this.nextSibling.innerHTML = "输入错误";
+                this.nextSibling.className = "wrong";
+            }
+        }
+        */
+
+
+        var pending = function (id,reg) {
+            var inp = document.getElementById(id);
+            inp.onblur = function () {
+                if(reg.test(this.value)){
+                    this.nextSibling.innerHTML = "输入正确"; // 这个 的 下一个兄弟节点 的 内部HTML = “”
+                    this.nextSibling.className = "right";//
+                }else{
+                    this.nextSibling.innerHTML = "输入错误";
+                    this.nextSibling.className = "wrong";
+                }
+            }
+        }
+
+        //QQ
+        var regQQ = /^[1-9]\d{4,9}$/;
+        pending("inp1",regQQ);
+        //手机 11位 号段 13[0-9] 14[57] 15[0-9] 18[0-9]
+        var regMobile = /^\d{11}$/;
+        var regMobile2 = /^(13[0-9]|14[57]|15[0-9]|18[0-9])\d{8}$/;
+        pending("inp2",regMobile);
+
+        var regEmail = /^\w+@\w+\.\w+$/;
+        var regEmail2 = /^\w+([+-.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+        //邮箱 \w+@\w+.\w+
+        //barack.obama.aaa.aaaa@whitehouse.gov
+        pending("inp3",regEmail);
+
+
+
+    }
+
+</script>
+<body>
+<div class="container">
+    <label>QQ</label><input type="text" id="inp1"><span></span><br>
+    <label>手机</label><input type="text" id="inp2"><span></span><br>
+    <label>邮箱</label><input type="text" id="inp3"><span></span><br>
+    <label>座机</label><input type="text" id="inp4"><span></span><br>
+    <label>姓名</label><input type="text" id="inp5"><span></span><br>
+</div>
+</body>
+</html>

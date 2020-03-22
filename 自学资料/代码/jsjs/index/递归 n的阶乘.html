@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+//	递归思想   1找规律 2找出口
+	//n的阶乘
+	function mul(n){
+		if(n==1||n==0){
+			return 1;
+		}else{
+			return n*mul(n-1);
+		}
+	}
+	
+	//斐波那契数列
+	function ma(n){
+		if(n==1||n==2){
+			return 1;
+		}else{
+			return ma(n-1)+ma(n-2);
+		}
+	}
+</script>

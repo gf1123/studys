@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/index.css"/>
+		<script src="../js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<style type="text/css">
+		.monsterText{
+			color: white;
+		}
+	</style>
+	<body>
+		<div>
+			<h2 class="monsterText">Hello<br />Three</h2>
+			<h3>We will eat you</h3>
+		</div>
+		<div class="monster">
+			<div class="eye">
+				<div class="eyeBall"></div>
+			</div>
+			<div class="mouth"></div>
+		</div>
+		<div class="monster blue">
+			<div class="eye">
+				<div class="eyeBall"></div>
+			</div>
+			<div class="mouth"></div>
+		</div>
+		<div class="pageLoading">
+			<div class="monster">
+				<div class="eye">
+					<div class="eyeBall"></div>
+				</div>
+				<div class="mouth"></div>
+			</div>
+			<div class="loading">
+				<div class="bar"></div>
+			</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	$(function(){
+		var timer;
+		var per =0;
+		timer=setInterval(function(){
+			$(".bar").css("width",per+"%");
+			per+=1;
+			if(per>100){
+				$(".pageLoading").addClass("complete");
+				setTimeout(function(){
+					$(".monsterText").html("<h2>we are monster</h2>")
+				},1000)
+				clearInterval(timer);
+			}
+		},30)
+		
+	})
+</script>

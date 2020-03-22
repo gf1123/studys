@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	//构造函数  
+//	1.在函数体最前面隐士的加上了this
+//	2.执行 this.xxx=xx;
+//	3.隐士的返回this
+
+	 function Car(color){
+	 	//1.this={};
+	 	this.color=color;
+	 	this.name="BMW";
+	 	this.height="100";
+	 	this.width="200";
+	 	this.health=100;
+	 	this.handle=function(){
+	 		this.health--;
+	 	}
+	 	//3.return this;
+	 }
+	 //car 和 car1 是创建出来的不同对象，互相不打扰,创建出来的car和car1对象都是独立的。
+	 var car  = new Car("red");
+	 var car1 = new Car("green");
+</script>

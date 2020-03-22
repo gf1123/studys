@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		.container {
+			height: 200px;
+			background: red;
+			margin: 50px;
+		}
+		
+		.item {
+			height: 50px;
+			background: blue;
+			margin: 50px;
+		}
+		
+		.container1 {
+			height: 200px;
+			background: green;
+			margin: 50px;
+			overflow: hidden;
+		}
+		
+		.item1 {
+			height: 50px;
+			background: orange;
+			margin: 50px;
+		}		
+	</style>
+
+	<body>
+		<!--这个外边距合并了 都是 50px-->
+		<div class="container">
+			<div class="item"></div>
+		</div>
+		<!--解决方法 利用 overflow  bfc 解决-->
+		<div class="container1">
+			<div class="item1"></div>
+		</div>
+	</body>
+
+</html>

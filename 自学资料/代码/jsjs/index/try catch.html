@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<img src="../img/二十.png"/>
+	</body>
+</html>
+<script type="text/javascript">
+		// try里面遇到错误的话，从遇到错误到后面都不执行，直接执行catch里的
+		try{
+			console.log("1")
+			console.log(b)
+			console.log("c")
+		}catch(e){
+			//e 有2个返回错误信息的参数 message  和 neme
+			console.log(e.message+"->"+e.name);
+
+		}	
+		console.log("lla");
+	
+	
+	//必须放在全局最顶端  "use strict"es5.0严格模式 启动
+//	function demo(){
+//		console.log(arguments.callee);
+//	}
+//	demo();
+//		function test(){
+//			"use strict";
+//		console.log(arguments.callee);//会报错
+//	}
+//		test();
+//		
+//			function myFunction() {
+//				var message, x;
+//				message = document.getElementById("p01");
+//				message.innerHTML = "";
+//				x = document.getElementById("demo").value;
+//				try {
+//					if(x == "") throw "值是空的000";
+//					if(isNaN(x)) throw "值不是一个数字";
+//					x = Number(x);
+//					if(x > 10) throw "太大";
+//					if(x < 5) throw "太小";
+//				} catch(err) {
+//					message.innerHTML = "错00误: " + err + ".";
+//				} finally {
+//					document.getElementById("demo").value = "";
+//				}
+//			}
+//			console.log(Number("sd"));
+</script>

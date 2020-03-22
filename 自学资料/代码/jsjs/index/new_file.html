@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<style type="text/css">
+		.chooseFile {
+			border: 1px solid #cccccc;
+			width: 97%;
+			height: 28px;
+			border-radius: 5px;
+			opacity: 0;
+			display: inline-block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			cursor: pointer;
+		}
+		
+		#uploadForm {
+			position: relative;
+			cursor: pointer;
+			border-color: #204d74;
+			border-radius: 4px;
+			/* overflow: hidden; */
+			width: 60px;
+			font-size: 14px;
+			background-color: #e8340c;
+			border-radius: 4px;
+			line-height: 30px;
+			color: white;
+			text-align: center;
+			margin: 0 7px;
+		}
+		
+
+	</style>
+
+	<body>
+		<div class="title">请选择翻译文件</div>
+		<div class="ibox-content piliangBox">
+			<input class="inputName" placeholder="请选择要翻译的文件" type="text" />
+			<form id="uploadForm" enctype="multipart/form-data" style="display: inline-block; ">
+				<input class="chooseFile" id="reportXML" type="file" name="file" /> 浏览
+			</form>
+			<span id="con">ddd</span>
+		</div>
+	</body>
+
+</html>
+<!--<script type="text/javascript">
+	$(function(){
+	var file; // 定义一个全局变量，为一个文本选择器。
+	file = $('<input type="file" />'); // 这样file就是jquery创建的一个文本选择器，但是因为我们并没有把它加载到页面山，所以是不可见的。
+
+	// button的单击事件
+	$('.select_file').click(function(){
+		// 启动文件选择
+		file.click();
+	});s
+
+	// 选择好文件后，获取选择的内容
+	file.change(function(e){
+		var select_file = file[0].files[0];
+		console.log(select_file)
+	var cc=select_file['name'];
+	var span =document.getElementById("span");
+	span.innerHTML=cc;
+	})
+	
+})
+</script>-->
+<script type="text/javascript">
+	function choseFile() {
+		var fileInput = $('#reportXML').get(0).files[0];
+		if(fileInput) {
+			$(".inputName").val(fileInput.name);
+		}
+	}
+	$("#uploadForm").click(function() {
+		window.setInterval("choseFile()", 100); //采用定时给input赋值，否则光浏览按钮是无法同时既选择文件又同时赋值
+	})
+</script>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<img src="../img/call.png"/>
+	</body>
+</html>
+<script type="text/javascript">
+	// call 改变 this指向
+	//apply 和call的区别，apply的实参必须传数组(传参列表不同)
+	//call 需要把实参按照形参的个数传进去
+	//apply 需要传一个arguments
+	//案列中就是用call来用别人的函数来实现自己的功能
+	//构造函数中 不 new的话 this指向 是 window
+	//test.call()代表执行
+	//test.call(obj,实参1，实参n);改变this指向
+	function test(){
+		
+	}
+	test();//test()===test.call();代表执行test
+
+	//test.call(obj,实参1，实参n);改变this指向
+	function Person(name,age){
+		//this==obj
+		this.name=name;
+		this.age=age;
+	}
+//	var person= new Person('deng',10);
+	var obj={
+		
+	}
+	//此时 Person里的this指向obj,
+	//call把Person里的this的指向改为obj对象
+	Person.call(obj,"wang",15);
+	//输出obj 试试
+	console.log(obj);
+	
+	
+	
+	//dfjsdl
+	function Person(name,age){
+		this.name=name;
+		this.age=age;
+	}
+	function Student(name,age,sex){
+		//因为new Student 了，所以隐式发生var this={}  === var this=Object.creat(Student.prototype)
+		Person.call(this,name,age);//this指的是student 参数为实参
+		this.sex=sex;
+	}
+	var students= new Student("gao",20,"male");
+	console.log(students)
+	
+</script>

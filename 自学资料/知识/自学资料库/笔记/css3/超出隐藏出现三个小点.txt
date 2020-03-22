@@ -1,0 +1,5 @@
+/*我们三个 是一套 组合拳 分开就实现不了哦   哈哈哈哈哈**/
+			white-space: nowrap;/*强制不换行*/
+			overflow: hidden;/*溢出隐藏*/
+			text-overflow: ellipsis;/*clip剪切    ellipsis替换成三个小点*/
+/*我们三个 是一套 组合拳 分开就实现不了哦   哈哈哈哈哈**/

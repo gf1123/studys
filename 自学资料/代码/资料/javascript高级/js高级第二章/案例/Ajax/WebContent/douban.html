@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<button id="button" >点击</button>
+<div id="result"></div>
+</body>
+</html>
+<script type="text/javascript">
+	var result = document.getElementById("result");
+	xmlhttp=null;
+		if (window.XMLHttpRequest)
+		  {// code for all new browsers
+		  xmlhttp=new XMLHttpRequest();
+		  }
+		else if (window.ActiveXObject)
+		  {// code for IE5 and IE6
+		  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+		  }
+	var btn = document.getElementById("button");
+	btn.onclick = function(){
+		if (xmlhttp!=null)
+		  {
+			
+		  xmlhttp.onreadystatechange=state_Change;
+		  xmlhttp.open("GET","DoubanServlet?page=123&time="+(new Date()).getTime(),true);
+		  //xmlhttp.open("GET","DoubanServlet",true);
+		  xmlhttp.send(null);
+		  }
+		else
+		  {
+		  alert("Your browser does not support XMLHTTP.");
+		  }
+	}
+	function state_Change()
+	{
+	if (xmlhttp.readyState==4)
+	  {// 4 = "loaded"
+	  if (xmlhttp.status==200)
+	    {// 200 = OK
+	    //alert(xmlhttp.responseText);
+	    	//var data = eval("'"+xmlhttp.responseText+"'")
+	    	var data = JSON.parse(xmlhttp.responseText);
+	    	var s = "";
+	    	if(data.code==1){
+	    		var list = data.list;
+	    		for(var i=0;i<list.length;i++){
+	    			var f = list[i];
+	    			s+=f.genres.join(",")+","+f.name+","+f.title+"<br/>";
+	    		}
+	    		result.innerHTML = s;
+	    	}
+	    	else{
+	    		alert(data.msg);
+	    	}
+	    }
+	  else
+	    {
+	    alert("Problem retrieving XML data");
+	    }
+	  }
+	}
+</script>

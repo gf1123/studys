@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<div>
+			<span>
+				
+			</span>
+			<strong>123</strong>
+		</div>
+	</body>
+
+</html>
+<script type="text/javascript">
+	//节点 如：属性节点=>2 元素节点=>1  文本节点=>3 注释节点=>8 文档节点(document)8=>9
+	//节点树
+	//父节点 parentNode
+	//子节点childNodes
+	//firsChild第一个子节点
+	//lastChild最后一个子节点
+	//nextSibling后一个兄弟节点
+	//perviousSibling前一个兄弟节点
+	//attributes 属性节点的集合
+	//haschildNodes
+
+	//nodeType  节点 如：属性节点=>2 元素节点=>1  文本节点=>3 注释节点=>8 文档节点(document)8=>9
+	
+	//输出div里的所有子元素节点
+	var div = document.getElementsByTagName("div")[0];
+	function retElementChild(node) {
+		//定义一个类数组
+		var temp = {
+				length: 0,
+				push: Array.prototype.push,
+				splice: Array.prototype.splice
+			},
+			child = node.childNodes,
+			len = child.length;
+		for(var i = 0; i < len; i++) {
+			//代表元素节点
+			if(child[i].nodeType===1){
+			temp.push(child[i])
+			}
+		}
+		return temp;
+	}
+	console.log(retElementChild(div))
+
+	
+	//元素节点
+	//parentElement 当前元素的父元素节点(ie不兼容)
+	//children=>返回当前元素的子节点
+	//node.childElementCount ===node.children.length 当前元素节点的子元素节点个数(ie不兼容)
+	//firstElementChild 第一个元素节点(ie不兼容)
+	//lastElementChild 最后一个元素节点(ie不兼容)
+	
+	//nextElementSibling后一个兄弟元素节点(ie不兼容)
+	//perviousElementSibling前一个兄弟元素节点(ie不兼容)
+</script>

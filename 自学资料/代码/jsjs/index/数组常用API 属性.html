@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<img src="../img/sz.png"/>
+	</body>
+</html>
+<script type="text/javascript">
+	//给数组追加元素
+	  //push(),unshift()
+	  var arr = [12,3,4,5,"arr"]
+	  arr.push("末尾1","末尾2");//添加到末尾
+	  arr.unshift("开头");//添加到开头
+	  console.log(arr); console.log("-----");
+	//删除元素
+	  //pop(剪切最后一个元素),shift
+	  var arr1 =[1,2,3,4,5,"arr1"];
+	  arr1.shift();//删除第一个元素
+	  console.log(arr1);
+	  console.log("-----");
+	//连接 arr.concat(arr1,arr2)
+	  //
+		  //连接 arr 和arr1
+	  var arr3 =arr.concat(arr1);//对原数组没有影响，想要获取连接之后的值，必须赋值给一个新的变量。
+	  arr3.push("arr3");
+	  console.log(arr3);
+	  console.log("---");
+	//将数组转化为字符串
+	 //数组名称.join("连接符");
+	   //将数组 arr 转化为字符串
+	 var arr4 =arr.join(",")
+	 console.log(arr4);
+	 console.log("---");
+	//将字符串转化为数组
+	  //数组名称.split("分隔符");
+	  var arr5 ="1,2,3,4,5,666";
+	  console.log(arr5.split(","));
+	  console.log("---");	
+	  //数组.reverse();数组取反
+	  
+	  //数组 。splice(从第几位开始，截取多少的长度(截取几个)，在切口出添加数据));
+	  //数组 都是 以光标为主
+	  //在 3和5中间添加一个4
+	  var  arrs=[1,2,3,5];
+	  arrs.splice(3,0,4);
+	  console.log(arrs);
+	  
+	  //乱序
+	  var arr= [1,2,3,4,5,8,6];
+	 arr.sort(function(){
+	 return 0.5-Math.random();
+	 })
+	 console.log(arr)
+</script>

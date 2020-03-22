@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<style type="text/css">
+		div{
+			font-size: 2em;
+		}
+	</style>
+	<body>
+		<div class="a">1</div>
+		<div class="div2">2</div>
+		<div class="div3">3</div>
+	</body>
+</html>
+<script type="text/javascript">
+	//dom对象转换为jquery对象 $(dom)
+	var div1 =document.getElementsByTagName("div")[0];
+//	div1.style.color="red";
+	$(div1).css("color","blue");
+	//jquery对象转换为dom对象 
+	//第一种$div[index]
+	var $div2=$(".div2");
+//	$div2.css("color","orange");
+	var div2=$div2[0];
+	div2.style.color="red";
+	//第二种 $div.get(index);
+	var $div3 =$(".div3");
+	var div3=$div3.get(0);
+	div3.style.color="green";
+	
+//	区别:
+	$(".a").html("<h1>你好</h1>")
+	$(".div2").text("<h1>你好</h1>")
+	
+</script>

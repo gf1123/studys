@@ -1,0 +1,39 @@
+typeof()//输出是什么类型
+alert()弹出窗口
+运算符 :
+赋值运算符：=
+算术运算符：【+ - * / ...】
+i++ 先赋值 后自加
+例如：
+var i = 2;
+var j = i++;
+alert(i);//i =3;
+alert(j);//j = 2;
+++i 先自加 后赋值
+var i = 2;
+var j = ++i;
+alert(i);//i =3;
+alert(j);//j = 3;
+
+比较运算符
+【> < = ...】
+
+//以id方式查找
+	document.getElementById("id名");
+	//以class方式查找
+	document.getElementsByClassName("class名称");
+	//以name的方式查找
+	document.getElementsByName("name");
+	//以标签名称的方式查找
+	document.getElementsByTagName("标签名称");
+	
+	
+	
+	//不使用关键字 声明变量(是全局变量)
+	c = 10;
+	//标准类对象
+	1.字符串对象String
+	2.日期对象
+	3.数组对象
+	4.数字对象
+	5.正则表达式对象

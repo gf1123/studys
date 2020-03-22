@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<style type="text/css">
+		div{
+			width: 200px;
+			height: 200px;
+			border:1px solid blue;
+		}
+	</style>
+
+	<body>
+		<div id="div1">节点</div>
+		<div id="div2"></div>
+	</body>
+
+</html>
+<script type="text/javascript">
+	$(function(){
+//		js写法
+var div1=document.getElementById("div1");
+//创建标签
+var elemens=document.createElement("p");
+//创建文本节点
+var childnode= document.createTextNode("我是用js创建的");
+div1.appendChild(childnode);
+
+$jquery =$("<h1>我是jquery 创建的</h1>");
+$("#div2").append($jquery);
+	})
+//jquery	-----------------
+appdend这类的还有一个就是 如果他是把网页里已经有的元素进行添加 属于 剪切 一样
+	父节点1.appdend(字节点1)把字1添加到父1里后面   属于父子关系
+	子节点1.appendTo(父节点1)把字1添加到父1里 后后面
+	父亲.prepend(子元素)把子元素添加父亲之前
+	
+	元素A.before(元素B)//b插入a之前属于 兄弟关系
+	元素A.after(元素B)
+	
+	
+	
+	
+//	js--------------------------------
+	var p =document.createElement("p"); //<p></p>
+	var texts =document.createTextNode("文本1111");//文本
+	var color =document.createAttribute("color","red");
+	p.appendChild(texts);
+	div1.appendChild(p);
+	
+
+//
+
+</script>

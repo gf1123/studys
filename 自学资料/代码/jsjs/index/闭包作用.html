@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+	</body>
+
+</html>
+<script type="text/javascript">
+	//累加器
+	//缓存
+	function addsss() {
+		var numss = 0;
+
+		function    () {
+			console.log(++numss);
+		}
+		return ass;
+	}
+	var qq = addsss(); //必须有参数接收
+	qq(); //1
+	qq(); //2
+	qq() //3
+	//因为操作的是addsss的AO所以每次都会在此基础上操作不会被销毁保存到ass身上了。
+
+	//缓存
+	function test() {
+		var food = "apple";
+		var obj = {
+			eatFood: function () {
+				if(food != "") {
+					console.log("1"+food);
+					food = "";
+				}else{
+					console.log("empty");
+				}
+			},
+			pushsFood: function(myFood) {
+				food = myFood;
+			}
+		}
+		return obj;
+	}
+	
+	eatFood和pushsFood保存的是同一个food(AO);
+	var demo =test();
+	demo.eatFood();//1apple
+	demo.eatFood();//empty
+	demo.pushsFood("banner");
+	demo.eatFood();//1banner
+</script>

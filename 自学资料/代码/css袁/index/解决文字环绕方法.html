@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		* {
+			margin: 0 auto;
+			padding: 0;
+		}
+		
+		span {
+			color: red;
+		}
+		
+		b {
+			display: block;
+		}
+		
+		.container .left img {
+			width: 100%;
+			display: block;
+		}
+		/*第一种 方法左右设置浮动和宽度 阻值文字环绕*/
+		
+		.container {
+			float: left;
+			width: 500px;
+			height: 1000px;
+			border: 1px solid red;
+		}
+		
+		.container .left {
+			float: left;
+			width: 100px;
+			margin-right: 25px;
+		}
+		
+		.container .right {
+			overflow: hidden;
+			注意:隐藏元素必须为 块级元素 才可以
+			第二种方法就是在文字环绕那个父级div里加入这个属性
+			/*float: left;
+			width: 350px;*/
+			/*margin-left: 25px;*/
+		}
+		/*第一种 方法左右设置浮动和宽度 阻值文字环绕*/
+		/*---------------------------------------------------------*/
+		
+		.no {
+			float: right;
+			width: 500px;
+			height: 1000px;
+			border: 1px solid blue;
+		}
+		
+		.no {}
+		
+		.no .left {
+			width: 100px;
+			float: left;
+		}
+		
+		.no .left img {
+			width: 100%;
+			display: block;
+		}
+		
+		.no .right {}
+	</style>
+
+	<body>
+		<!--在不给非浮动元素设置overflow:hidden;在不给非浮动元素设置浮动 之后设置width,这样两边都是浮动并且有宽度就不会出现环绕了。-->
+		<div class="container">
+			<div class="left">
+				<img src="../img/move_1.jpg" alt="" />
+				<h5>我是h5标签</h>
+			</div>
+			<div class="right">
+				<a href="#"><span>我是非文字环绕效果</span> 年上空的飞机拉萨年上空的飞机拉萨年上空的飞机拉萨年上空的飞机拉萨年上空的飞机拉萨年上空的飞机拉萨年上空的飞机拉萨年上空的飞机拉萨年上空的飞机拉萨年上空的飞机拉萨年上空的飞机拉萨年上空的飞机拉萨年上空的飞机拉萨年上空的飞机拉萨年上空的飞机拉萨年上空的飞机拉萨年上空的飞机拉萨年上空的飞机拉萨年上空的飞机拉萨年上空的飞机拉萨年上空的飞机拉萨年上空的飞机拉萨年上空的飞机拉萨年上空的飞机拉萨年上空的飞机拉萨年上空的飞机拉萨年上空的飞机拉萨年上空的飞机拉萨年上空的飞机拉萨年上空的飞机拉萨年上空的飞机拉萨年上空的飞机拉萨年上空的飞机拉萨年上空的飞机拉萨年上空的飞机拉萨年上空的飞机拉萨年上空的飞机拉萨年上空的飞机拉萨年上空的飞机拉萨</a>
+				<b>我是测试 兄弟标签</b>
+			</div>
+		</div>
+		<div class="no">
+			<div class="left">
+				<img src="../img/move_1.jpg" alt="" />
+			</div>
+			<div class="right">
+				<a href="#"><span>我是文字环绕效果</span>年上空的飞机拉萨年上空的飞机拉萨年上空的飞机拉萨年上空的飞机拉萨年上空的飞机拉萨年上空的飞机拉萨年上空的飞机拉萨年上空的飞机拉萨年上空的飞机拉萨年上空的飞机拉萨年上空的飞机拉萨年上空的飞机拉萨年上空的飞机拉萨 年上空的飞机拉萨年上空的飞机拉萨年上空的飞机拉萨年上空的飞机拉萨年上空的飞机拉萨年上空的飞机拉萨年上空的飞机拉萨年上空的飞机拉萨年上空的飞机拉萨年上空的飞机拉萨年上空的飞机拉萨年上空的飞机拉萨年上空的飞机拉萨</a>
+			</div>
+		</div>
+	</body>
+
+</html>

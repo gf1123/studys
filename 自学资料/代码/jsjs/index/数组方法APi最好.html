@@ -1,0 +1,148 @@
+<html>
+
+	<head>
+		<meta name="" content="" charset="utf-8" />
+		<title></title>
+	</head>
+
+	<body>
+		<img src="../img/ssz.png"/>
+	</body>
+
+</html>
+<script type="text/javascript">
+	var arr = new Array(5,20,8,4,10,13,6,-8,-2,-9,5); //实例化一个数组对象
+	var arreng =["a","w","z","f","b","n"];
+	//增删改查
+	//增加 push unshift splice 改变原数组
+	function zj(){
+	//在数组最后增加
+	arr.push("我是增加最后面的!");
+	//在数组最前面增加
+	arr.unshift("我是添加最前面的!");
+	//在3和4中间添加:我是可以自定义的
+	 //数组 。splice(从第几位开始，截取多少的长度(截取几个)，在切口出添加数据)负数是倒数,以光标为主);
+	var splices = arr.splice(0, 1, "我是可以自定义的");
+	console.log(splices);
+	console.log(arr);		
+	}
+ 	//删除 pop shift splice 改变原数组
+	function del(){
+	//删除最后一个
+//	arr.pop();
+	//删除第一个
+//	arr.shift();
+	//删除随意一个:删除 3
+	arr.splice(-2,1);
+	console.log(arr);		
+	}
+	//splice剪切 属于
+	//修改 主要看有没有下标
+	function xg(){
+	//修改第一个
+	arr[0]="修改第一个";
+	//	有值是修改没有值是增加
+	console.log(arr);
+	}
+	//查询
+	function cx(){
+	//查找第四个位置是什么
+	var ar3=arr[3];
+	console.log(ar3);		
+	}
+	//连接数组 concat   不改变原数组
+	function newarr(){
+	//把arr数组和arr1数组连接为一个数组
+	var arr1 =["one","two","three","four"];
+	var arr2 =["one1","two2","three3","four4"];
+	var newarr= arr.concat(arr1,arr2);
+	console.log(newarr);		
+	}
+	//数组转化为字符串  join 不改变原数组
+	function jonarr(){
+	//把arr数组转化为字符并且以-连接
+	var joinarr= arr.join("-");
+	console.log(joinarr);		
+	}
+	//将字符串转化为数组 split  不改变原数组
+	function strarr(){
+	//把str转化为字符串
+	var str ="1234,5678-one,split";//字符串
+	var strarr=str.split(",");//字符串转化为数组
+	console.log(strarr);//数组		
+	}
+	//数组取反      reverse   改变原数组
+	function reverse(){
+	var reversearr=arr.reverse();
+	console.log(reversearr);		
+	}
+	
+	//排序   数组.sort(函数);
+	//1,当返回的值为负数时,那么前面的数放在前面
+	//2,当返回值为整数时,那么后面的数在前	
+	//3,为0 不动
+	//原理类似冒 泡
+	function sortarr(){
+	//函数可以写下方的几个函数名可以自定义
+		var sortarr= arr.sort(bigpx);
+		//默认是按字母排的 如 12 9 10排序为 10  12 9
+		//升序
+		function bigpx(a,b){
+//			原理类似冒泡
+			if(a>b){
+				return 1;
+			}
+			else{
+				return -1;
+			}
+			//可以简写 return a-b;
+//			相当于:
+//			if(a-b){
+//				return a-b;10-5 为正
+//			}
+//			else{
+//				return a-b;5-10 为负
+//			}			
+		}
+		// 降序
+		function smallpx(){
+			if(a<b){
+				return 1;
+			}else{
+				return -1;
+			}
+			//可以简写为 return b-a  mn;
+		}
+		//乱序
+		function luanpx(){
+			return 0.5 - Math.random();
+		}
+	
+		console.log(arr);
+		}
+	//遍历数组
+	function fors(){
+		//for 循环
+		for(var i=0;i<arr.length;i++){
+			//i代表下标
+			console.log(arr[i]);
+		}
+		console.log("--------");
+		//for in循环
+		for(var key in arr){
+			console.log(arr[key]);//值
+	//		console.log(key);//下标
+	//		console.log(arr);//原数组
+		}	
+			//只对数组的 forEach
+	arr.forEach(function(value,index,arrs){
+//		值,下标,数组
+		console.log(value);//值
+//		console.log(index);//下标
+//		console.log(arrs);//数组
+//		console.log(arr[index]);//下标取值
+	})
+
+	}
+
+</script>

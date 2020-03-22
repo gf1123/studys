@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	// 对象 ：数组 fn boolean
+	var str="a123";
+	str.length=2;
+	//new String("a123").length=2; delete
+	
+	//new String("a123").length
+ 	console.log(str.length);
+	
+	var ary =["A","b","c"];
+	ary.length=2;
+	console.log(ary);
+	
+	
+	var a=5;
+	function test(){
+		a=0;
+		alert(a);//0
+		alert(this.a);//this 指的是全局
+		var a;
+		alert(a);
+	} new test()
+</script>

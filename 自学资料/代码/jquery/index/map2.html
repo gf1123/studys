@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+		<style type="text/css">
+			body,
+			html {
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				font-family: "微软雅黑";
+			}
+			
+			#allmap {
+				width: 100%;
+				height: 30rem;
+			}
+			
+			p {
+				margin-left: 5px;
+				font-size: 14px;
+			}
+		</style>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=99O3d6l4egB0b7Y8UR3SIbt4YpAn49Qj"></script>
+		<title>万安园辽源市区办事处</title>
+	</head> 
+
+	<body>
+		<div id="allmap"></div>
+	</body>
+</html>
+<script type="text/javascript">
+	// 百度地图API功能
+	var sContent =
+		"<h4 style='margin:0 0 5px 0;padding:0.2em 0'>万安园辽源市区办事处</h4>" +
+		"<p style='margin:0;line-height:1.5;font-size:13px;text-indent:2em'>辽源市龙山东路315号（滨河小区6号楼门市） </p>" +
+		"</div>";
+	var map = new BMap.Map("allmap", {
+		enableMapClick: false
+	}); //构造底图时，关闭底图可点功能
+	var point = new BMap.Point(125.163099,42.904476);
+	var marker = new BMap.Marker(point);
+	var infoWindow = new BMap.InfoWindow(sContent); // 创建信息窗口对象
+	map.centerAndZoom(point, 19);
+	map.addOverlay(marker);
+	marker.addEventListener("click", function() {
+		this.openInfoWindow(infoWindow);
+	});
+
+	//鼠标缩放
+	map.enableScrollWheelZoom(); //启用滚轮放大缩小，默认禁用
+	map.enableContinuousZoom(); //启用地图惯性拖拽，默认禁用
+
+	//比例尺控件
+	var top_right_navigation = new BMap.NavigationControl({
+		anchor: BMAP_ANCHOR_TOP_RIGHT,
+		type: BMAP_NAVIGATION_CONTROL_SMALL
+	}); //右上角，仅包含平移和缩放按钮
+	//添加控件和比例尺           
+	map.addControl(top_right_navigation);
+</script>
+
+</script>
+</script>

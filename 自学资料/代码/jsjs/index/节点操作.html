@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="div1">
+			<div id="div2">11</div>
+			<div id="div3">22</div>
+		</div>
+		<div id="div4">
+			复制节点
+			<div id="a">
+				<img src="../img/3.png" style="width: 51%; height: 304px;;"/>
+			</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	//创建节点 
+	//createElement("div")
+	var div = document.createElement("div");
+	div.innerHTML="div1";
+	div.style.width="100px";
+	div.style.height="100px";
+	div.style.background="red";
+	var div1 = document.getElementById("div1");
+	//添加节点
+	//父节点.appendChild(插入的节点)，添加在父元素的最后边
+	//子节点.insertBefore(插入的节点，参照节点)，插入的节点或插在参照节点的前面
+	div1.appendChild(div);//
+	div1.insertBefore(div,document.getElementById("div3"));//必须得有参照物
+	
+	//删除节点
+	//父元素作为参照物
+	//删除div3
+	var div3=document.getElementById("div3");
+	//父元素不明确时候可以用
+	div3.parentNode.removeChild(div3);
+	
+	
+	//克隆节点
+	var div4= document.getElementById("div4");
+	console.log(div4.cloneNode());//只复制出#div标签
+	console.log(div4.cloneNode(true));//把里面的内容一起复制出来
+	//属性操作
+	   //设置属性:选择节点.属性名称 =属性值;
+	   //获取属性：选择节点.属性名称;
+	   //获取属性
+	   console.log("---------")
+	  console.log(div1.getAttribute("id"));
+	   //设置属性
+	   div1.setAttribute("name","names")
+	   //删除属性
+	   div1.removeAttribute("name");
+	
+</script>

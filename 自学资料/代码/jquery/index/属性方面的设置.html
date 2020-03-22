@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div title="shuai"><span>ssdf</span></div>
+		<div title="gf">gf</div>
+		
+		<div title="aa">aa</div>
+		<div class="guigu"></div>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>li5</li>
+		</ul>
+		<input type="text" name="" id="" value="我是最晒得" /><br />
+		<input type="text" value="sdfs " /><br />
+		<input type="button" name="names" id="" value="全选" />
+		<input type="button" name="" id="" value="全不选" /><br />
+		第一个<input type="checkbox"  name="" id="" value="" /><br />
+		第二个<input type="checkbox" name="" id="" value="" />
+	</body>
+</html>
+<script type="text/javascript">
+	//1.读取第一个div的title属性
+	console.log($("div:first").attr("title"));
+	//2.给所有的div设置name属性(value为gaofeng)
+	$("div").attr("name","gaofeng");
+	//3.读取name属性为names的元素
+	console.log($('input[name=names]'));
+	$('input[name=names]').css("background","red");
+	//4.移除所有div的title属性
+	$("div").removeAttr("title");
+	//给所有div设置class="class1"
+	$("div").attr("class","class1");
+	//给所有div添加clas="abc"
+	$("div").addClass("abc");
+	//得到最后一额li的标签体文本
+	console.log($("ul>li:last").html());
+	//设置第一个li的标签体为“<h1>djflsd</h1>”
+	$("ul>li:first").html("<h1>djflsd</h1>");
+	//得到输入框中value值
+	console.log($("input").val());
+	//将输入框中的值设置为 我是设置
+	$(":text").val("我是设置");
+	//实现全选和全部选功能
+	
+	//attr():操作属性值为非布尔值的属性
+	//prop():操作属性值为布尔值的属性
+	$("input[type=button]:first").click(function(){
+		$(":checkbox").prop("checked",true);
+	})
+		$("input[type=button]:last").click(function(){
+		$(":checkbox").prop("checked",false);
+	})
+</script>

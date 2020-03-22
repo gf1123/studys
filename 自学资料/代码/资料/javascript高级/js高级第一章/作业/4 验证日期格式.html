@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script type="text/javascript">
+//日期格式有2种 第一种是yyyy-mm-dd 或 yyyy/mm/dd
+	var reg = /^\d{4}[-\/]\d{1,2}[-\/]\d{1,2}$/;
+
+	var d1 = "2015-12-1";
+
+	console.log(reg.test(d1)); //true
+
+	var d2 = "2015-12-02";
+
+	console.log(reg.test(d2)); //true
+
+	var d3 = "2015/12/12";
+
+	console.log(reg.test(d3)); // true
+</script>

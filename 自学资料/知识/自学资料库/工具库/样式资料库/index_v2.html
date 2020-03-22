@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>吉大正元UI前端框架V2.0</title>
+
+    <meta name="keywords" content="吉大正元UI前端框架V2.0">
+    <meta name="description" content="吉大正元UI前端框架V2.0">
+
+    <link rel="shortcut icon" href="favicon.ico"> <link href="css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+    <link href="css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+
+    <!-- Morris -->
+    <link href="css/plugins/morris/morris-0.4.3.min.css" rel="stylesheet">
+
+    <!-- Gritter -->
+    <link href="js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
+
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/style.min862f.css?v=4.1.0" rel="stylesheet">
+    
+
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content">
+        <div class="row">
+        	<div class="col-sm-12">
+                <ul class="statistics">
+                	<li class="statistics_li1">
+                    	<h3><i class="fa fa-file-text"></i> 队列总数</h3>
+                        <p>1629</p>
+                        <label><i class="fa fa-file-text"></i></label>
+                    </li>
+                    <li class="statistics_li2">
+                    	<h3><i class="fa fa-commenting"></i> 信息总数</h3>
+                        <p>265</p>
+                        <label><i class="fa fa-commenting"></i></label>
+                    </li>
+                    <li class="statistics_li3">
+                    	<h3><i class="fa fa-envelope"></i> 邮件总数</h3>
+                        <p>342</p>
+                        <label><i class="fa fa-envelope"></i></label>
+                    </li>
+                    <li class="statistics_li4">
+                    	<h3><i class="fa fa-group"></i> 人员总数</h3>
+                        <p>18017</p>
+                        <label><i class="fa fa-group"></i></label>
+                    </li>
+                </ul>
+            </div>
+            <!--<div class="col-sm-3">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <span class="label label-success pull-right">月</span>
+                        <h5>警员</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <h1 class="no-margins">46,200</h1>
+                        <div class="stat-percent font-bold text-success">98% <i class="fa fa-bolt"></i>
+                        </div>
+                        <small>总警员数</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <span class="label label-info pull-right">全年</span>
+                        <h5>RSA</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <h1 class="no-margins">25,800</h1>
+                        <div class="stat-percent font-bold text-info">20% <i class="fa fa-level-up"></i>
+                        </div>
+                        <small>新RSA</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <span class="label label-primary pull-right index_nowadays">今天</span>
+                        <h5>SM2</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <h1 class="no-margins">16,120</h1>
+                        <div class="stat-percent font-bold text-navy">44% <i class="fa fa-level-up"></i>
+                        </div>
+                        <small>新SM2</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <span class="label label-danger pull-right">上月</span>
+                        <h5>活跃用户</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <h1 class="no-margins">8,600</h1>
+                        <div class="stat-percent font-bold text-danger">38% <i class="fa fa-level-down"></i>
+                        </div>
+                        <small>12月</small>
+                    </div>
+                </div>
+            </div>-->
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>签发</h5>
+                        <div class="pull-right martop_neg10">
+                          
+                                <div data-toggle="buttons" class="btn-group">
+                                    <label class="btn btn-sm btn-white">
+                                        <input type="radio" id="option1" name="options">天</label>
+                                    <label class="btn btn-sm btn-white active">
+                                        <input type="radio" id="option2" name="options">周</label>
+                                    <label class="btn btn-sm btn-white">
+                                        <input type="radio" id="option3" name="options">月</label>
+                             
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="row">
+                            <div class="col-sm-9">
+                                <div class="flot-chart">
+                                    <div class="flot-chart-content" id="flot-dashboard-chart"></div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <ul class="stat-list">
+                                    <li>
+                                        <h2 class="no-margins">2,346</h2>
+                                        <small>使用总数</small>
+                                        <div class="stat-percent">48% <i class="fa fa-level-up text-navy"></i>
+                                        </div>
+                                        <div class="progress progress-mini">
+                                            <div style="width: 48%;" class="progress-bar"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <h2 class="no-margins ">4,422</h2>
+                                        <small>最近一个月签发</small>
+                                        <div class="stat-percent">60% <i class="fa fa-level-down text-navy"></i>
+                                        </div>
+                                        <div class="progress progress-mini">
+                                            <div style="width: 60%;" class="progress-bar"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <h2 class="no-margins ">9,180</h2>
+                                        <small>总计签发</small>
+                                        <div class="stat-percent">22% <i class="fa fa-bolt text-navy"></i>
+                                        </div>
+                                        <div class="progress progress-mini">
+                                            <div style="width: 22%;" class="progress-bar"></div>
+                                        </div>
+                                    </li>
+                                 </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>消息</h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content ibox-heading">
+                        <h3><i class="fa fa-envelope-o"></i> 新消息</h3>
+                        <small><i class="fa fa-tim"></i> 您有22条未读消息</small>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="feed-activity-list">
+
+                            <div class="feed-element">
+                                <div>
+                                    <small class="pull-right text-navy">1月前</small>
+                                    <strong>双龙</strong>
+                                    <div>《菜根谭》里说“觉人之诈而不形于色，此中有无限乐趣”，意思是当你知道别人在骗你，你一点儿都不表现出来，这里头有无限的乐趣。</div>
+                                    <small class="text-muted">4月11日 00:00</small>
+                                </div>
+                            </div>
+
+                            <div class="feed-element">
+                                <div>
+                                    <small class="pull-right">2月前</small>
+                                    <strong>常春</strong>
+                                    <div>戒掉了轻易评论别人的习惯，就能逐渐达到不受他人影响，不被他人的目光，期待和评价所操纵了。不受他人影响，于是就达到了定的状态。</div>
+                                    <small class="text-muted">11月8日 20:08 </small>
+                                </div>
+                            </div>
+
+                            <div class="feed-element">
+                                <div>
+                                    <small class="pull-right">5月前</small>
+                                    <strong>小暴龙</strong>
+                                    <div>所有的创新有一个最重要的本质，就是是否有人愿意为你的创新埋单，不愿意埋单的创新那不叫创新，只是自娱自乐。</div>
+                                    <small class="text-muted">11月8日 20:08 </small>
+                                </div>
+                            </div>
+
+                            <div class="feed-element">
+                                <div>
+                                    <small class="pull-right">5月前</small>
+                                    <strong>KG秀秀</strong>
+                                    <div>旅游的意义不在于去了哪个奇怪的地方，而在于帮助人们从日常的状态中抽离出来，去体验一种全新的境界。旅游终究是要回家的，所以在旅游中还能得到一些体悟，并能点化日常生活，那是最好的。另外，读书也是一种旅游，听音乐也是一种旅游，它们都是灵魂的旅游。</div>
+                                    <small class="text-muted">11月8日 20:08 </small>
+                                </div>
+                            </div>
+
+
+                            <div class="feed-element">
+                                <div>
+                                    <small class="pull-right">5月前</small>
+                                    <strong>老刘健不健99</strong>
+                                    <div>所谓“如来”二字，于我而言，就是“如”实承认我现在面临的一切都是必然和活该“来”的。</div>
+                                    <small class="text-muted">11月8日 20:08 </small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-8">
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="ibox float-e-margins">
+                            <div class="ibox-title">
+                                <h5>用户项目列表</h5>
+                                <div class="ibox-tools">
+                                    <a class="collapse-link">
+                                        <i class="fa fa-chevron-up"></i>
+                                    </a>
+                                    <a class="close-link">
+                                        <i class="fa fa-times"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="ibox-content">
+                                <table class="table table-hover no-margins">
+                                    <thead>
+                                        <tr>
+                                            <th>状态</th>
+                                            <th>日期</th>
+                                            <th>用户</th>
+                                            <th>值</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><small>进行中...</small>
+                                            </td>
+                                            <td><i class="fa fa-clock-o"></i> 11:20</td>
+                                            <td>青檬5858</td>
+                                            <td class="text-navy"> <i class="fa fa-level-up"></i> 24%</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="label label-warning">已取消</span>
+                                            </td>
+                                            <td><i class="fa fa-clock-o"></i> 10:40</td>
+                                            <td>孙敬哲</td>
+                                            <td class="text-navy"> <i class="fa fa-level-up"></i> 66%</td>
+                                        </tr>
+                                        <tr>
+                                            <td><small>进行中...</small>
+                                            </td>
+                                            <td><i class="fa fa-clock-o"></i> 01:30</td>
+                                            <td>于宏儒</td>
+                                            <td class="text-navy"> <i class="fa fa-level-up"></i> 54%</td>
+                                        </tr>
+                                        <tr>
+                                            <td><small>进行中...</small>
+                                            </td>
+                                            <td><i class="fa fa-clock-o"></i> 02:20</td>
+                                            <td>纪絎哥哥</td>
+                                            <td class="text-navy"> <i class="fa fa-level-up"></i> 12%</td>
+                                        </tr>
+                                        <tr>
+                                            <td><small>进行中...</small>
+                                            </td>
+                                            <td><i class="fa fa-clock-o"></i> 09:40</td>
+                                            <td>代云平</td>
+                                            <td class="text-navy"> <i class="fa fa-level-up"></i> 22%</td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="label label-primary">已完成</span>
+                                            </td>
+                                            <td><i class="fa fa-clock-o"></i> 04:10</td>
+                                            <td>刘双龙</td>
+                                            <td class="text-navy"> <i class="fa fa-level-up"></i> 66%</td>
+                                        </tr>
+                                        <tr>
+                                            <td><small>进行中...</small>
+                                            </td>
+                                            <td><i class="fa fa-clock-o"></i> 12:08</td>
+                                            <td>范范范二妮</td>
+                                            <td class="text-navy"> <i class="fa fa-level-up"></i> 23%</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="ibox float-e-margins">
+                            <div class="ibox-title">
+                                <h5>任务列表</h5>
+                                <div class="ibox-tools">
+                                    <a class="collapse-link">
+                                        <i class="fa fa-chevron-up"></i>
+                                    </a>
+                                    <a class="close-link">
+                                        <i class="fa fa-times"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="ibox-content">
+                                <ul class="todo-list m-t small-list ui-sortable">
+                                    <li>
+                                        <a class="check-link"><i class="fa fa-check-square"></i> </a>
+                                        <span class="m-l-xs todo-completed">开会</span>
+
+                                    </li>
+                                    <li>
+                                        <a class="check-link"><i class="fa fa-check-square"></i> </a>
+                                        <span class="m-l-xs  todo-completed">项目开发</span>
+
+                                    </li>
+                                    <li>
+                                        <a class="check-link"><i class="fa fa-square-o"></i> </a>
+                                        <span class="m-l-xs">修改bug</span>
+                                        <small class="label label-primary"><i class="fa fa-clock-o"></i> 1小时</small>
+                                    </li>
+                                    <li>
+                                        <a class="check-link"><i class="fa fa-square-o"></i> </a>
+                                        <span class="m-l-xs">修改bug</span>
+                                        <small class="label label-primary"><i class="fa fa-clock-o"></i> 1小时</small>
+                                    </li>
+                                    <li>
+                                        <a class="check-link"><i class="fa fa-square-o"></i> </a>
+                                        <span class="m-l-xs">修改bug</span>
+                                        <small class="label label-primary"><i class="fa fa-clock-o"></i> 1小时</small>
+                                    </li>
+                                    <li>
+                                        <a class="check-link"><i class="fa fa-square-o"></i> </a>
+                                        <span class="m-l-xs">修改bug</span>
+                                        <small class="label label-primary"><i class="fa fa-clock-o"></i> 1小时</small>
+                                    </li>
+                                    <li>
+                                        <a class="check-link"><i class="fa fa-square-o"></i> </a>
+                                        <span class="m-l-xs">修改bug</span>
+                                        <small class="label label-primary"><i class="fa fa-clock-o"></i> 1小时</small>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="display:none">
+                    <div class="col-sm-12">
+                        <div class="ibox float-e-margins">
+                            <div class="ibox-title">
+                                <h5>交易地区</h5>
+                                <div class="ibox-tools">
+                                    <a class="collapse-link">
+                                        <i class="fa fa-chevron-up"></i>
+                                    </a>
+                                    <a class="close-link">
+                                        <i class="fa fa-times"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="ibox-content">
+
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <table class="table table-hover margin bottom">
+                                            <thead>
+                                                <tr>
+                                                    <th style="width: 1%" class="text-center">序号</th>
+                                                    <th>交易</th>
+                                                    <th class="text-center">日期</th>
+                                                    <th class="text-center">销售额</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="text-center">1</td>
+                                                    <td>防盗门
+                                                        </small>
+                                                    </td>
+                                                    <td class="text-center small">2014.9.15</td>
+                                                    <td class="text-center"><span class="label label-primary">&yen;483.00</span>
+                                                    </td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center">2</td>
+                                                    <td>衣柜
+                                                    </td>
+                                                    <td class="text-center small">2014.9.15</td>
+                                                    <td class="text-center"><span class="label label-primary">&yen;327.00</span>
+                                                    </td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center">3</td>
+                                                    <td>防盗门
+                                                    </td>
+                                                    <td class="text-center small">2014.9.15</td>
+                                                    <td class="text-center"><span class="label label-warning">&yen;125.00</span>
+                                                    </td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center">4</td>
+                                                    <td>橱柜</td>
+                                                    <td class="text-center small">2014.9.15</td>
+                                                    <td class="text-center"><span class="label label-primary">&yen;344.00</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center">5</td>
+                                                    <td>手机</td>
+                                                    <td class="text-center small">2014.9.15</td>
+                                                    <td class="text-center"><span class="label label-primary">&yen;235.00</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center">6</td>
+                                                    <td>显示器</td>
+                                                    <td class="text-center small">2014.9.15</td>
+                                                    <td class="text-center"><span class="label label-primary">&yen;100.00</span>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div id="world-map" style="height: 300px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery.min.js?v=2.1.4"></script>
+    <script src="js/bootstrap.min.js?v=3.3.6"></script>
+    <script type="text/javascript" src="js/contabs.min.js"></script>
+    <script src="js/plugins/flot/jquery.flot.js"></script>
+    <script src="js/plugins/flot/jquery.flot.tooltip.min.js"></script>
+    <script src="js/plugins/flot/jquery.flot.spline.js"></script>
+    <script src="js/plugins/flot/jquery.flot.resize.js"></script>
+    <script src="js/plugins/flot/jquery.flot.pie.js"></script>
+    <script src="js/plugins/flot/jquery.flot.symbol.js"></script>
+    <script src="js/plugins/peity/jquery.peity.min.js"></script>
+    <script src="js/demo/peity-demo.min.js"></script>
+    <script src="js/content.min.js?v=1.0.0"></script>
+    <script src="js/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <script src="js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+    <script src="js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="js/plugins/easypiechart/jquery.easypiechart.js"></script>
+    <script src="js/plugins/sparkline/jquery.sparkline.min.js"></script>
+    <script src="js/demo/sparkline-demo.min.js"></script>
+	<script type="text/javascript" src="js/index_v2chat.js" ></script>
+    <script type="text/javascript" src="js/tajs.js" charset="UTF-8"></script>
+</body>
+</html>

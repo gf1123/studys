@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		/*利用 translate 实现水平垂直居中*/
+		div{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 200px;
+			height: 200px;
+			background-color:red;
+			/*transform:translate(x,y);*/
+				/*变形		移动  如果设置植是百分比,是相对自己的宽度为主*/
+			transition: all 0.5s;
+			/*配合transition使用   如果设置植是百分比,是相对自己的宽度为主*/
+			transform: translate(-50%,-50%);/*第二种实现水平垂直居中*/
+			/*margin-left: -100px; /*第一种实现水平居中*/
+			/*margin-top: -100px;*/ /*第一种实现垂直居中*/
+		}
+		div:active{
+			transform: translate(50px,50px);/*配合transition使用   如果设置植是百分比,是相对自己的宽度为主*/* /
+			
+		}
+		
+		
+		
+		
+	</style>
+	<body>
+		<div></div>
+	</body>
+</html>

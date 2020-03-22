@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<style type="text/css">
+		*{
+			margin: 0 auto;
+			padding: 0;
+		}
+		ul{
+			list-style-type: none;
+		}
+		.container{
+			width: 500px;
+			border: 1px solid red;
+		}
+		.clearfix:after{
+			content: "";
+			display: block;
+			clear: both;
+		}
+		li{
+			float: left;
+		cursor: pointer;
+		}
+		.left{
+			float: left;
+		}
+		.right{
+			float: right;
+		}
+		.left,.right{
+			width: 100px;
+		}
+		.content{
+			overflow: hidden;
+			
+		}
+		.left li ,.right li,.content li{
+			width: 100px;
+			text-align: center;
+			color: #FFFFFF;
+		}
+				.left li:hover,.right li,.content li:hover{
+					
+				}
+				
+		.left li{
+			background: blue;
+			border-bottom:1px solid black;
+		}
+		.right li{
+			border-bottom:1px solid black;
+			background: green;
+		}
+		.content li{
+			background: orange;
+			display: none;
+			width: 100%;
+			height: 220px;
+			font-size: 5em;
+			color: #FFFFFF;
+			line-height: 210px;
+		}
+	.content .item{
+		display: block;
+	}
+	</style>
+	<body>
+		<div class="container clearfix">
+			<ul class="left">
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+				<li>6</li>
+				<li>7</li>
+				<li>8</li>
+				<li>9</li>
+				<li>10</li>
+			</ul>
+
+			<ul class="right">
+				<li>1-1</li>
+				<li>2-1</li>
+				<li>3-1</li>
+				<li>4-1</li>
+				<li>5-1</li>
+				<li>6-1</li>
+				<li>7-1</li>
+				<li>8-1</li>
+				<li>9-1</li>
+				<li>10-1</li>
+			</ul>
+			
+				<ul class="content">
+				<li class="item">1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+				<li>6</li>
+				<li>7</li>
+				<li>8</li>
+				<li>9</li>
+				<li>10</li>
+				<li>11</li>
+				<li>12</li>
+				<li>13</li>
+				<li>14</li>
+				<li>15</li>
+				<li>16</li>
+				<li>17</li>
+				<li>18</li>
+				<li>19</li>
+				<li>20</li>
+				<li>21</li>
+				<li>22</li>
+			</ul>
+			
+		</div>
+
+	</body>
+</html>
+<script type="text/javascript">
+	$(function(){
+		$(".left li").mouseenter(function(){
+			console.log(this);
+			//利用索引对索引来控制显示隐藏
+			//获取左边li的索引
+			var index=$(this).index();
+			$(".content>li").eq(index).show().siblings("li").hide();
+		})
+		$(".right li").mouseenter(function(){
+			console.log(this);
+			//利用索引对索引来控制显示隐藏
+			//获取左边li的索引
+			var index=$(this).index();
+			index+=10;
+			$(".content>li").eq(index).show().siblings("li").hide();
+		})
+	})
+</script>

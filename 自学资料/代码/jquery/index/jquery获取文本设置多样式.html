@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>开关灯</title>
+		<script src="../js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<style type="text/css">
+		p {
+			font-size: 2em;
+			width: 100px;
+			height: 100px;
+		}
+	</style>
+
+	<body>
+		<div class="div1">
+			<p>1</p>
+			<p>2</p>
+			<p>3<span>3-1</span></p>
+		</div>
+	</body>
+
+</html>
+<script type="text/javascript">
+	$(function() {
+		//获取单独样式
+		var $p = $("p").css("width");
+		console.log($p)
+		//设置单个样式   可以大驼峰也可以用-的方法
+		//	var $p1=$("p").css("background-color","blue");
+		var $p1 = $("p").css("backgroundColor", "blue");
+		//设置多个样式 以对象的形式设置
+		var $p = $("p").css({
+			"width": "50px",
+			"border": "5px solid red"
+		});
+	})
+
+	$(function() {
+		function text() {
+			// .text()获取了所有子元素的文本
+			console.log($(".div1").text());
+			// .text()设置了文本会覆盖原有内容
+			console.log($(".div1 span").text("我是设置文本"));
+		}
+	})
+</script>

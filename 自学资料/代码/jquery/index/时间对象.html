@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<style type="text/css">
+		div{
+			width: 200px;
+			height: 200px;
+			border: 1px solid red;
+		}
+	</style>
+	<body>
+		<div id="times"></div>
+	</body>
+</html>
+<script type="text/javascript">
+	
+	//启动
+var a =	setInterval(clock,1000);
+	function clock(){
+		var date =new Date();
+		var year=date.getFullYear();
+		var month=date.getMonth()+1;//月分
+		var day=date.getDate();
+		var hour=date.getHours();
+		var minute=date.getMinutes();
+		var second =date.getSeconds();
+		second =handle(second);
+		var time =year+"/"+month+"/"+day+" "+hour+":"+minute+":"+second;
+		
+		//判断秒前缀带0
+		$("#times").html(time);
+				function handle(s){
+			if(s>=0 &&s<10){
+				return "0"+s;
+			}else{
+				return s;
+			}
+		}
+	}
+
+
+</script>

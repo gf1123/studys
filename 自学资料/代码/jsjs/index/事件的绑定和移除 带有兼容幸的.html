@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		div {
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
+	</style>
+
+	<body>
+		<div></div>
+	</body>
+
+</html>
+<script type="text/javascript">
+	var div = document.getElementsByTagName("div")[0];
+	addEvent(div, "click", tests);//添加
+	removeEvent(div, "click", tests)//移除
+	function tests() {
+		console.log("this")
+	}
+	//兼容 事件 方法start 如果有移除事件 需要使用函数里的 ie8一下
+	function addEvent(elem, type, handle) {
+		//elem === 对象(div) ，type=== 事件("click")，handle===执行函数(function(){})
+		if(elem.addEventListener) {
+			//ie9以上
+			elem.addEventListener(type, handle, false);
+		} else if(elem.attachEvent) {
+//			ie8一下用  移出事件时好使，
+			elem.attachEvent("on" + type, handle);
+//			//ie8以上用的 操作this 时可用，移出事件时不好使
+//			elem.attachEvent("on" + type, function() {
+//				handle.call(elem);//操作this的,this指向自己，不是默认的指向全局
+//			});
+			
+		} else {
+			//通用的
+			elem["on" + type] = handle;
+		}
+	}
+	//兼容 事件 方法end
+	
+	//兼容 事件  移除的方法 start
+	function removeEvent(elem, type, handler) {
+//		elem===操作对象(div) type===事件("click") clallName===回调函数名字
+		if(elem.removeEventListener) {
+			elem.removeEventListener(type, handler, false);
+		} else if(elem.detachEvent) {
+			elem.detachEvent("on" + type, handler);
+		} else {
+			elem["on" + type] = null;
+		}
+	}	
+	//兼容 事件 移除的方法 end	
+		
+</script>

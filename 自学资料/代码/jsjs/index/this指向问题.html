@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<img src="../img/this.png"/>
+	</body>
+</html>
+<script type="text/javascript">
+	//1.预编译 this->window
+	//2.谁调用的 this 指向谁
+	//3.call apply
+	//4.全局 this ->window
+	var name="222";
+	var a={
+		name:"111",
+		say:function(){
+			console.log(this.name);
+		}
+	}
+	var fun =a.say;
+	fun();//222
+	a.say();//111
+	var b={
+		name:"333",
+		//function(){console.log(this.name);}
+		say:function(fun){//B函数
+//			this指向b
+			fun();
+		}
+	}
+	b.say(a.say);//222
+//	b.say=a.say;,相当于把 a.say里面的函数妨到b.say上了,如A 替换了 B函数
+	b.say=a.say;
+	b.say();//333
+	
+	
+	
+	//这个就相当于上面 	[b.say(a.say);//222]这句话
+	console.log("----")
+	var age= 123;
+	var abc=function (abcd){
+		var age=234;
+		abcd();
+	}
+	abc(function(){
+			console.log(this.age);
+	});
+	
+	
+</script>
+

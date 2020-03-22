@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+
+	</body>
+
+</html>
+<script type="text/javascript">
+	//函数三种形式、
+	//第一种 关键字
+	//	  function f1(){
+	//	  	console.log("关键字");
+	//	  }
+	//	 f1();
+	//	 //第二种  直接量：只能先定义，后调用
+	//	 var f2= function(){
+	//	 	console.log("直接量");
+	//	 }
+	//	 f2();
+	//	 //第三种 构造函数
+	//	 var f3 = new Function(){
+	//	 	console.log("构造函数")
+	//	 }f3();
+
+	//形式参数和实际参数
+	//arguments：接收实参，以数组的形式展示
+
+	//实参小于形参时  没有传值的形参的值为 undefined
+	//实参大于形参时  没有传值的形参的值自动省略
+	function n1(a, b, c) { //形式参数
+		console.log(a)
+		console.log(b)
+		console.log(c)//为undefined
+	}
+	n1(1, 2); //实际参数
+
+	function n2(a, b, c) { //形式参数
+	//arguments：接收实参，以数组的形式展示
+	//arguments：接收实参，以数组的形式展示
+		console.log(arguments)//数组形式展示
+		console.log(arguments .length+"=实参")//长度
+		console.log(n2.length+"=形参")//形参长度
+		if(arguments .length==n2.length){
+			console.log("匹配");
+		}else{
+			console.log("不匹配")
+		}
+		
+	}
+	n2(1, 2,6,4); //实际参数
+	
+	
+	function n3(a,b){
+		 sum = a+b;
+		return sum;//想要将函数的值返回，可以使用 return + 值
+	}
+	var a =n3(1,2);//调用函数需要有变量来接收，变量接收的值，就是 return返回的值。
+	console.log(a)
+</script>

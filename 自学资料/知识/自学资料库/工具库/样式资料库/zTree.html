@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>吉大正元UI前端框架V2.0  - zTree</title>
+    <meta name="keywords" content="吉大正元UI前端框架V2.0"><meta name="description" content="吉大正元UI前端框架V2.0">
+
+    <link rel="shortcut icon" href="favicon.ico"> <link href="css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+    <link href="css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/style.min862f.css?v=4.1.0" rel="stylesheet">
+    <link href="css/plugins/treeview/bootstrap-treeview.css" rel="stylesheet">
+	<script src="js/jquery.min.js?v=2.1.4"></script>
+	<script type="text/javascript" src="js/jquery.ztree.core.js"></script>
+</head>
+
+<body class="gray-bg">
+    <div class="row wrapper wrapper-content animated fadeInRight">
+        <div class="col-sm-6">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>zTree 简介</h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="zTree.html#">
+                            <i class="fa fa-wrench"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-user">
+                            <li><a href="zTree.html#">选项1</a>
+                            </li>
+                            <li><a href="zTree.html#">选项2</a>
+                            </li>
+                        </ul>
+                        <a class="close-link">
+                            <i class="fa fa-times"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <p>zTree 是一个依靠 jQuery 实现的多功能 “树插件”。优异的性能、灵活的配置、多种功能的组合是 zTree 最大优点。</p>
+                    <ul>
+                        <li>zTree v3.0 将核心代码按照功能进行了分割，不需要的代码可以不用加载</li>
+                        <li>采用了 延迟加载 技术，上万节点轻松加载，即使在 IE6 下也能基本做到秒杀</li>
+                        <li>兼容 IE、FireFox、Chrome、Opera、Safari 等浏览器</li>
+                        <li>支持 JSON 数据</li>
+                        <li>支持静态 和 Ajax 异步加载节点数据</li>
+                        <li>支持任意更换皮肤 / 自定义图标（依靠css）</li>
+                        <li>支持极其灵活的 checkbox 或 radio 选择功能</li>
+                        <li>提供多种事件响应回调</li>
+                        <li>灵活的编辑（增/删/改/查）功能，可随意拖拽节点，还可以多节点拖拽哟</li>
+                        <li>在一个页面内可同时生成多个 Tree 实例</li>
+                        <li>简单的参数配置实现 灵活多变的功能</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-sm-6">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>默认</h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="zTree.html#">
+                            <i class="fa fa-wrench"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-user">
+                            <li><a href="zTree.html#">选项1</a>
+                            </li>
+                            <li><a href="zTree.html#">选项2</a>
+                            </li>
+                        </ul>
+                        <a class="close-link">
+                            <i class="fa fa-times"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-content ztree_height">
+<SCRIPT type="text/javascript">
+		var setting = {	};
+
+		var zNodes =[
+			{ name:"父节点1 - 展开", open:true,
+				children: [
+					{ name:"父节点11 - 折叠",
+						children: [
+							{ name:"叶子节点111"},
+							{ name:"叶子节点112"},
+							{ name:"叶子节点113"},
+							{ name:"叶子节点114"}
+						]},
+					{ name:"父节点12 - 折叠",
+						children: [
+							{ name:"叶子节点121"},
+							{ name:"叶子节点122"},
+							{ name:"叶子节点123"},
+							{ name:"叶子节点124"}
+						]},
+					{ name:"父节点13 - 没有子节点", isParent:true}
+				]},
+			{ name:"父节点2 - 折叠",
+				children: [
+					{ name:"父节点21 - 展开", open:true,
+						children: [
+							{ name:"叶子节点211"},
+							{ name:"叶子节点212"},
+							{ name:"叶子节点213"},
+							{ name:"叶子节点214"}
+						]},
+					{ name:"父节点22 - 折叠",
+						children: [
+							{ name:"叶子节点221"},
+							{ name:"叶子节点222"},
+							{ name:"叶子节点223"},
+							{ name:"叶子节点224"}
+						]},
+					{ name:"父节点23 - 折叠",
+						children: [
+							{ name:"叶子节点231"},
+							{ name:"叶子节点232"},
+							{ name:"叶子节点233"},
+							{ name:"叶子节点234"}
+						]}
+				]},
+			{ name:"父节点3 - 没有子节点", isParent:true}
+
+		];
+
+		$(document).ready(function(){
+			$.fn.zTree.init($("#treeDemo"), setting, zNodes);
+		});
+		
+</SCRIPT>
+                    <ul id="treeDemo" class="ztree"></ul>
+
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <!--[if lt IE 9]>
+	<script src="js/html5.js"></script>
+    <script src="js/respond.js"></script>
+	<![endif]-->
+    <script src="js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="js/content.min.js?v=1.0.0"></script>
+    <script src="js/plugins/treeview/bootstrap-treeview.js"></script>
+    <script type="text/javascript" src="js/tajs.js" charset="UTF-8"></script>
+    
+</body>
+</html>

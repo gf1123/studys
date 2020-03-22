@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width:100px;
+			height: 100px;
+			background: lightblue;
+			/*transition:过度属性,过度时间,运动曲线,何时开始*/
+			/*单独设置每个属性 过度*/
+			transition: width 0.6s ease 0s,height 0.3s ease 1s;
+			/*属性全相同的话可以用 all 指的是 属性  后边默认*/
+			transition: all 0.5;
+			
+		}
+		div:hover{
+			width: 500px;
+			height: 300px;
+		}
+	</style>
+	<body>
+		<div></div>
+	</body>
+</html>

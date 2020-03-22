@@ -1,0 +1,1 @@
+引入外部连接<script src="路径 " type="text/javascript" charset="UTF-8"></script>

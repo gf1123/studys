@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script type="text/javascript">
+
+
+	//var reg = /<a[.\s]*href\s*=\s*'http:\/\/.*?'>\w*?<\/a>/gi; //非贪婪模式
+	var reg = /<a[.\s]*href\s*=\s*'http:\/\/.*'>\w*<\/a>/gi; //贪婪模式
+	var html = "<div><a href='http://www.baidu.com'>222</a><p>344</p></div>";
+
+	console.log(html.match(reg)); // ["<a href='http://www.baidu.com'>222</a>"]
+
+	var html2 = "<div><a href='http://www.baidu.com'>222</a><p>344</p><a href='http://www.baidu2.com'>333</a></div>";
+
+	console.log(html2.match(reg)); //["<a href='http://www.baidu.com'>222</a><p>344</p><a href='http://www.baidu2.com'>333</a>"]
+</script>

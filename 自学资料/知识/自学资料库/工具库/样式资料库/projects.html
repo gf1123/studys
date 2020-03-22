@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+ <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+        <title>吉大正元UI前端框架V2.0</title>
+
+    <meta name="keywords" content="吉大正元UI前端框架V2.0">
+    <meta name="description" content="吉大正元UI前端框架V2.0">
+
+
+    <link rel="shortcut icon" href="favicon.ico"> <link href="css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+    <link href="css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/style.min862f.css?v=4.1.0" rel="stylesheet">
+    
+
+</head>
+
+<body class="gray-bg">
+
+    <div class="wrapper wrapper-content animated fadeInUp">
+        <div class="row">
+            <div class="col-sm-12">
+
+                <div class="ibox">
+                    <div class="ibox-title">
+                        <h5>所有项目</h5>
+                        <div class="ibox-tools">
+                            <a href="projects.html" class="btn btn-primary btn-xs">创建新项目</a>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="row m-b-sm m-t-sm">
+                            <div class="col-md-1">
+                                <button type="button" id="loading-example-btn" class="btn btn-white btn-sm"><i class="fa fa-refresh"></i> 刷新</button>
+                            </div>
+                            <div class="col-md-11">
+                                <div class="input-group">
+                                        <input type="text" class="form-control"> <span class="input-group-btn"> <button type="button" class="btn btn-primary">搜索
+                                        </button> </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-list">
+
+                            <table class="table table-hover">
+                                <tbody>
+                                    <tr>
+                                        <td class="project-status">
+                                            <span class="label label-primary">进行中</span>
+                                        </td>
+                                        <td class="project-title">
+                                            <a class="J_menuItem_cet" href="project_detail.html">吉林省委办公厅电子政务内网项目</a>
+                                            <br/>
+                                            <small>创建于 2017.02.28</small>
+                                        </td>
+                                        <td class="project-completion">
+                                                <small>当前进度： 48%</small>
+                                                <div class="progress progress-mini">
+                                                    <div style="width: 48%;" class="progress-bar"></div>
+                                                </div>
+                                        </td>
+                                        <td class="project-people">
+                                            <a class="J_menuItem_cet" href="contacts.html"><img alt="image" class="img-circle" src="img/a3.jpg"></a>
+                                            <a class="J_menuItem_cet" href="contacts.html"><img alt="image" class="img-circle" src="img/a1.jpg"></a>
+                                            <a class="J_menuItem_cet" href="contacts.html"><img alt="image" class="img-circle" src="img/a2.jpg"></a>
+                                            <a class="J_menuItem_cet" href="contacts.html"><img alt="image" class="img-circle" src="img/a4.jpg"></a>
+                                            <a class="J_menuItem_cet" href="contacts.html"><img alt="image" class="img-circle" src="img/a5.jpg"></a>
+                                        </td>
+                                        <td class="project-actions">
+                                            <a href="projects.html#" class="btn btn-white btn-sm projects_btn"><i class="fa fa-folder"></i> 查看 </a>
+                                            <a href="projects.html#" class="btn btn-white btn-sm projects_btn"><i class="fa fa-pencil"></i> 编辑 </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="project-status">
+                                            <span class="label label-primary">进行中</span>
+                                        </td>
+                                        <td class="project-title">
+                                            <a class="J_menuItem_cet" href="project_detail.html">辽宁省监狱管理局电子政务项目</a>
+                                            <br/>
+                                            <small>创建于 2017.02.28</small>
+                                        </td>
+                                        <td class="project-completion">
+                                            <small>当前进度： 28%</small>
+                                            <div class="progress progress-mini">
+                                                <div style="width: 28%;" class="progress-bar"></div>
+                                            </div>
+                                        </td>
+                                        <td class="project-people">
+                                            <a class="J_menuItem_cet" href="contacts.html"><img alt="image" class="img-circle" src="img/a7.jpg"></a>
+                                            <a class="J_menuItem_cet" href="contacts.html"><img alt="image" class="img-circle" src="img/a6.jpg"></a>
+                                            <a class="J_menuItem_cet" href="contacts.html"><img alt="image" class="img-circle" src="img/a3.jpg"></a>
+                                        </td>
+                                        <td class="project-actions">
+                                            <a class="J_menuItem_cet" href="projects.html#" class="btn btn-white btn-sm projects_btn"><i class="fa fa-folder"></i> 查看 </a>
+                                            <a class="J_menuItem_cet" href="projects.html#" class="btn btn-white btn-sm projects_btn"><i class="fa fa-pencil"></i> 编辑 </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="project-status">
+                                            <span class="label label-default">已取消</span>
+                                        </td>
+                                        <td class="project-title">
+                                            <a class="J_menuItem_cet" href="project_detail.html">吉林省人大公文流转系统项目</a>
+                                            <br/>
+                                            <small>创建于 2017.02.08</small>
+                                        </td>
+                                        <td class="project-completion">
+                                            <small>当前进度： 8%</small>
+                                            <div class="progress progress-mini">
+                                                <div style="width: 8%;" class="progress-bar"></div>
+                                            </div>
+                                        </td>
+                                        <td class="project-people">
+                                            <a class="J_menuItem_cet" href="contacts.html"><img alt="image" class="img-circle" src="img/a5.jpg"></a>
+                                            <a class="J_menuItem_cet" href="contacts.html"><img alt="image" class="img-circle" src="img/a3.jpg"></a>
+                                        </td>
+                                        <td class="project-actions">
+                                            <a href="projects.html#" class="btn btn-white btn-sm projects_btn"><i class="fa fa-folder"></i> 查看 </a>
+                                            <a href="projects.html#" class="btn btn-white btn-sm projects_btn"><i class="fa fa-pencil"></i> 编辑 </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="project-status">
+                                            <span class="label label-primary">进行中</span>
+                                        </td>
+                                        <td class="project-title">
+                                            <a class="J_menuItem_cet" href="project_detail.html">人社厅持卡人员数据分析系统</a>
+                                            <br/>
+                                            <small>创建于 2017.02.28</small>
+                                        </td>
+                                        <td class="project-completion">
+                                            <small>当前进度： 83%</small>
+                                            <div class="progress progress-mini">
+                                                <div style="width: 83%;" class="progress-bar"></div>
+                                            </div>
+                                        </td>
+                                        <td class="project-people">
+                                            <a class="J_menuItem_cet" href="contacts.html"><img alt="image" class="img-circle" src="img/a2.jpg"></a>
+                                            <a class="J_menuItem_cet" href="contacts.html"><img alt="image" class="img-circle" src="img/a3.jpg"></a>
+                                            <a class="J_menuItem_cet" href="contacts.html"><img alt="image" class="img-circle" src="img/a1.jpg"></a>
+                                            <a class="J_menuItem_cet" href="contacts.html"><img alt="image" class="img-circle" src="img/a7.jpg"></a>
+                                        </td>
+                                        <td class="project-actions">
+                                            <a href="projects.html#" class="btn btn-white btn-sm projects_btn"><i class="fa fa-folder"></i> 查看 </a>
+                                            <a href="projects.html#" class="btn btn-white btn-sm projects_btn"><i class="fa fa-pencil"></i> 编辑 </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="project-status">
+                                            <span class="label label-primary">进行中</span>
+                                        </td>
+                                        <td class="project-title">
+                                            <a class="J_menuItem_cet" href="project_detail.html">吉林省融投集团股权信息发布平台</a>
+                                            <br/>
+                                            <small>创建于 2017.02.28</small>
+                                        </td>
+                                        <td class="project-completion">
+                                            <small>当前进度： 97%</small>
+                                            <div class="progress progress-mini">
+                                                <div style="width: 97%;" class="progress-bar"></div>
+                                            </div>
+                                        </td>
+                                        <td class="project-people">
+                                            <a class="J_menuItem_cet" href="contacts.html"><img alt="image" class="img-circle" src="img/a4.jpg"></a>
+                                        </td>
+                                        <td class="project-actions">
+                                            <a href="projects.html#" class="btn btn-white btn-sm projects_btn"><i class="fa fa-folder"></i> 查看 </a>
+                                            <a href="projects.html#" class="btn btn-white btn-sm projects_btn"><i class="fa fa-pencil"></i> 编辑 </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="project-status">
+                                            <span class="label label-primary">进行中</span>
+                                        </td>
+                                        <td class="project-title">
+                                            <a class="J_menuItem_cet" href="project_detail.html">吉林省人社厅互联网+政务服务项目</a>
+                                            <br/>
+                                            <small>创建于 2017.02.28</small>
+                                        </td>
+                                        <td class="project-completion">
+                                            <small>当前进度： 48%</small>
+                                            <div class="progress progress-mini">
+                                                <div style="width: 48%;" class="progress-bar"></div>
+                                            </div>
+                                        </td>
+                                        <td class="project-people">
+                                            <a class="J_menuItem_cet" href="contacts.html"><img alt="image" class="img-circle" src="img/a1.jpg"></a>
+                                            <a class="J_menuItem_cet" href="contacts.html"><img alt="image" class="img-circle" src="img/a2.jpg"></a>
+                                            <a class="J_menuItem_cet" href="contacts.html"><img alt="image" class="img-circle" src="img/a4.jpg"></a>
+                                            <a class="J_menuItem_cet" href="contacts.html"><img alt="image" class="img-circle" src="img/a5.jpg"></a>
+                                        </td>
+                                        <td class="project-actions">
+                                            <a href="projects.html#" class="btn btn-white btn-sm projects_btn"><i class="fa fa-folder"></i> 查看 </a>
+                                            <a href="projects.html#" class="btn btn-white btn-sm projects_btn"><i class="fa fa-pencil"></i> 编辑 </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="project-status">
+                                            <span class="label label-primary">进行中</span>
+                                        </td>
+                                        <td class="project-title">
+                                            <a class="J_menuItem_cet" href="project_detail.html">石家庄平山县公安局智能化大楼建设项目</a>
+                                            <br/>
+                                            <small>创建于 2017.02.20</small>
+                                        </td>
+                                        <td class="project-completion">
+                                            <small>当前进度： 28%</small>
+                                            <div class="progress progress-mini">
+                                                <div style="width: 28%;" class="progress-bar"></div>
+                                            </div>
+                                        </td>
+                                        <td class="project-people">
+                                            <a class="J_menuItem_cet" href="contacts.html"><img alt="image" class="img-circle" src="img/a7.jpg"></a>
+                                            <a class="J_menuItem_cet" href="contacts.html"><img alt="image" class="img-circle" src="img/a6.jpg"></a>
+                                            <a class="J_menuItem_cet" href="contacts.html"><img alt="image" class="img-circle" src="img/a3.jpg"></a>
+                                        </td>
+                                        <td class="project-actions">
+                                            <a href="projects.html#" class="btn btn-white btn-sm projects_btn"><i class="fa fa-folder"></i> 查看 </a>
+                                            <a href="projects.html#" class="btn btn-white btn-sm projects_btn"><i class="fa fa-pencil"></i> 编辑 </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="project-status">
+                                            <span class="label label-default">已取消</span>
+                                        </td>
+                                        <td class="project-title">
+                                            <a class="J_menuItem_cet" href="project_detail.html">吉林省委办公厅文电处公文流转系统（历史项目）</a>
+                                            <br/>
+                                            <small>创建于 2017.02.24</small>
+                                        </td>
+                                        <td class="project-completion">
+                                            <small>当前进度： 8%</small>
+                                            <div class="progress progress-mini">
+                                                <div style="width: 8%;" class="progress-bar"></div>
+                                            </div>
+                                        </td>
+                                        <td class="project-people">
+                                            <a class="J_menuItem_cet" href="contacts.html"><img alt="image" class="img-circle" src="img/a5.jpg"></a>
+                                            <a class="J_menuItem_cet" href="contacts.html"><img alt="image" class="img-circle" src="img/a3.jpg"></a>
+                                        </td>
+                                        <td class="project-actions">
+                                            <a href="projects.html#" class="btn btn-white btn-sm projects_btn"><i class="fa fa-folder"></i> 查看 </a>
+                                            <a href="projects.html#" class="btn btn-white btn-sm projects_btn"><i class="fa fa-pencil"></i> 编辑 </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="project-status">
+                                            <span class="label label-primary">进行中</span>
+                                        </td>
+                                        <td class="project-title">
+                                            <a href="project_detail.html">吉林省教育厅身份认证项目</a>
+                                            <br/>
+                                            <small>创建于 2017.02.24</small>
+                                        </td>
+                                        <td class="project-completion">
+                                            <small>当前进度： 83%</small>
+                                            <div class="progress progress-mini">
+                                                <div style="width: 83%;" class="progress-bar"></div>
+                                            </div>
+                                        </td>
+                                        <td class="project-people">
+                                            <a class="J_menuItem_cet" href="contacts.html"><img alt="image" class="img-circle" src="img/a2.jpg"></a>
+                                            <a class="J_menuItem_cet" href="contacts.html"><img alt="image" class="img-circle" src="img/a3.jpg"></a>
+                                            <a class="J_menuItem_cet" href="contacts.html"><img alt="image" class="img-circle" src="img/a1.jpg"></a>
+                                        </td>
+                                        <td class="project-actions">
+                                            <a href="projects.html#" class="btn btn-white btn-sm projects_btn"><i class="fa fa-folder"></i> 查看 </a>
+                                            <a href="projects.html#" class="btn btn-white btn-sm projects_btn"><i class="fa fa-pencil"></i> 编辑 </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="project-status">
+                                            <span class="label label-primary">进行中</span>
+                                        </td>
+                                        <td class="project-title">
+                                            <a class="J_menuItem_cet" href="project_detail.html">江苏省政务外网统一认证平台</a>
+                                            <br/>
+                                            <small>创建于 2017.02.23</small>
+                                        </td>
+                                        <td class="project-completion">
+                                            <small>当前进度： 97%</small>
+                                            <div class="progress progress-mini">
+                                                <div style="width: 97%;" class="progress-bar"></div>
+                                            </div>
+                                        </td>
+                                        <td class="project-people">
+                                            <a class="J_menuItem_cet" href="contacts.html"><img alt="image" class="img-circle" src="img/a4.jpg"></a>
+                                        </td>
+                                        <td class="project-actions">
+                                            <a href="projects.html#" class="btn btn-white btn-sm projects_btn"><i class="fa fa-folder"></i> 查看 </a>
+                                            <a href="projects.html#" class="btn btn-white btn-sm projects_btn"><i class="fa fa-pencil"></i> 编辑 </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="project-status">
+                                            <span class="label label-primary">进行中</span>
+                                        </td>
+                                        <td class="project-title">
+                                            <a class="J_menuItem_cet" href="project_detail.html">吉林省缺陷产品信息采集系统</a>
+                                            <br/>
+                                            <small>创建于 2017.02.23</small>
+                                        </td>
+                                        <td class="project-completion">
+                                            <small>当前进度： 28%</small>
+                                            <div class="progress progress-mini">
+                                                <div style="width: 28%;" class="progress-bar"></div>
+                                            </div>
+                                        </td>
+                                        <td class="project-people">
+                                            <a class="J_menuItem_cet" href="contacts.html"><img alt="image" class="img-circle" src="img/a7.jpg"></a>
+                                            <a class="J_menuItem_cet" href="contacts.html"><img alt="image" class="img-circle" src="img/a6.jpg"></a>
+                                            <a class="J_menuItem_cet" href="contacts.html"><img alt="image" class="img-circle" src="img/a3.jpg"></a>
+                                        </td>
+                                        <td class="project-actions">
+                                            <a href="projects.html#" class="btn btn-white btn-sm projects_btn"><i class="fa fa-folder"></i> 查看 </a>
+                                            <a href="projects.html#" class="btn btn-white btn-sm projects_btn"><i class="fa fa-pencil"></i> 编辑 </a>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <script src="js/jquery.min.js?v=2.1.4"></script>
+    <script src="js/bootstrap.min.js?v=3.3.6"></script>
+    <script type="text/javascript" src="js/contabs.min.js"></script>
+    <script src="js/content.min.js?v=1.0.0"></script>
+    <script>
+       $(document).ready(function(){$("#loading-example-btn").click(function(){btn=$(this);simpleLoad(btn,true);simpleLoad(btn,false)})});function simpleLoad(btn,state){if(state){btn.children().addClass("fa-spin");btn.contents().last().replaceWith(" Loading")}else{setTimeout(function(){btn.children().removeClass("fa-spin");btn.contents().last().replaceWith(" Refresh")},2000)}};
+    </script>
+    <script type="text/javascript" src="js/tajs.js" charset="UTF-8"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+	</body>
+
+</html>
+<script type="text/javascript">
+	//	function test(){}//函数声明
+	var demo = function() {
+		console.log("A")
+	}; //函数表达式        和立即执行函数原理一样，执行玩之后就销毁找不到了，最后只剩一个空的demo
+	//	()代表执行
+
+	// 立即执行函数 原理 只有表达式才可以立即执行。
+	//	(function(){}()),最外面的()代表数学括号,它把里面转换为表达式了,之后{}后面的()代表执行.
+	var x = 1;
+	if(function f() {}) {
+		//任何未声明的变量就使用指定会报错但是  typeof除外，返回类型是 string
+		x += typeof f;
+	}
+	console.log(x);//undefined
+</script>

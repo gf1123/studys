@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <title>吉大正元UI前端框架V2.0</title>
+    <meta name="keywords" content="吉大正元UI前端框架V2.0">
+    <meta name="description" content="吉大正元UI前端框架V2.0">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+    <link href="css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/style.min862f.css?v=4.1.0" rel="stylesheet">
+    <link href="css/plugins/morris/morris-0.4.3.min.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet"  />
+    <link href="css/list_document.css" rel="stylesheet" type="text/css" />
+    
+    <script language = "JavaScript" type="text/javascript">
+<!--
+    
+    // JavaScript Document
+
+function SetWinHeight(obj)
+
+{
+obj.height = "100%";
+    win = obj.contentWindow, 
+    doc = win.document, 
+    html = doc.documentElement, 
+    body = doc.body; 
+
+	// 获取高度 
+	var height = Math.max( body.scrollHeight, body.offsetHeight, 
+                       html.clientHeight, html.scrollHeight, html.offsetHeight ); 
+					  
+var win=obj;
+
+if (document.getElementById)
+{
+
+if (win && !window.opera)
+
+{
+
+if (win.contentDocument && win.contentDocument.body.offsetHeight) 
+
+   
+win.height = height; <!--+111是加的iframe以上头部的高度;下面那处相同,一共两处 add by lihua_zhen at 2017－03-10 -->
+    
+else if(win.Document && win.Document.body.scrollHeight) 
+win.height = height;
+}
+}
+}   
+    </script>
+<script type="text/javascript">
+
+function showCss(othis, url){
+	$(".tab_main a").each(function(index,b){
+		$('#'+b.id).removeClass("cur");
+		
+	});
+	$('#'+othis.id).addClass("cur");
+		
+	document.getElementById('bl').src = url;
+}
+</script>
+    
+</head>
+
+<body class="gray-bg">
+<div class="header" id="header_tab">
+     	<div class="header_top">
+        	<p class="header_logo"></p>
+            <ul class="header_tab_ul">
+            	<li><i class="fa fa-home header_fa" aria-hidden="true"></i><span>平台首页</span></li>
+               <li><i class="fa fa-table header_fa" aria-hidden="true"></i><span>列表</span></li>
+               <li><i class="fa fa-edit header_fa" aria-hidden="true"></i><span>表单</span></li>
+               <li><i class="fa fa-bar-chart-o header_fa" aria-hidden="true"></i><span>统计图表</span></li>
+               <li><i class="fa fa-envelope header_fa" aria-hidden="true"></i><span>信箱</span></li>
+               <li><i class="fa fa-desktop header_fa" aria-hidden="true"></i><span>页面</span></li>
+               <li><i class="fa fa-flask header_fa" aria-hidden="true"></i><span>UI元素</span></li>
+          	   <li><i class="fa fa-picture-o header_fa"></i><span>图片</span></li>
+               <li><i class="fa fa-cutlery header_fa"></i><span>工具 </span></li>
+            </ul>
+           
+            <div class="clearfix"></div>
+  </div>
+        <div class="header_bottom">
+      		 
+							
+             
+   	    	 <div class="header_bottom_manager nav-user">
+                        <div class="dropdown profile-element">
+                            <span><img alt="image" class="img-circle martop-neg30 header_bottom_manager_img" src="img/profile_small.jpg" /></span>
+                            <a data-toggle="dropdown" class="dropdown-toggle header_bottom_manager_name" href="#">
+                               <span class="block m-t-xs white font-size16px">王秀峰</span>
+                                <span class="text-muted text-xs block font-size12px lightblue">超级管理员<b class="caret"></b></span>
+                            </a>
+                            <ul class="dropdown-menu animated fadeInRight m-t-xs transparent50 personalinfo_dropdown">
+                                <li><a class="J_menuItem" href="javascript:void(0);" onclick="showCss(this, 'form_avatar.html');">修改头像</a>
+                                </li>
+                                <li><a class="J_menuItem" href="javascript:void(0);" onclick="showCss(this, 'profile.html');">个人资料</a>
+                                </li>
+                                <li><a class="J_menuItem" href="javascript:void(0);" onclick="showCss(this, 'contacts.html');">联系我们</a>
+                                </li>
+                                <li><a class="J_menuItem" href="javascript:void(0);" onclick="showCss(this, 'mailbox.html');">信箱</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li><a href="login/Mouse_induction/Light/login4.html">安全退出</a>
+                                </li>
+                            </ul>
+                        </div>
+                     <ul class="header_bottom_manager_i_fa noticeindex ">
+                 		 <li class="dropdown"><a class="dropdown-toggle count-info" data-toggle="dropdown" href="#"><span class="badge badge-danger index_numbur_x">6</span><i class="fa fa-envelope-o header_bottom_manager_fa" aria-hidden="true"></i></a><ul class="dropdown-menu dropdown-alerts index_messages">
+                                <li>
+                                    <a href="javascript:void(0);" onclick="showCss(this, 'mailbox.html');">
+                                        <div>
+                                            <i class="fa fa-envelope fa-fw"></i> 您有16条未读消息
+                                            <span class="pull-right text-muted small">4分钟前</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="javascript:void(0);" onclick="showCss(this, 'profile.html');">
+                                        <div>
+                                            <i class="fa fa-qq fa-fw"></i> 3条新回复
+                                            <span class="pull-right text-muted small">12分钟钱</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <div class="text-center link-block">
+                                        <a class="J_menuItem" id="a02" href="javascript:void(0);" onclick="showCss(this, 'mailbox.html');">
+                                            <strong>查看所有 </strong>
+                                            <i class="fa fa-angle-right"></i>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                            </li>
+                      	<li class="dropdown">
+                        	<a class="dropdown-toggle count-info" data-toggle="dropdown" >
+                            	<span class="badge badge-danger index_numbur_x">18</span><i class="fa fa-bell-o header_bottom_manager_fa" aria-hidden="true"></i></a>
+                            
+                  <ul class="dropdown-menu dropdown-messages index_messages">
+                                <li>
+                                   <div class="sidebar-message index_ul_nav">
+                                   <a class="J_menuItem" href="javascript:void(0);" onclick="showCss(this, 'article.html');">
+                                    <div class="pull-left text-center index_nav_pull">
+                                        <i class="fa fa-volume-up dropdown_fa_up" aria-hidden="true"></i>
+
+                                        <div class="m-t-xs">
+                                            <i class="fa fa-star text-warning"></i>
+                                            <i class="fa fa-star text-warning"></i>
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+
+                                        长春市政府办公厅政府信息公开指南
+                                        <br>
+                                        <small class="text-muted">今天 4:21</small>
+                                    </div>
+                                </a>
+                                <div class="clearfix"></div>
+                            </div>
+                            	</li>
+                                <li class="divider"></li>
+                                <li>
+                                   <div class="sidebar-message index_ul_nav">
+                                   <a class="J_menuItem" href="javascript:void(0);" onclick="showCss(this, 'article.html');">
+                                    <div class="pull-left text-center index_nav_pull">
+                                        <i class="fa fa-volume-up dropdown_fa_up" aria-hidden="true"></i>
+
+                                        <div class="m-t-xs">
+                                            <i class="fa fa-star text-warning"></i>
+                                            <i class="fa fa-star text-warning"></i>
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+
+                                        长春市政府办公厅政府信息公开指南
+                                        <br>
+                                        <small class="text-muted">今天 4:21</small>
+                                    </div>
+                                </a>
+                                <div class="clearfix"></div>
+                            </div>
+                            	</li>
+                                <li class="divider"></li>
+                                <li>
+                                    <div class="text-center link-block">
+                                        <a class="J_menuItem" id="a01" href="javascript:void(0);" onclick="showCss(this, 'agile_board.html');">
+                                            <i class="fa fa-envelope"></i> <strong> 查看所有消息</strong>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul></li>      
+                     </ul>
+             </div>
+           	  
+        	<div class="header_tab_ul_content">
+            		<div class="tab_main">
+                    	  <a id='a1' href="index.html"  target="_blank">主页示例一</a>        
+                          <a id='a2' href="javascript:void(0);" onclick="showCss(this, 'index_v2.html');"> 主页示例二</a>           
+                          <a id='a3' target="bl" href="index_v3.html" onclick="showCss(this);">主页示例三</a>          
+                          <a id='a4' target="bl" href="index_v4.html" onclick="showCss(this);">主页示例四</a>         
+                          <a id='a5' target="bl" href="index_content_main.html" onclick="showCss(this);">主页示例五</a>
+                          <div class="list_document_search">
+                             <input type="text" value="请输入搜索内容" onfocus="if(value=='请输入搜索内容') {value=''}"
+                                   onblur="if (value=='') {value='请输入搜索内容'}" style="color:#909090" class="list_document_search_input">
+                            <input type="button" value=" " name="button" class="list_document_search_but">
+                         </div>
+                    
+                    </div>
+                    <div class="tab_main header_tab_ul_content_tab1" style="display:none;">
+                    	<div class="tab_main_header_bottom">
+                          <a id='a6' href="javascript:void(0);" onclick="showCss(this, 'table_basic.html');">基本列表</a>         
+                          <a id='a7' href="javascript:void(0);" onclick="showCss(this, 'table_data_tables.html');"> DataTables</a>           
+                          <a id='a8' href="javascript:void(0);" onclick="showCss(this, 'table_jqgrid.html');">jqGrid</a>      
+                          <a id='a9' href="javascript:void(0);" onclick="showCss(this, 'table_foo_table.html');">Foo Tables</a>            
+                          <a id='a10' href="javascript:void(0);" onclick="showCss(this, 'table_bootstrap.html');">Bootstrap Table</a>
+                          <a id='a11' href="javascript:void(0);" onclick="showCss(this, 'projects.html');">项目列表</a>
+                          <a id='a12' href="javascript:void(0);" onclick="showCss(this, 'agile_board.html');">任务列表</a>
+                          <a id='a91' href="javascript:void(0);" onclick="showCss(this, 'table_query.html');">查询列表</a>
+                         <a id='a13' href="javascript:void(0);" onclick="showCss(this, 'ui2list.html');">2.0自定义列表</a>
+                        </div>
+                        <span class="navlist">
+                             <i class="fa fa-sort-desc header_tab_nav" aria-hidden="true"></i>
+                            <span class="menu2">
+                                <a id='a6' href="javascript:void(0);" onclick="showCss(this, 'table_basic.html');">基本列表</a>         
+                          <a id='a7' href="javascript:void(0);" onclick="showCss(this, 'table_data_tables.html');"> DataTables</a>           
+                          <a id='a8' href="javascript:void(0);" onclick="showCss(this, 'table_jqgrid.html');">jqGrid</a>      
+                          <a id='a9' href="javascript:void(0);" onclick="showCss(this, 'table_foo_table.html');">Foo Tables</a>            
+                          <a id='a10' href="javascript:void(0);" onclick="showCss(this, 'table_bootstrap.html');">Bootstrap Table</a>
+                          <a id='a11' href="javascript:void(0);" onclick="showCss(this, 'projects.html');">项目列表</a>
+                          <a id='a12' href="javascript:void(0);" onclick="showCss(this, 'agile_board.html');">任务列表</a>
+                          <a id='a91' href="javascript:void(0);" onclick="showCss(this, 'table_query.html');">查询列表</a>
+                          <a id='a13' href="javascript:void(0);" onclick="showCss(this, 'ui2list.html');">2.0自定义列表</a>
+                     
+                        </span>
+                       </span>
+                          
+					</div>
+                    
+                    <div class="tab_main header_tab_ul_content_tab1" style="display:none;">
+                    	<div class="tab_main_header_bottom">
+                           <a id='a14' href="javascript:void(0);" onclick="showCss(this, 'form_basic.html');" >基本表单</a>
+                                <a id='a15' href="javascript:void(0);" onclick="showCss(this, 'form_validate.html');">表单验证</a>
+                           <a id='a16' href="javascript:void(0);" onclick="showCss(this, 'form_advanced.html');">高级插件</a>
+                           <a id='a17' href="javascript:void(0);" onclick="showCss(this, 'form_wizard.html');">表单向导</a>
+                           <a id='a18' href="javascript:void(0);" onclick="showCss(this, 'form_webuploader.html');">百度WebUploader</a>
+                           <a id='a19' href="javascript:void(0);" onclick="showCss(this, 'form_file_upload.html');">DropzoneJS</a>
+                           <a id='a20' href="javascript:void(0);" onclick="showCss(this, 'form_avatar.html');">头像裁剪上传</a>
+                    		<a id='a21' href="javascript:void(0);" onclick="showCss(this, 'form_editors.html');">富文本编辑器</a>
+                           <a id='a22' href="javascript:void(0);" onclick="showCss(this, 'form_simditor.html');" >simditor</a>
+                           <a id='a23' href="javascript:void(0);" onclick="showCss(this, 'form_markdown.html');">MarkDown编辑器</a>
+                           <a id='a24' href="javascript:void(0);" onclick="showCss(this, 'code_editor.html');">代码编辑器</a>
+                           <a id='a25' href="javascript:void(0);" onclick="showCss(this, 'suggest.html');">搜索自动补全</a>
+                           <a id='a26' href="javascript:void(0);" onclick="showCss(this, 'layerdate.html');">日期选择器layerDate</a>
+                           <a id='a27' href="javascript:void(0);" onclick="showCss(this, 'calendar.html');">日历</a>
+                          	</div>				
+                           <span class="navlist" id="pichuan">
+                          	 <i class="fa fa-sort-desc header_tab_nav" aria-hidden="true"></i>
+                           
+                            <span class="menu2">
+                     			 <a id='a14' href="javascript:void(0);" onclick="showCss(this, 'form_basic.html');" >基本表单</a>
+                                <a id='a15' href="javascript:void(0);" onclick="showCss(this, 'form_validate.html');">表单验证</a>
+                           <a id='a16' href="javascript:void(0);" onclick="showCss(this, 'form_advanced.html');">高级插件</a>
+                           <a id='a17' href="javascript:void(0);" onclick="showCss(this, 'form_wizard.html');">jQuery Steps表单</a>
+                           <a id='a17' href="javascript:void(0);" onclick="showCss(this, 'form_special_effects.html');">特效表单</a>
+                           <a id='a18' href="javascript:void(0);" onclick="showCss(this, 'form_webuploader.html');">百度WebUploader</a>
+                           <a id='a19' href="javascript:void(0);" onclick="showCss(this, 'form_file_upload.html');">DropzoneJS</a>
+                           <a id='a20' href="javascript:void(0);" onclick="showCss(this, 'form_avatar.html');">头像裁剪上传</a>
+                    		<a id='a21' href="javascript:void(0);" onclick="showCss(this, 'form_editors.html');">富文本编辑器</a>
+                           <a id='a22' href="javascript:void(0);" onclick="showCss(this, 'form_simditor.html');" >simditor</a>
+                           <a id='a23' href="javascript:void(0);" onclick="showCss(this, 'form_markdown.html');">MarkDown编辑器</a>
+                           <a id='a24' href="javascript:void(0);" onclick="showCss(this, 'code_editor.html');">代码编辑器</a>
+                           <a id='a25' href="javascript:void(0);" onclick="showCss(this, 'suggest.html');">搜索自动补全</a>
+                           <a id='a26' href="javascript:void(0);" onclick="showCss(this, 'layerdate.html');">日期选择器layerDate</a>
+                           <a id='a27' href="javascript:void(0);" onclick="showCss(this, 'calendar.html');">日历</a>
+                        <!--   <i class="fa fa-sort-asc header_tab_nav" aria-hidden="true"></i>-->
+                     	</span>
+                     	</span>
+                          
+                    	</div>
+                    <div class="tab_main header_tab_ul_content_tab1" style="display:none;">
+                    	
+                         <a id='a28' href="javascript:void(0);" onclick="showCss(this, 'graph_echarts.html');">百度ECharts</a>
+                         <a id='a29' href="javascript:void(0);" onclick="showCss(this, 'graph_flot.html');">Flot</a>
+                         <a id='a30' href="javascript:void(0);" onclick="showCss(this, 'graph_morris.html');">Morris.js</a>
+                         <a id='a31' href="javascript:void(0);" onclick="showCss(this, 'graph_rickshaw.html');">Rickshaw</a>
+                          <a id='a32' href="javascript:void(0);" onclick="showCss(this, 'graph_peity.html');">Peity</a>
+                          <a id='a33' href="javascript:void(0);" onclick="showCss(this, 'graph_sparkline.html');">Sparkline</a>
+                          <a id='a34' href="javascript:void(0);" onclick="showCss(this, 'graph_metrics.html');" >图表组合</a>
+                         
+                          
+                    </div>
+                    <div class="tab_main header_tab_ul_content_tab1" style="display:none;">
+                        <a id='a35' href="javascript:void(0);" onclick="showCss(this, 'mailbox.html');">收件箱</a>
+                        <a id='a36' href="javascript:void(0);" onclick="showCss(this, 'mail_detail.html');">查看邮件</a>
+                        <a id='a37' href="javascript:void(0);" onclick="showCss(this, 'mail_compose.html');">写信</a>
+                    </div>
+                    <div class="tab_main header_tab_ul_content_tab1" style="display:none;">
+                    	<div class="tab_main_header_bottom">
+                        <a id='a38' href="javascript:void(0);" onclick="showCss(this, 'contacts.html');">联系人</a>
+                        <a id='a39' href="javascript:void(0);" onclick="showCss(this, 'profile.html');">个人资料</a>
+                        <a id='a40' href="javascript:void(0);" onclick="showCss(this, 'projects.html');">项目</a>
+                        <a id='a41' href="javascript:void(0);" onclick="showCss(this, 'project_detail.html?r=Math.random();');" >项目详情</a>
+                        <a id='a42' href="javascript:void(0);" onclick="showCss(this, 'teams_board.html');">团队管理</a>
+                        <a id='a43' href="javascript:void(0);" onclick="showCss(this, 'clients.html');" >客户管理</a>
+                        <a id='a44' href="javascript:void(0);" onclick="showCss(this, 'file_manager.html');">文件柜</a>
+                        <a id='a45' href="javascript:void(0);" onclick="showCss(this, 'blog.html');">信息列表</a>
+                        <a id='a46' href="javascript:void(0);" onclick="showCss(this, 'article.html');">信息页</a>
+                        <a id='a47' href="javascript:void(0);" onclick="showCss(this, 'faq.html');">FAQ</a>
+                        <a id='a77' href="javascript:void(0);" onclick="showCss(this, 'timeline.html');">时间轴v1</a>
+                        <a id='a78' href="javascript:void(0);" onclick="showCss(this, 'timeline_v2.html');">时间轴v2</a>
+                        <a id='a79' href="javascript:void(0);" onclick="showCss(this, 'pin_board.html');">标签墙</a>
+                        <a id='a80' href="javascript:void(0);" onclick="showCss(this, 'invoice.html');">单据</a>
+                        <a id='a81' href="javascript:void(0);" onclick="showCss(this, 'invoice_print.html');">单据打印</a>
+                        <a id='a82' href="javascript:void(0);" onclick="showCss(this, 'search_results.html');">搜索结果</a>
+                        <a id='a83' href="javascript:void(0);" onclick="showCss(this, 'forum_main.html');">论坛</a>
+                        <a id='a84' href="javascript:void(0);" onclick="showCss(this, 'chat_view.html');">聊天窗口</a>
+                        <a id='a85' href="javascript:void(0);" onclick="showCss(this, 'webim.html');">layIM</a>
+                        <a id='a86' href="register.html" target="_blank">注册页面</a>
+                        <a id='a87' href="lockscreen.html" target="_blank">登录超时</a>
+                        <a id='a88' href="javascript:void(0);" onclick="showCss(this, '404.html');">404页面</a>
+                        <a id='a89' href="javascript:void(0);" onclick="showCss(this, 'success2.html');">success页面</a>
+                        <a id='a90' href="javascript:void(0);" onclick="showCss(this, 'empty_page.html');">空白页</a>
+                        <a id='a48' href="login/index.html" target="_blank">登录页面合集</a>
+                         </div>                      
+                         <span class="navlist">
+                             <i class="fa fa-sort-desc header_tab_nav" aria-hidden="true"></i>
+                         <span class="menu2">
+                            <a id='a38' href="javascript:void(0);" onclick="showCss(this, 'contacts.html');">联系人</a>
+                            <a id='a39' href="javascript:void(0);" onclick="showCss(this, 'profile.html');">个人资料</a>
+                            <a id='a40' href="javascript:void(0);" onclick="showCss(this, 'projects.html');">项目</a>
+                            <a id='a41' href="javascript:void(0);" onclick="showCss(this, 'project_detail.html?r=Math.random();');" >项目详情</a> 
+                            <a id='a42' href="javascript:void(0);" onclick="showCss(this, 'teams_board.html');">团队管理</a>
+                            <a id='a43' href="javascript:void(0);" onclick="showCss(this, 'clients.html');" >客户管理</a>
+                            <a id='a44' href="javascript:void(0);" onclick="showCss(this, 'file_manager.html');">文件柜</a>
+                            <a id='a45' href="javascript:void(0);" onclick="showCss(this, 'blog.html');">信息列表</a>
+                            <a id='a46' href="javascript:void(0);" onclick="showCss(this, 'article.html');">信息页</a>
+                            <a id='a47' href="javascript:void(0);" onclick="showCss(this, 'faq.html');">FAQ</a>
+                            <a id='a77' href="javascript:void(0);" onclick="showCss(this, 'timeline.html');">时间轴v1</a>
+                            <a id='a78' href="javascript:void(0);" onclick="showCss(this, 'timeline_v2.html');">时间轴v2</a>
+                            <a id='a79' href="javascript:void(0);" onclick="showCss(this, 'pin_board.html');">标签墙</a>
+                            <a id='a80' href="javascript:void(0);" onclick="showCss(this, 'invoice.html');">单据</a>
+                            <a id='a81' href="javascript:void(0);" onclick="showCss(this, 'invoice_print.html');">单据打印</a>
+                            <a id='a82' href="javascript:void(0);" onclick="showCss(this, 'search_results.html');">搜索结果</a>
+                            <a id='a83' href="javascript:void(0);" onclick="showCss(this, 'forum_main.html');">论坛</a>
+                            <a id='a84' href="javascript:void(0);" onclick="showCss(this, 'chat_view.html');">聊天窗口</a>
+                            <a id='a85' href="javascript:void(0);" onclick="showCss(this, 'webim.html');">layIM</a>
+                            <a id='a86' href="register.html" target="_blank">注册页面</a>
+                            <a id='a87' href="lockscreen.html" target="_blank">登录超时</a>
+                            <a id='a88' href="javascript:void(0);" onclick="showCss(this, '404.html');">404页面</a>
+                            <a id='a89' href="javascript:void(0);" onclick="showCss(this, '500.html');">success页面</a>
+                            <a id='a90' href="javascript:void(0);" onclick="showCss(this, 'empty_page.html');">空白页</a>
+                            <a id='a48' href="login/index.html" target="_blank">登录页面合集</a>
+                          <!--  <i class="fa fa-sort-asc header_tab_nav" aria-hidden="true"></i>-->
+                        </span>
+                       </span>
+                                      
+                      </div>
+                      <div class="tab_main header_tab_ul_content_tab1" style="display:none;">
+                      	<div class="tab_main_header_bottom">
+                      	 <a id='a50' href="javascript:void(0);" onclick="showCss(this, 'typography.html');" >排版</a>
+                        <a id='a51' href="javascript:void(0);" onclick="showCss(this, 'fontawesome.html');">Font Awesome</a>
+                        <a id='a52' href="javascript:void(0);" onclick="showCss(this, 'glyphicons.html');">Glyphicon</a>
+                         <a id='a53' href="javascript:void(0);" onclick="showCss(this, 'iconfont.html');">阿里巴巴矢量图标库</a>
+                        <a id='a54' href="javascript:void(0);" onclick="showCss(this, 'draggable_panels.html');">拖动面板</a>
+                        <a id='a55' href="javascript:void(0);" onclick="showCss(this, 'agile_board.html');">任务清单</a>
+                         <a id='a56' href="javascript:void(0);" onclick="showCss(this, 'buttons.html');">按钮</a>
+                         <a id='a57' href="javascript:void(0);" onclick="showCss(this, 'tabs_panels.html');">选项卡 &amp; 面板</a>
+                          <a id='a58' href="javascript:void(0);" onclick="showCss(this, 'notifications.html');">通知 &amp; 提示</a>
+                          <a id='a59' href="javascript:void(0);" onclick="showCss(this, 'badges_labels.html');">徽章，标签，进度条</a>
+                          <a id='a60' href="javascript:void(0);" onclick="showCss(this, 'grid_options.html');">栅格</a>
+                          <a id='a61' href="javascript:void(0);" onclick="showCss(this, 'plyr.html');">视频、音频</a>
+                          <a id='a62' href="javascript:void(0);" onclick="showCss(this, 'layer.html');">Web弹层组件layer</a> 
+                          <a id='a63' href="javascript:void(0);" onclick="showCss(this, 'modal_window.html');">模态窗口</a>
+                          <a id='a64' href="javascript:void(0);" onclick="showCss(this, 'sweetalert.html');"> SweetAlert</a>
+                          <a id='a65' href="javascript:void(0);" onclick="showCss(this, 'jstree.html');">jsTree</a>
+                          <a id='a66' href="javascript:void(0);" onclick="showCss(this, 'tree_view.html');">Bootstrap Tree View</a>
+                          <a id='a67' href="javascript:void(0);" onclick="showCss(this, 'nestable_list.html');">nestable</a>
+                          <a id='a119' href="javascript:void(0);" onclick="showCss(this, 'zTree.html');">zTree</a>
+                          <a id='a68' href="javascript:void(0);" onclick="showCss(this, 'toastr_notifications.html');">Toastr通知</a>
+                          <a id='a69' href="javascript:void(0);" onclick="showCss(this, 'diff.html');">文本对比</a>
+                          <a id='a70' href="javascript:void(0);" onclick="showCss(this, 'spinners.html');">加载动画</a>
+                          <a id='a71' href="javascript:void(0);" onclick="showCss(this, 'widgets.html');">小部件</a>
+                        </div>
+                        
+                        <span class="navlist">
+                             <i class="fa fa-sort-desc header_tab_nav" aria-hidden="true"></i>
+                            <span class="menu2">
+                               <a id='a50' href="javascript:void(0);" onclick="showCss(this, 'typography.html');" >排版</a>
+                        <a id='a51' href="javascript:void(0);" onclick="showCss(this, 'fontawesome.html');">Font Awesome</a>
+                        <a id='a52' href="javascript:void(0);" onclick="showCss(this, 'glyphicons.html');">Glyphicon</a>
+                         <a id='a53' href="javascript:void(0);" onclick="showCss(this, 'iconfont.html');">阿里巴巴矢量图标库</a>
+                        <a id='a54' href="javascript:void(0);" onclick="showCss(this, 'draggable_panels.html');">拖动面板</a>
+                        <a id='a55' href="javascript:void(0);" onclick="showCss(this, 'agile_board.html');">任务清单</a>
+                         <a id='a56' href="javascript:void(0);" onclick="showCss(this, 'buttons.html');">按钮</a>
+                         <a id='a57' href="javascript:void(0);" onclick="showCss(this, 'tabs_panels.html');">选项卡 &amp; 面板</a>
+                          <a id='a58' href="javascript:void(0);" onclick="showCss(this, 'notifications.html');">通知 &amp; 提示</a>
+                          <a id='a59' href="javascript:void(0);" onclick="showCss(this, 'badges_labels.html');">徽章，标签，进度条</a>
+                          <a id='a60' href="javascript:void(0);" onclick="showCss(this, 'grid_options.html');">栅格</a>
+                          <a id='a61' href="javascript:void(0);" onclick="showCss(this, 'plyr.html');">视频、音频</a>
+                          <a id='a62' href="javascript:void(0);" onclick="showCss(this, 'layer.html');">Web弹层组件layer</a> 
+                          <a id='a63' href="javascript:void(0);" onclick="showCss(this, 'modal_window.html');">模态窗口</a>
+                          <a id='a64' href="javascript:void(0);" onclick="showCss(this, 'sweetalert.html');"> SweetAlert</a>
+                          <a id='a65' href="javascript:void(0);" onclick="showCss(this, 'jstree.html');">jsTree</a>
+                          <a id='a66' href="javascript:void(0);" onclick="showCss(this, 'tree_view.html');">Bootstrap Tree View</a>
+                          <a id='a67' href="javascript:void(0);" onclick="showCss(this, 'nestable_list.html');">nestable</a>
+                          <a id='a119' href="javascript:void(0);" onclick="showCss(this, 'zTree.html');">zTree</a>
+                          <a id='a68' href="javascript:void(0);" onclick="showCss(this, 'toastr_notifications.html');">Toastr通知</a>
+                          <a id='a69' href="javascript:void(0);" onclick="showCss(this, 'diff.html');">文本对比</a>
+                          <a id='a70' href="javascript:void(0);" onclick="showCss(this, 'spinners.html');">加载动画</a>
+                          <a id='a71' href="javascript:void(0);" onclick="showCss(this, 'widgets.html');">小部件</a>
+                        <!--  <i class="fa fa-sort-asc header_tab_nav" aria-hidden="true"></i>-->
+                        </span>
+                       </span>
+                       </div>
+                       <div class="tab_main header_tab_ul_content_tab1" style="display:none;">
+                       	<a id='a72' href="javascript:void(0);" onclick="showCss(this, 'basic_gallery.html');" >基本图库</a>
+                        <a id='a73' href="javascript:void(0);" onclick="showCss(this, 'carousel.html');" >左右切换</a>
+                        <a id='a74' href="javascript:void(0);" onclick="showCss(this, 'blueimp.html');" >Blueimp相册</a>
+                       </div>
+                       <div class="tab_main header_tab_ul_content_tab1" style="display:none;">
+                       	  <a id='a76' href="javascript:void(0);" onclick="showCss(this, 'css_animation.html');">CSS动画</a>
+                          <a id='a75' href="javascript:void(0);" onclick="showCss(this, 'form_builder.html');" >表单构建器</a>
+                       </div>
+            </div>
+            
+			
+            <div class="clearfix"></div>
+            </div>
+            <script>
+                    $(document).ready(function () {
+                        $(".header_tab_ul li:nth-child(1)").addClass("header_tab_ul_li_nbr");
+                        $(".header_tab_ul li:nth-child(1)").addClass("selected");
+                    });
+                </script>
+                <div class="clearfix"></div>
+        </div>	
+        <div class="clearfix"></div>
+</div>
+    	
+				<!--iframe     star-->
+                
+                <iframe src="index_v1.html" name="bl" onload="Javascript:SetWinHeight(this)"  width="100%" height="100%" scrolling="no" frameborder="0" id="bl" border="0"> 浏览器不支持嵌入式框架，或被配置为不显示嵌入式框架。</iframe>
+                <!--iframe     end-->
+				
+				<!--底部   star-->
+				<div class="footer">
+					<span class="logozimu"><img src="img/logo_zimu.png"/></span>
+					<span class="nian">2016</span>
+					<span class="logo_1"><img src="img/logo_1.png"/></span>
+				</div>
+				<!--底部   end-->
+			</div>
+			<!--右边区域内容    end-->
+			
+  	<script src="js/html5.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/respond.min.js" type="text/javascript" charset="utf-8"></script>
+	
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	  	<script src="js/html5shiv.js"></script>
+	  	<script src="js/respond.min.js"></script>
+	<![endif]-->
+	
+   <!--tab-->
+
+ <script src="js/jquery.min.js?v=2.1.4"></script>
+
+ 
+<script src="js/tab_xyh.js"></script>
+    <script src="js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="js/plugins/layer/layer.min.js"></script>
+    <script src="js/content.min.js"></script>
+    <script src="js/plugins/layer/layer.min.js"></script>
+    <script src="js/welcome.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+ 
+<!Doctype html> 
+<html> 
+<head> 
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" /> 
+<title>step1</title> 
+<style type="text/css">
+#fader{position:relative;overflow:hidden;height:300px;width:500px} 
+#fader li{position:absolute;left:0;top:0;} 
+ul,li{list-style:none;margin:0;padding:0} 
+img{display:block;} 
+</style> 
+<script type="text/javascript">
+	function $(id){return document.getElementById(id)} 
+	function $$(c,p){return p.getElementsByTagName(c)}
+function banner(options){ //options参数：id（必选）：图片列表父标签id；auto（可选）：自动运行时间；index（可选）：开始的运行的图片序号 
+	var wp = $(options.id); // 获取图片列表父元素 
+	var ul = $$('ul',wp)[0]; // 获取ul 
+	var li =  $$('li',ul); //获取所有的图片li
+	var l = li.length;
+	var interval = options.auto?options.auto:2; //自动运行间隔 
+	var index = options.position?options.position:0; //开始运行的图片序号（从0开始） 
+	var cur,z;
+	cur = z = 0;//当前显示的图片序号&&z-index变量 
+
+	function start(){
+		pos(index);
+		li.timer = setInterval(function(){
+						move(1);
+					},interval*1000);
+	}
+	function pos (i){
+		z++; //设置图片显示的顺序z-index
+		li[i].style.zIndex = z; //每次让下一张图片z-index加一 
+		cur = i; //绑定当前显示图片的正确序号
+	}
+	function move(i){
+		var n = cur+i; 
+		var m = i==1?n==l?0:n:n<0?l-1:n; //下一张或上一张的序号（注意三元选择符的运用） 
+		pos(m); //变换到上一张或下一张 
+	}
+	return start;
+}
+
+</script>
+</head> 
+<body> 
+<div id="fader"> 
+	<ul> 
+		<li><img src="http://files.jb51.net/upload/201010/20101011212559828.jpg"  alt="我是图片一" /></li> 
+		<li><img src="http://files.jb51.net/upload/201010/20101011212559387.jpg"  alt="哈哈，图片二" /></li> 
+		<li><img src="http://files.jb51.net/upload/201010/20101011212559942.jpg"  alt="这是图片三" /></li> 
+		<li><img src="http://files.jb51.net/upload/201010/20101011212559739.jpg" alt="哈哈，图片四" /></li> 
+		<li><img src="http://files.jb51.net/upload/201010/20101011212559310.jpg" alt="图片五来咯" /></li> 
+	</ul> 
+</div> 
+<script type="text/javascript">
+	var b = banner({ 
+		id:'fader' 
+		});
+	b();
+</script> 
+</body> 
+</html> 

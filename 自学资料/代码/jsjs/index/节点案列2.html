@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		#content{
+			width: 300px;
+			height: 300px;
+			border: 1px solid red;
+			margin: 5px 0;
+		}
+	</style>
+	<body>
+		<div id="all">
+			<input type="text" name="" id="txt" value="" />
+			<input type="button" name="" id="btn" value="发表" />
+		</div>
+				
+		<div id="content">
+			
+		</div>
+		<input type="button" name="f" id="f" value="aaa" />
+<input type="button" name="f" id="fas" value="aaa" />
+		
+	</body>
+</html>
+<script type="text/javascript">
+
+	var btn =document.getElementById("btn");
+    var content =document.getElementById("content");
+	
+	btn.onclick=function(){
+	var txt =document.getElementById("txt");
+	//创建一个div
+	var cjdiv =document.createElement("div");
+	//把创建的div放在#content里的最后面
+	var zjdiv = content.insertBefore(cjdiv,content.firstElementChild);
+		zjdiv.innerHTML=txt.value;//把填写的内容放在zjdiv中
+	//创建一个删除按钮放在添加内容的后面
+	var delBtn = document.createElement("input");
+	delBtn.type="button";
+	delBtn.value="删除";
+	delBtn.style.marginLeft="5px";
+	var zjdel =zjdiv.appendChild(delBtn);
+//	点击删除按钮移除zjdiv
+delBtn.onclick=function(){
+	zjdiv.parentNode.removeChild(zjdiv);
+}
+	}
+	
+	
+	var a =document.getElementsByName("f");
+	for(var i=0;i<a.length;i++){
+		console.log(a[i]);
+	}
+</script>

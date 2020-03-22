@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>开关灯</title>
+		<script src="../js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<style type="text/css">
+		body{
+			background: darkgray;
+		}
+	</style>
+	<body>
+		<button id="btn1">开灯</button>
+		<button  id="btn2">关灯</button>
+	</body>
+</html>
+<script type="text/javascript">
+	$(function(){
+		$("#btn1").click(function(){
+			$("body").css("background-color","white");
+		})
+				$("#btn2").click(function(){
+			$("body").css("background-color","darkgray");
+		})
+	})
+</script>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+	</body>
+
+</html>
+<script type="text/javascript">
+	//预编译 单线程 解释型语言
+	
+	//重点 *********预编译发生在函数执行之前***************
+
+	//变量     声明提升
+	//函数声明整体提升
+	//---------****预编译步骤 start*****-------------
+	// 1. 创建AO对象
+	// 2. 找 形参和 变量声明,将变量和形参名作为AO属性名,值为undefined
+	// 3. 将实参值和形参统一
+	// 4. 在函数体里面找函数声明，值赋予函数体
+	//---------****预编译步骤*****end-------------
+
+	//---------****预编译步骤 案列*****-------------
+	// 1. 创建AO对象
+//	AO{
+//		a:undefined 1 function a(){} 123 123
+//		b:undefined  function(){}
+//		d:function d(){}
+//		
+//	}
+	// 2. 找 形参 和 变量声明 ,将变量和形参名作为AO属性名,值为undefined
+	// 3. 将实参值和形参统一
+	// 4. 在函数体里面找函数声明，值 赋予 函数体
+//	function fn(a) {
+//		console.log(a);//fn
+//		var a = 123;
+//		console.log(a)//123
+//		function a() {}
+//		console.log(a)//123
+//		var b = function() {}
+//		console.log(b)//fn
+//
+//		function d() {}
+//	}
+//	fn(1);
+	//---------****预编译步骤*****end-------------
+
+ 
+	//---------****预编译步骤 start*****-------------
+	// 1. 创建AO对象
+	
+	//先创建GO对象，之后在创建AO对象
+//	GO{分析过程
+//		test:undefined function test(){}
+//	}
+//	AO{
+//		test:undefined 1 function test(){}
+//	}
+//	console.log(test);//fn
+//	function test(test){
+//		console.log(test);//fn
+//		var test =234;
+//		console.log(test);//234
+//		function test(){}
+//	}
+//	test(1);
+//	var test =123;
+	
+	// 2. 找形参和变量声明,将变量和形参名作为AO属性名,值为undefined
+	// 3. 将实参值和形参统一
+	// 4. 在函数体里面找函数声明，值赋予函数体
+	
+	
+//	glo=100;
+//	function fn(){
+//		console.log(glo);//und
+//		glo=200;
+//		console.log(glo);//200
+//		var glo =300;
+//	}
+//	fn();
+//	var glo;
+//	Ao{
+//		glo:undefined,200
+//	}
+//	GO{
+//		glo:undefined  100
+//		fn:function fn(){}
+//	}
+//	暗示变量 先用最近的所以不是 100
+	
+	
+	
+	
+	function test(){
+		console.log(b);//un
+		if(a){
+			var b=100;
+		}
+		c=234;
+		console.log(c);//234
+	}
+	var a;
+	test();
+	a=10;
+	console.log(c);//234
+	
+//	Go{
+//		a:undefined 
+//		c:234
+//	}
+//	Ao{
+//		b:undefined 
+//	}
+	
+	//---------****预编译步骤*****end-------------
+
+
+	// 1. 创建AO对象
+	// 2. 找 形参 和 变量声明 ,将变量和形参名作为AO属性名,值为undefined
+	// 3. 将实参值和形参统一
+	// 4. 在函数体里面找函数声明，值 赋予 函数体
+//	function test(a,b){
+//		console.log(a);
+//		c=0;
+//		var c;
+//		b=2;
+//		console.log(b);
+//		function b(){};
+//		function d(){}
+//		console.log(b);
+//	}
+//	test(1);
+	//---------****预编译步骤*****end-------------
+
+	//var a;属于变量声明
+	//var b=123; === window.b=123;
+	//    b=123; === window.b=123; b=123,也叫暗示全局变量
+//	function win() {
+//		//*********重点*****
+//		//b归window所有,相当于 b=123(暗示全局变量)
+//		//a不归window所有
+//		var a = b = 123;
+//
+//	}
+//	//函数声明整体提升
+//	test();
+//
+//	function test() {
+//		console.log("a");
+//	}
+//	//变量 声明提升
+//	console.log(a);
+//	var a = 123;
+
+
+//
+//function a(){};
+//var a=123;
+//console.log(a);
+</script>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	//类数组 没有 数组的方法 .
+	//可以当数组用但是它不是数组
+//	function test(){
+//		console.log(arguments);
+//		arguments.push(alert);//会报错
+//	}
+//	test(1,2,3,4,63,3);
+	
+	var obj ={
+		"0":"a",
+		"4":"b",
+		"5":"c",
+		"1":"d",
+		length:4,
+		name:"abc",
+		age:123,
+		push:Array.prototype.push,
+		splice:Array.prototype.splice
+	}
+	obj.push("c");
+	obj.push("p");
+	console.log(obj)
+	//想用类数组 中数组的方法就要自定义数组方法
+	//特点:具备数组和对象的使用.
+	//属性要为索引(数字)属性，必须有length,最好加上push 才叫类数组 
+	//好处
+	//push(在数组最后一位加上)
+//	Array.prototype.push=function(target){
+//		obj[obj.length]=target;
+//	}
+</script>

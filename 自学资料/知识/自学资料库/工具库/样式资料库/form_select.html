@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>吉大正元UI前端框架V2.0</title>
+
+    <meta name="keywords" content="吉大正元UI前端框架V2.0">
+    <meta name="description" content="吉大正元UI前端框架V2.0">
+
+    <link rel="shortcut icon" href="favicon.ico"> <link href="css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+    <link href="css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+    <link href="css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/style.min862f.css?v=4.1.0" rel="stylesheet">
+    
+    <script src="js/jquery.min.js?v=2.1.4"></script>
+	<script type="text/javascript" src="js/jquery.ztree.core.js"></script>
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="row">
+          <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>特殊下拉框</h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="form_select.html#">
+                                <i class="fa fa-wrench"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-user">
+                                <li><a href="form_select.html#">选项1</a>
+                                </li>
+                                <li><a href="form_select.html#">选项2</a>
+                                </li>
+                            </ul>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <form method="get" class="form-horizontal">
+                            <div class="form-group">
+                            	<label class="col-sm-2 control-label">TreeSelect</label>
+                                <div class="col-sm-10">
+                                	<div class="input-group" id="menu_parent_name">
+                                        <input type="text" class="form-control">
+                                        <div class="input-group-btn">
+                                            <button class="btn btn-white dropdown-toggle" type="button">
+                                                <span class="caret"></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <a href="#" id="closed" class="treediv" style=" display:none;"><font>×</font></a>
+                                	<div id="treediv" class="col-sm-5 treediv">
+                                        
+<SCRIPT type="text/javascript">
+		var setting = {	};
+
+		var zNodes =[
+			{ name:"父节点1 - 展开", open:true,
+				children: [
+					{ name:"父节点11 - 折叠",
+						children: [
+							{ name:"叶子节点111"},
+							{ name:"叶子节点112"},
+							{ name:"叶子节点113"},
+							{ name:"叶子节点114"}
+						]},
+					{ name:"父节点12 - 折叠",
+						children: [
+							{ name:"叶子节点121"},
+							{ name:"叶子节点122"},
+							{ name:"叶子节点123"},
+							{ name:"叶子节点124"}
+						]},
+					{ name:"父节点13 - 没有子节点", isParent:true}
+				]},
+			{ name:"父节点2 - 折叠",
+				children: [
+					{ name:"父节点21 - 展开", open:true,
+						children: [
+							{ name:"叶子节点211"},
+							{ name:"叶子节点212"},
+							{ name:"叶子节点213"},
+							{ name:"叶子节点214"}
+						]},
+					{ name:"父节点22 - 折叠",
+						children: [
+							{ name:"叶子节点221"},
+							{ name:"叶子节点222"},
+							{ name:"叶子节点223"},
+							{ name:"叶子节点224"}
+						]},
+					{ name:"父节点23 - 折叠",
+						children: [
+							{ name:"叶子节点231"},
+							{ name:"叶子节点232"},
+							{ name:"叶子节点233"},
+							{ name:"叶子节点234"}
+						]}
+				]},
+			{ name:"父节点3 - 没有子节点", isParent:true}
+
+		];
+
+		$(document).ready(function(){
+			$.fn.zTree.init($("#treeDemo"), setting, zNodes);
+		});
+		
+</SCRIPT>
+
+                                            	<ul id="treeDemo" class="ztree" style=" height:auto;"></ul>
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+                            
+                            
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">GridSelect</label>
+                                <div class="col-sm-10">
+                                    <div class="input-group" id="tbxCategory" onclick="ShowOpenWin(this);">
+                                        <input type="text" class="form-control">
+                                        <div class="input-group-btn">
+                                            <button class="btn btn-white dropdown-toggle" type="button">
+                                                <span class="caret"></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <a href="#" id="closed2" class="treediv" style=" display:none;">×</a>
+                                    <iframe onlosecapture="HiddenAllFlag(event)" onblur="HiddenAllFlag(event)" src="form_sel.html" id="frmOpenWin"  frameborder="1"></iframe>
+                                    
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+	
+    <script src="js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="js/content.min.js?v=1.0.0"></script>
+    <script src="js/plugins/iCheck/icheck.min.js"></script>
+    <script>
+        $(document).ready(function(){$(".i-checks").iCheck({checkboxClass:"icheckbox_square-green",radioClass:"iradio_square-green",})});
+    </script>
+    <script type="text/javascript" src="js/tajs.js" charset="UTF-8"></script>
+
+
+<script type="text/javascript">
+//生成弹出层的代码
+<!-- 弹出层-->
+xOffset = 0;//向右偏移量
+yOffset = 35;//向下偏移量
+
+var toshow = "treediv";//要显示的层的id
+var target = "menu_parent_name";//目标控件----也就是想要点击后弹出树形菜单的那个控件id
+
+
+$("#"+target).click(function (){
+	$("#"+toshow)
+	.css("position", "absolute")
+	.css("left", $("#"+target).position().left+xOffset + "px")
+	.css("top", $("#"+target).position().top+yOffset +"px").show();
+});
+//关闭层
+/*$("#closed").click(function(){
+	$("#"+toshow).hide();
+});*/
+
+//判断鼠标在不在弹出层范围内
+ function   checkIn(id){
+	var yy = 20;   //偏移量
+	var str = "";
+	var   x=window.event.clientX;   
+	var   y=window.event.clientY;   
+	var   obj=$("#"+id)[0];
+	if(x>obj.offsetLeft&&x<(obj.offsetLeft+obj.clientWidth)&&y>(obj.offsetTop-yy)&&y<(obj.offsetTop+obj.clientHeight)){   
+		return true;
+	}else{   
+		return false;
+	}   
+  }   
+//点击body关闭弹出层
+/*	$(document).click(function(){
+		var is = checkIn("treediv");
+		if(!is){
+			$("#"+toshow).hide();
+		}
+	});*/
+<!-- 弹出层-->
+//生成弹出层的代码
+
+//点击菜单树给文本框赋值------------------菜单树里加此方法
+function setvalue(id,name){
+	$("#menu_parent_name").val(name);
+	$("#menu_parent").val(id);
+	$("#treediv").hide();
+}
+
+</script>
+
+<script  language="javascript">
+            function ShowOpenWin(objTag)
+				{
+					document.getElementById("frmOpenWin").style.visibility = "visible";
+					
+					var position = getPos(objTag);                    
+				}
+
+				function HiddenAllFlag(event){
+
+					event = event||window.event;
+
+					var obj = event.srcElement?event.srcElement : event.target
+					if(obj.id != "tbxCategory"){
+						document.getElementById("frmOpenWin").style.visibility = "hidden";
+					}
+				}
+				
+				function getPos(elm)
+				{
+					for(var zx=zy=0;elm!=null;zx+=elm.offsetLeft,zy+=elm.offsetTop,elm=elm.offsetParent); 
+					return {x:zx,y:zy}                
+				}
+
+        </script>
+<script>
+$("#menu_parent_name").click(function (){
+		$("#closed").show();		
+	})
+$("#closed").click(function(){
+	$("#"+toshow).hide();
+	$("#closed").hide();
+});
+
+
+$("#tbxCategory").click(function (){
+		$("#closed2").show();		
+	})
+$("#closed2").click(function(){
+	$("#frmOpenWin").attr('style','');
+	$("#closed2").hide();
+});
+</script>
+
+
+</body>
+</html>

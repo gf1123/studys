@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	//创建数组
+	//1.使用Array对象创建，下标赋值
+	var arr = new Array();//实例化一个数组对象
+	  arr["a"]="你好";
+	  arr[0]="你好a ";
+	  arr[1]="我是people";
+	  console.log(arr);
+	 //2. 使用Array对象创建，直接赋值
+	 var arr = new Array(1,2,3,4,);
+	 console.log(arr);
+	 //3 简化的写法 字面量
+	 var arr = [1,2,3,4,5]; 
+	 console.log(arr);
+	 
+	 
+	 //数组元素的操作(增删改查);
+	   //查询   用下标查询，如果下表不存在，返回的是undefined
+	   var arr= [2,3,4,5];
+	   var a =arr[1];
+	   console.log(a);
+	  //增加元素和修改元素(下表存在就是修改，不存在就是增加)
+	   arr[3]=10//修改
+	   arr[4]=11//增加
+	   console.log(arr);
+	   console.log("-------");
+	   //读取所有元素       	读取数组必须 遍历数组
+	   for(var i=0;i<arr.length;i++){
+	   	console.log(arr[i]);//i代表下标
+	   }
+	   
+</script>

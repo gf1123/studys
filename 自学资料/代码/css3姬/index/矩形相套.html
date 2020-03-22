@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.r{width: 100px;height: 100px;background: red;}
+			.b{width: 100px;height: 100px;background: black; padding: 10px;}
+			.w{width: 120px;height: 120px;background: white; padding:10px ;}
+			.o{width: 140px;height: 140px;background: orange;padding: 10px;}
+			.q{width: 160px;height: 160px;background: green;padding: 10px;}
+
+		</style>
+	</head>
+	<body>
+		<!--原理:从里面子元素开始 让每一级都覆盖上它的儿子之后在设置一个padding-->
+		<div class="q">
+			<div class="o">
+				<div class="w">
+					<div class="b">
+						<div class="r">
+							<div class="y"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

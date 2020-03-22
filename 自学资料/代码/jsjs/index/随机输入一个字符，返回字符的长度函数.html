@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+//随机输入一个字符，返回字符的长度函数.中文返回2个英文返回1个	
+	function retByteslen(strings){
+		var count=0;
+		for(var i=0;i<strings.length;i++){
+			if(strings.charCodeAt(i)<=255){
+				count++;
+			}else if(strings.charCodeAt(i)>255){
+				count+=2;
+			}
+		}
+		console.log(count)
+	}
+	
+</script>

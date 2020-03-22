@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		
+		.nav {
+			width: 730px;
+			height: 454px;
+			overflow: hidden;
+			margin-left: 200px;
+			border: 1px solid black;
+		}
+		
+		.nav ul {
+			width: 3650px;
+			animation: moving 10s  infinite 1s;
+			animation-timing-function: steps(5,end);
+		}
+		
+		.nav li {
+			float: left;
+		}
+		
+		.nav li img {
+			display: block;
+			height: 100%;
+		}
+		
+		@keyframes moving {
+			to{
+				transform: translateX(-3650px);
+			}
+			/*25% {
+				margin-left: -730px;
+			}
+			50% {
+				margin-left: -1460px;
+			}
+			75% {
+				margin-left: -2190px;
+			}
+			100% {
+				margin-left: -2920px;
+			}*/
+		}
+		
+		.nav:hover ul {
+			animation-play-state: paused;
+		}
+	</style>
+
+	<body>
+		<nav class="nav">
+			<ul>
+				<li><img src="../img/jd1.jpg" alt="" /></li>
+				<li><img src="../img/jd2.jpg" alt="" /></li>
+				<li><img src="../img/jd3.jpg" alt="" /></li>
+				<li><img src="../img/jd4.jpg" alt="" /></li>
+				<li><img src="../img/jd5.jpg" alt="" /></li>
+			</ul>
+		</nav>
+	</body>
+
+</html>

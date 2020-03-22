@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<style type="text/css">
+		*{
+			margin: 0 auto;
+			padding: 0;
+			text-align: center;
+		}
+		.checkbox{
+			text-align: center;
+		}
+	</style>
+	<body>全选<input type="checkbox" name="" id="all" value="" /><br />
+		<div class="checkbox">
+		<input type="checkbox" name="" id="" value="" /><br />
+		<input type="checkbox" name="" id="" value="" /><br />
+		<input type="checkbox" name="" id="" value="" /><br />
+		<input type="checkbox" name="" id="" value="" /><br />
+		<input type="checkbox" name="" id="" value="" /><br />			
+		</div>
+
+	</body>
+</html>
+<script type="text/javascript">
+		$("#all").click(function(){
+		var $allCheck=$(this).prop("checked");
+		//全选按钮为 true 所有按钮都为 true  相反为false也一样
+		$(".checkbox input").prop("checked",$allCheck);
+		})
+
+
+		$(".checkbox input").click(function(){
+		//获取全选兄弟所有chebox 的个数
+		var $allsiblings = $(".checkbox input").length;
+		//获取全选兄弟所有checked元素的个数
+		var $xzsiblings = $(".checkbox input:checked").length;
+//		console.log($allsiblings+":"+$xzsiblings)
+//判断是否相等 
+//		if($allsiblings == $xzsiblings){
+//			$("#all").prop("checked",true);
+//		}else{
+//			$("#all").prop("checked",false);
+//		}
+			
+			//可以简化为
+			$("#all").prop("checked",$allsiblings == $xzsiblings);
+		})
+
+
+</script>

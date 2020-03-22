@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+//	// person.name === person['name']
+////	for in 循环 针对 对象 遍历属性
+	 var person={
+	 	name:1234,
+	 	age:34,
+	 	num:44,
+	 	__proto__:{
+	 		lsatName:"高频"//原型
+	 	}
+	 }
+	 Object.prototype.ab="ab";//原型
+	 for(var key in person){//key 代表 随意变量, person带表对象
+//	 	console.log(person[key]);//输出的是所有属性结果
+
+	 	if(person.hasOwnProperty(key)){//为了过滤自己设置的的原型属性,去掉判断你在输出就懂了
+	 		
+	 	console.log(person[key]);	 		
+	 	}
+	 }
+	 
+//	 function foo(x){
+//	 	console.log(arguments);//打印实参以数组形式展示.
+//	 
+//	 	console.log(arguments.length);
+//	 	console.log(foo);
+//	 	
+//	 	console.log(foo.length);
+//	 	return x;
+//	 }
+//	 foo(1,2,3,4);
+</script>

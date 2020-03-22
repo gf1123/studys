@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	//1 . 给一个连字符串例如：get-element-by-id转化成驼峰形式。
+	var str = "get-element-by-id";
+	var reg = /-(\w)/g;
+	var rst = str.replace(reg,function(a,b){
+		return b.toUpperCase();
+	})
+	console.log(rst);
+	//2 . 匹配二进制数字
+	var str1 ="1010101111";
+	var reg1 = /^[01]+$/g;
+	console.log(str1.match(reg1));
+	//3 . 非零的十进制数字 (有至少一位数字, 但是不能以0开头)
+	var reg2 =/^[1-9][0-9]?$/g;
+	var str2 ="88";
+	console.log(str2.match(reg2));
+	//4 . 匹配一年中的12个月
+	var str3 ="1";
+	var reg3  = /^(0?[1-9]|1[0-2])$/g;
+	console.log(str3.match(reg3));
+	//5 . 匹配qq号最长为13为,最少为2位
+	var str4 ="123457890123";
+	var reg4 =/^[1-9][0-9]{1,12}$/g;
+	console.log(str4.match(reg4));
+	//6 . 匹配常见的固定电话号码
+	var str5= "000-12344562";
+	var reg5= /\(?0\d{2}[\) -]?\d{8}/g;
+	console.log(str5.match(reg5));
+	//7 . 匹配用尖括号括起来的以a开头的字符串
+	var str6="<a herf='www.baidu.com'>";
+	var reg6=/<a[^>]+/g
+	console.log(str6.match(reg6));
+	//10000000000  ---> 100,000,000,000
+	var str7 ="100000000000";
+	var reg7 = /(?=((\B\d{3})+$))/g;
+	var rst =str7.replace(reg7,",")
+	console.log(rst);
+	
+	
+	
+	
+
+// 规则：字母和数字的混合
+
+// 正则如： /^(([a-z]+)([0-9]+)|([0-9]+([a-z]+)))[a-z0-9]*$/i
+
+// 分析：^([a-z]+)([0-9]+) 含义是 以1个或多个字母开头 后面紧跟1个或者多个数字
+
+//      ^([0-9]+([a-z]+)) 或者是以1个或者多个数字开头 后面紧跟1个或者多个字母
+
+//   [a-z0-9]*$ 后面还可以紧跟数字或者字母0个或者多个
+var reg = /^(([a-z]+)([0-9]+)|([0-9]+([a-z]+)))[a-z0-9]*$/i;
+
+var str1 = "aaaa";
+
+var str2 = "aa22";
+
+var str3 = "111sddtr";
+
+var str4 = "问问啊啊啊ass";
+
+var str5 = "1111ssdsd111sasddas";
+
+console.log(reg.test(str1));  //false
+
+console.log(reg.test(str2));  // true
+
+console.log(reg.test(str3));  // true
+
+console.log(reg.test(str4));  // false
+
+console.log(reg.test(str5));  // true
+</script>

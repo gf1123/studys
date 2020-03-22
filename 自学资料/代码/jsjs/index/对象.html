@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	//对象的创建方法
+	//1. var  obj={}
+	//2.构造函数
+//		1)系统自带的构造函数  Object()  var obj =new Object();系统自带的独一无二的只能有一个，剩余都属于双胞胎
+//		2)自定义
+	//1	
+	var obj =new Object();
+	//添加属性
+	obj.name="gao";obj.sex="25";
+	//2
+	var obj={
+		name:"liu",
+		sex:"44"
+	}
+	//自定义function Person(){}  var person1 =new Person();
+	//系统自带 new Object(); Array(); Number(); Boolean(); String(); Date();
+	//构造函数 最好是大驼峰命名
+	
+	
+	
+	
+	
+	var deng={
+		name:"laodneg",
+		sex:"male",
+		gf:"xiaoliu",
+		wife:"",
+		divorce:function(){
+			delete this.wife;
+			this.gf=this.preparWife;
+		},
+		getMarried:function(){
+			this.wife=this.gf;
+		},
+		changePrepareWife:function(someone){
+			this.prepareWife=someone;
+		}
+		
+	}
+</script>

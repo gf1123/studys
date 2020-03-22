@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	</head>
+
+	<body>
+		<input type="text" name="name" id="name" placeholder="name" /><br />
+		<!--<input type="password" name="" id="pwd" placeholder="pwd" /><br />-->
+		<input type="button" name="btns" id="btn" value="验证" />
+
+	</body>
+
+</html>
+<script type="text/javascript">
+	var pwd = document.getElementById("pwd");
+	var btn = document.getElementById("btn");
+
+	btn.onclick = function() {
+		var name = document.getElementById("name").value;
+
+		var exec = /^[a-zA-Z][\w_]{4,16}$/;
+		if(exec.test(name)) {
+			swal('干得漂亮！', '验证成功！', 'success');
+		} else {
+			swal('很遗憾！', '验证失败！', 'error');
+		}
+	}
+</script>

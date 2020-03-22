@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>吉大正元UI前端框架V2.0</title>
+
+    <meta name="keywords" content="吉大正元UI前端框架V2.0">
+    <meta name="description" content="吉大正元UI前端框架V2.0">
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/style.min862f.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+        <script src="js/respond.min.js"></script>
+	<![endif]-->
+
+    </head>
+
+<body class="login3-bg">
+	<div class="login2-content animated fadeInDown">
+    	<div class="login2-title">
+    		<h1><img src="img/logo.png" alt=""></h1>
+        </div>
+        <form class="login2-form" role="form" action=""  autocomplete="off">
+            <div class="form-group">
+            	<input type="email" class="form-control" placeholder="请输入用户名" />
+                <span class="form-control1"></span>
+            </div>
+            <div class="form-group">
+            	<input type="password" class="form-control" placeholder="请输入密码" />
+                <span class="form-control2"></span>
+            </div>
+            <div class="form-group">
+            	<input type="text" class="form-control" placeholder="请输入验证码" />
+                <span class="form-control3"></span>
+                <div class="login2-yzm"><a href="#"><img src="img/login2-yzmbg.png" ></a></div>
+            </div>
+            <div class="form-group">
+            	<input type="text" class="form-control" placeholder="请输入短信验证码" />
+                <span class="form-control4"></span>
+                <div class="login2-yzm2"><a href="#">发送验证码</a></div>
+            </div>
+            <div class="dl3-p"><p>用户名或密码错误</p></div>
+            <button type="submit" class="btn btn-primary block full-width m-b">登 录</button>
+            <p class="text-muted text-center">
+            	<a href="#">忘了密码？</a> | <a href="#">立即注册</a>
+            </p>
+        </form>
+    </div>
+    <!--<div id="right-nav">
+        <div class="w">
+            <ul id="right-nav-list1">
+                <li><a href="#"><img src="img/5_24.png"></a><div>人员信息</div></li>
+                <li><a href="#"><img src="img/5_06.png"></a><div>我的关注</div></li>
+                <li><a href="#"><img src="img/5_20.png"></a><div>我的足迹</div></li>
+                <li><a href="#"><img src="img/5_11.png"></a><div>我的消息</div></li>
+            </ul>
+        </div>
+    </div>-->
+	<canvas id="space"></canvas>
+
+
+<script>
+//based on an Example by @curran
+window.requestAnimFrame = (function(){   return  window.requestAnimationFrame})();
+var canvas = document.getElementById("space");
+var c = canvas.getContext("2d");
+
+var numStars = 1900;
+var radius = '0.'+Math.floor(Math.random() * 9) + 1  ;
+var focalLength = canvas.width *2;
+var warp = 0;
+var centerX, centerY;
+
+var stars = [], star;
+var i;
+
+var animate = true;
+
+initializeStars();
+
+function executeFrame(){
+  
+  if(animate)
+    requestAnimFrame(executeFrame);
+  moveStars();
+  drawStars();
+}
+
+function initializeStars(){
+  centerX = canvas.width / 2;
+  centerY = canvas.height / 2;
+  
+  stars = [];
+  for(i = 0; i < numStars; i++){
+    star = {
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      z: Math.random() * canvas.width,
+      o: '0.'+Math.floor(Math.random() * 99) + 1
+    };
+    stars.push(star);
+  }
+}
+
+function moveStars(){
+  for(i = 0; i < numStars; i++){
+    star = stars[i];
+    star.z--;
+    
+    if(star.z <= 0){
+      star.z = canvas.width;
+    }
+  }
+}
+
+function drawStars(){
+  var pixelX, pixelY, pixelRadius;
+  
+  // Resize to the screen
+  if(canvas.width != window.innerWidth || canvas.width != window.innerWidth){
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    initializeStars();
+  }
+  if(warp==0)
+  {c.fillStyle = "rgba(0,30,60,1)";
+  c.fillRect(0,0, canvas.width, canvas.height);}
+  c.fillStyle = "rgba(209, 255, 255, "+radius+")";
+  for(i = 0; i < numStars; i++){
+    star = stars[i];
+    
+    pixelX = (star.x - centerX) * (focalLength / star.z);
+    pixelX += centerX;
+    pixelY = (star.y - centerY) * (focalLength / star.z);
+    pixelY += centerY;
+    pixelRadius = 1 * (focalLength / star.z);
+    
+    c.fillRect(pixelX, pixelY, pixelRadius, pixelRadius);
+    c.fillStyle = "rgba(209, 255, 255, "+star.o+")";
+    //c.fill();
+  }
+}
+
+executeFrame();
+
+</script>
+<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="js/jquery.placeholder.min.js"></script>
+</body>
+
+</html>

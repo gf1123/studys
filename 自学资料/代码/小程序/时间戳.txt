@@ -1,0 +1,43 @@
+// 时间戳  小程序 时间戳转化为时间
+function dateFormat(time, format) {
+  if (!format) {
+    format = "yyyy-MM-dd hh-mm-ss";
+  }
+  // 时间戳转化为毫秒
+  time = parseInt(time * 1000);
+  //转化为时间对象
+  var relDate = getDate(time);
+  //添加后缀 0
+  function timeFormat(num) {
+    return num < 10 ? '0' + num : num;
+  }
+  var date = [
+    ['M+', timeFormat(relDate.getMonth() + 1)],
+    ["d+", timeFormat(relDate.getDate())],
+    ["h+", timeFormat(relDate.getHours())],
+    ["m+", timeFormat(relDate.getMinutes())],
+    ["s+", timeFormat(relDate.getSeconds())],
+    ["q+", Math.floor((relDate.getMonth() + 3) / 3)],
+    ["S+", relDate.getMilliseconds()],
+  ];
+
+  var regYear = getRegExp("(y+)", "i");
+  var reg1 = regYear.exec(format);
+  if (reg1) {
+    format = format.replace(reg1[1], (relDate.getFullYear() + '').substring(4 - reg1[1].length));
+  }
+  for (var i = 0; i < date.length; i++) {
+    var k = date[i][0];
+    var v = date[i][1];
+
+    var reg2 = getRegExp("(" + k + ")").exec(format);
+    if (reg2) {
+      format = format.replace(reg2[1], reg2[1].length == 1 ? v : ("00" + v).substring(("" + v).length));
+    }
+  }
+  return format;
+}
+module.exports = {
+  priceFormat: priceFormat,
+  dateFormat: dateFormat
+}

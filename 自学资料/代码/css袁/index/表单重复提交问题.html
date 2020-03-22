@@ -1,0 +1,46 @@
+<html>
+	<head>
+		<title></title>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		
+<button type="button" data-val="0">00000</button>
+
+<button type="button" data-val="1">11111</button>
+
+<button type="button" data-val="2">22222</button>
+
+	</body>
+</html>
+<script type="text/javascript">
+//可以点击
+	var isClick = true;
+console.log(isClick);
+	$("button").on("click",function(){
+
+		if(isClick) {
+//不能点击
+			isClick = false;
+
+			//事件
+
+			console.log($(this).attr("data-val"));
+
+			//定时器
+
+			setTimeout(function() {
+				//1秒后可以点击
+				isClick = true;
+				console.log(isClick)
+
+			}, 1000);//一秒内不能重复点击
+
+			console.log(isClick);
+		}
+
+	});
+
+
+
+</script>

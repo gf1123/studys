@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	//作用1  终止程序
+	function sum(a,b){
+		console.log(a)
+		return;
+		console.log(b)
+	}
+	sum(1,2);
+	var a=5
+	//作用2 返回 隐藏的是 又终止程序又返回值
+	function myNumber(target){
+		a+=target;
+		return a;//返回数字
+	}
+	console.log(myNumber(12));
+	
+	
+</script>

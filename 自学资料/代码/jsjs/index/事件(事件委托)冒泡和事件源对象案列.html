@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		li{background: red;margin: 4px;}
+	</style>
+	<body>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+			<li>10</li>
+		</ul>
+	</body>
+</html>
+<script type="text/javascript">
+//	var ul =document.getElementsByTagName("ul")[0]
+	document.onclick=function(){
+		console.log("a");		
+	}
+	var uls =document.getElementsByTagName("ul")[0];
+	uls.onclick = function(e){
+		e.stopPropagation();
+		//
+		var event = e|| window.event;
+		//事件源对象
+		var target = event.target||event.srcElement;
+		//nodeName 属性可依据节点的类型返回其名称，返回的元素名称是大写
+		//toLowerCase() 转换为小写
+		if(target.nodeName.toLowerCase()=="li"){
+		console.log(target.innerHTML);			
+		}
+	}
+	
+
+//	uls.onclick = function(e){
+//		e.stopPropagation();
+//		console.log("event");
+//		
+//	}
+</script>

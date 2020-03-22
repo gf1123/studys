@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	// 对象的创建方法
+	// 1.var obj={}     对象字面量/对象直接量
+	// 2.构造函数
+	//	1)系统自带的构造函数  new Object()
+	//  2)自定义 需要 大驼峰命名规范
+	//构造函数内部原理
+//					1:在函数体最前面隐士的加上this={}
+//					2:执行this.xxx=xxx;
+//					3:隐士的返回 retutn this.
+	var obj = {
+		name: "丽丽",
+		age: "12",
+		fruit: "苹果",
+		like: function(a) {
+			return this.fruit = a;
+		}
+	}
+	console.log(obj.name);
+	console.log(obj.age);
+	console.log(obj.like("柿子"));
+
+	//构造函数
+	var obj1 = new Object();
+	obj1.name = "xiao";
+	obj1.age = "22";
+	obj1.like = "fu";
+	console.log(obj1.age);
+
+	//自定义
+	function Car() {
+		this.aa = 100;
+		this.run = function() {
+			this.aa++;
+		}
+	}
+	//自定义 需要 大驼峰命名规范
+	//创建了2个对象 公用一个 但是互相不干扰
+	var car = new Car();
+	var car1 = new Car();
+	
+	//自定义传参
+	function Studnent(name,age,like){
+		this.name =name;
+		this.age =age;
+		this.like =like;
+		this.eq="100%";
+	}
+	var student = new Studnent("gao","22","play");
+	
+</script>

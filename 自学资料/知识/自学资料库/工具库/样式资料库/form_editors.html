@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>吉大正元UI前端框架V2.0  - 富文本编辑器</title>
+    <meta name="keywords" content="吉大正元UI前端框架V2.0"><meta name="description" content="吉大正元UI前端框架V2.0">
+
+    <link rel="shortcut icon" href="favicon.ico"> <link href="css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+    <link href="css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/plugins/summernote/summernote.css" rel="stylesheet">
+    <link href="css/plugins/summernote/summernote-bs3.css" rel="stylesheet">
+    <link href="css/style.min862f.css?v=4.1.0" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content">
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>Wyswig Summernote 富文本编辑器</h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="form_editors.html#">
+                                <i class="fa fa-wrench"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-user">
+                                <li><a href="form_editors.html#">选项1</a>
+                                </li>
+                                <li><a href="form_editors.html#">选项2</a>
+                                </li>
+                            </ul>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content no-padding">
+
+                        <div class="summernote">
+                            <h2>公司资质更新通知</h2>
+                            <p>更新资质名称
+ 涉密信息系统产品检测证书
+ 
+资质颁布单位
+ 国家保密科技测评中心
+ 
+发证时间
+ 2016/09/14
+ 
+获取途径
+ 证书原件：长春公司前台
+ 
+证书扫描件：OA-->我的知识-->文档目录--> 公司产品资料--> 电子签章系统-->产品资质;
+ 
+受影响的部门及人员
+ 技术中心、营销中心、产品经理
+ 
+
+</p>
+                           
+                            <p>
+                                <b>更新时间：</b><span class="label label-warning">2017/02/24</span>
+                            </p>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+
+                    <div class="ibox-content">
+
+                        <h2>
+                                Summernote
+                            </h2>
+                        <p>
+                            Summernote是一个简单的基于Bootstrap的WYSIWYG富文本编辑器
+                        </p>
+
+                        <div class="alert alert-warning">
+                            官方文档请参考：
+                            <a href="http://hackerwins.github.io/summernote/features.html#api">http://hackerwins.github.io/summernote/features.html#api</a>
+                            <!--<div class="summernote">summernote 2</div>-->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>编辑/保存为html代码示例</h5>
+                        <button id="edit" class="btn btn-primary btn-xs m-l-sm" onclick="edit()" type="button">编辑</button>
+                        <button id="save" class="btn btn-primary  btn-xs" onclick="save()" type="button">保存</button>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="form_editors.html#">
+                                <i class="fa fa-wrench"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-user">
+                                <li><a href="form_editors.html#">选项1</a>
+                                </li>
+                                <li><a href="form_editors.html#">选项2</a>
+                                </li>
+                            </ul>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content" id="eg">
+
+                        <div class="click2edit wrapper">
+                            <h3>公司资质更新通知</h3>
+                            <p>更新资质名称
+ 涉密信息系统产品检测证书
+ 
+资质颁布单位
+ 国家保密科技测评中心
+ 
+发证时间
+ 2016/09/14
+ 
+获取途径
+ 证书原件：长春公司前台
+ 
+证书扫描件：OA-->我的知识-->文档目录--> 公司产品资料--> 电子签章系统-->产品资质;
+ 
+受影响的部门及人员
+ 技术中心、营销中心、产品经理 </p>
+                            <p> <b>更新时间：</b><span class="label label-warning">2017/02/24</span> </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery.min.js?v=2.1.4"></script>
+    <script src="js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="js/content.min.js?v=1.0.0"></script>
+    <script src="js/plugins/summernote/summernote.min.js"></script>
+    <script src="js/plugins/summernote/summernote-zh-CN.js"></script>
+    <script>
+        $(document).ready(function(){$(".summernote").summernote({lang:"zh-CN"})});var edit=function(){$("#eg").addClass("no-padding");$(".click2edit").summernote({lang:"zh-CN",focus:true})};var save=function(){$("#eg").removeClass("no-padding");var aHTML=$(".click2edit").code();$(".click2edit").destroy()};
+    </script>
+    <script type="text/javascript" src="js/tajs.js" charset="UTF-8"></script>
+</body>
+</html>

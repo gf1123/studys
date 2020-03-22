@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		.content {
+			width: 200px;
+			height: 200px;
+			border: 1px solid red;
+			display: none;
+		}
+		
+		.active {
+			background: yellow;
+		}
+	</style>
+
+	<body>
+		<button class="active">选项卡1</button>
+		<button>选项卡2</button>
+		<button>选项卡3</button>
+		<div class="content" style="display: block;">11</div>
+		<div class="content">222</div>
+		<div class="content">333</div>
+	</body>
+
+</html>
+<script type="text/javascript">
+	var btn = document.getElementsByTagName("button");
+	var div = document.getElementsByClassName("content");
+	for(var i = 0; i < btn.length; i++) {
+		(function(n){//解决闭包
+		btn[n].onclick=function(){
+			//排他思想
+			for(var j=0;j<btn.length;j++){
+				btn[j].className="";
+				div[j].style.display="none";
+			}
+			this.className="active";
+			div[n].style.display="block";
+		}			
+		}(i))
+
+	}
+</script>

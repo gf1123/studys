@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+	</head>
+	<style type="text/css">
+		* {
+			margin: 0 auto;
+			padding: 0;
+			color: #555555;
+		}
+		
+		a {
+			text-decoration: none;
+		}
+		
+		.clearfix::before,
+		.clearfix::after {
+			content: "";
+			display: block;
+			height: 0;
+			line-height: 0;
+			visibility: hidden;
+			clear: both;
+		}
+		
+		ul {
+			list-style: none;
+		}
+		
+		.nav {
+			width: 100%;
+		}
+		
+		.nav ul {
+			background: lightblue;
+		}
+		
+		.nav ul li {
+			display: inline-block;
+		}
+		
+		.main .left {
+			width: 60%;
+			float: left;
+			text-align: center;
+		}
+		
+		.main .right {
+			float: left;
+			text-align: center;
+		}
+		
+		@media only screen and (max-width:768px) {
+			.main .left {
+				width: 100%;
+			}
+			.main .right {
+				width: 100%;
+			}
+			.nav ul li {
+				display: block;
+				padding: 10px;
+			}
+		}
+	</style>
+
+	<body>
+		<header>
+			<nav class="nav">
+				<ul class="">
+					<li>
+						<a href="">博客</a>
+					</li>
+					<li>
+						<a href="">博客</a>
+					</li>
+					<li>
+						<a href="">博客</a>
+					</li>
+					<li>
+						<a href="">博客</a>
+					</li>
+					<li>
+						<a href="">博客</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<section class="main clearfix">
+			<aside class="left">
+				<ul>
+					<li>
+						<a href="">Window innerWidth 和 innerHeight 属性 | 菜鸟教程</a>
+					</li>
+					<li>
+						<a href="">Window innerWidth 和 innerHeight 属性 | 菜鸟教程</a>
+					</li>
+					<li>
+						<a href="">Window innerWidth 和 innerHeight 属性 | 菜鸟教程</a>
+					</li>
+					<li>
+						<a href="">Window innerWidth 和 innerHeight 属性 | 菜鸟教程</a>
+					</li>
+					<li>
+						<a href="">Window innerWidth 和 innerHeight 属性 | 菜鸟教程</a>
+					</li>
+				</ul>
+			</aside>
+			<div class="center"></div>
+			<aside class="right">
+				<ul>
+					<li>
+						<a href="">Window innerWidth 和 innerHeight 属性 | 菜鸟教程</a>
+					</li>
+					<li>
+						<a href="">Window innerWidth 和 innerHeight 属性 | 菜鸟教程</a>
+					</li>
+					<li>
+						<a href="">Window innerWidth 和 innerHeight 属性 | 菜鸟教程</a>
+					</li>
+					<li>
+						<a href="">Window innerWidth 和 innerHeight 属性 | 菜鸟教程</a>
+					</li>
+					<li>
+						<a href="">Window innerWidth 和 innerHeight 属性 | 菜鸟教程</a>
+					</li>
+				</ul>
+			</aside>
+		</section>
+		<footer></footer>
+	</body>
+
+</html>

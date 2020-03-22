@@ -1,0 +1,19 @@
+e f    e里面的所有f元素
+e>f    e里面的子元素f
+e+f    e的相邻兄弟元素f
+e~f    e的所有 兄弟元素
+
+
+e (必须带有空格):root 匹配元素在文档的根元素
+e :first-child   匹配父元素的第一个子元素e
+e :last-child    匹配元素的最后一个子元素e
+
+e :only-child    匹配父元素仅有的一个子元素e(找的是第一个孙子)
+e :nth-child(n)  匹配父元素的第n个子元素e
+e :nth-last-child(n)   匹配父元素的倒数第n个子元素e
+e :first-of-type    匹配同类型中的第一个同级兄弟元素e
+e :last-of-type   匹配同类型中的最后一个同级别兄弟元素e
+e :only-of-type   匹配同类型中的唯一的一个同级兄弟元素e
+e :nth-of-type(n)  匹配同类型中的第n个溶剂别兄弟元素e
+e :nth-last-of-type(n)  匹配同类型中的倒数第n个同级别兄弟元素e
+e :empty  匹配没有任何子元素(包括tet节点)的元素e

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<img src="../img/2.jpg"/>
+		
+	</body>
+</html>
+<script type="text/javascript">
+	//1获取父节点元素 .parentNode :获取上一级,每次加.parentNode都会往上一级
+	var div =document.getElementById("div1");
+	console.log(div.parentNode);
+	//2获取兄弟节点
+	//获取下边兄弟的节点
+	//	nextSibling:认为换行也是兄弟节点:ie支持,但是谷歌和火狐存在Bug
+	//	nextElementSibling:火狐或者谷歌支持,除ie以外的支持,ie高版本也在支持
+	console.log(div.nextSibling);
+	console.log(div.nextElementSibling);
+	//兼容性写法  2中方法
+	var nextDiv = div.nextElementSibling?div.nextElementSibling:div.nextSibling;
+	var nextDiv = div.nextElementSibling || div.nextSibling;
+	//获取上边兄弟的节点
+	//	console.log(div.previousSibling)认为换行也是兄弟节点:ie支持,但是谷歌和火狐存在Bug
+	//	console.log(div.previousElementSibling)火狐或者谷歌支持,除ie以外的支持,ie高版本也在支持
+	//兼容性写法  2中方法
+	var nextDiv = div.previousElementSibling?div.previousElementSibling:div.previousSibling;
+	var nextDiv = div.previousElementSibling || div.previousSibling;
+
+	//获取子节点
+	//第一个子节点
+	console.log(div.firstChild)//这认为内容,换行也是子节点
+	console.log(div.firstElementChild)//只有标签是子节点，ie不支持
+	//获取最后一个子元素
+	console.log(div.lastChild);//这认为内容,换行也是子节点
+	console.log(div.lastElementChild);//只有标签是子节点，ie不支持
+	
+	//获取全部子节点
+	console.log(div.childNodes);//文本，属性，标签都是子节点
+	console.log(div.children);//标签属于子节点
+	
+	
+
+	
+</script>

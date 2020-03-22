@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../../jquery/js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<input type="text" name="" id="aa" value="" />
+		<button>点击</button>
+	</body>
+</html>
+<script type="text/javascript">
+	
+$("button").on("click",function(){
+	var aa =$("#aa").val();
+	if(aa!=="是" && aa!=="否"){
+		alert("真确")
+	}else{
+		console.log("年后")
+	}
+})
+</script>

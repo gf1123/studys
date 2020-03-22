@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../../jsjs/index/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<select name="select" id="one">
+			<option value="">请选择</option>
+			<option value="0">浙江</option>
+			<option value="1">河北</option>
+			<option value="2">湖北</option>
+			<option value="3">山西</option>
+			<option value="4">江苏</option>
+			<option value="5">吉林</option>
+		</select>省
+		<select name="select" id="city">
+			<option value="0">选择市</option>
+		</select>市
+	</body>
+</html>
+<script type="text/javascript">
+			$(function(){
+				//二维数组
+				var citys=[
+					["杭州","绍兴","温州","义乌"],
+					["石家庄","邯郸","廊坊","保定","张家口"],
+					["武汉","武汉","武汉","武汉","武汉"],
+					["太原","太原","太原","太原","太原"],
+					["南京","南京","南京","南京","南京"],
+					["吉林","长春","四平","沈阳"]
+				];
+				$("#one").change(function(){
+					//每次选择清空市区
+					$("#city")[0].options.length=1;
+					//每个省的值 0 1 2 3 4 5
+					var val=this.value;
+					//遍历第一层数组
+					$.each(citys,function(index,value){
+						//判断第一层数组下标是否和值相等
+						//value=["杭州","绍兴","温州","义乌"]......
+						if(val==index){
+							//遍历第二层下标
+							$(value).each(function(indexs,values){
+								//values=里面的每一个元素
+								$("#city").append("<option>"+values+"</option>");
+							})
+						}
+					})
+					
+				})
+			})
+</script>

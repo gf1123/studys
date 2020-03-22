@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		.s{
+			width: 626px;
+			height: 300px;
+			border: 1px solid blue;
+			position: absolute;
+			left: 0;
+		}
+		.wrapper {
+			width: 100px;
+			height: 100px;
+			background: red;
+			position: absolute;
+			left: 0;
+		}
+	</style>
+
+	<body><div class="s"><div class="wrapper"></div></div>
+	
+	</body>
+
+</html>
+<script type="text/javascript">
+//	function getStyle(elem, prop) {
+//		if(window.getComputedStyle) {
+//			return window.getComputedStyle(elem, null)[prop];
+//		} else {
+//			return elem.currentStyle[prop]
+//		}
+//	}
+
+	var div = document.getElementsByClassName("wrapper")[0];
+//	var counts = 0;
+//	div.onclick = function() {
+//		counts++;
+//		if(counts % 2 == 0) {
+//			this.style.backgroundColor = "green";
+//		} else {
+//			this.style.backgroundColor = "blue";
+//		}
+//	}
+var speed=1;
+	var timer = setInterval(function() {
+//		speed+=speed/20;
+//speed=speed-speed/20; 
+speed +=speed/20;
+//1+0.3 ,1+0.3+0.3,1+0.3+0.3+0.3;
+		div.style.left = parseInt(getComputedStyle(div, null)["left"])  + speed + "px";
+		if(parseInt(div.style.left) >=500) {
+		
+			clearInterval(timer);
+				div.style.left="0";
+		}
+	}, 200)
+	
+	
+</script>

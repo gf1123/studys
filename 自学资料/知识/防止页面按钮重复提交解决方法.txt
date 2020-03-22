@@ -1,0 +1,11 @@
+1111111111111111111111111111111
+function commitForm(){
+$('#button').attr('disabled', true);
+$.ajax({
+type:'',
+url:'',
+success: function(){
+$('#button').attr('disabled', false);
+}});
+}
+222222222222222222222222222222222222

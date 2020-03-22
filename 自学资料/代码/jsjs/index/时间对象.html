@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		div{
+			width: 200px;
+			height: 200px;
+			border: 1px solid red;
+		}
+	</style>
+	<body>
+		<div id="times"></div>
+	</body>
+</html>
+<script type="text/javascript">
+	
+	
+	setInterval(clock,1000);
+	function clock(){
+		var date =new Date();
+		var year=date.getFullYear();//年
+		var month=date.getMonth()+1;//月
+		var day=date.getDate();//日
+		var hour=date.getHours();//时
+		var minute=date.getMinutes();//分
+		minute=minutes(minute);
+		var second =date.getSeconds();//秒
+		second =handle(second);//给秒加上前缀 0.   10:05
+		//拼接时间
+		var time =year+"/"+month+"/"+day+" "+hour+":"+minute+":"+second;
+		//添加扫也页面
+		var div =document.getElementById("times");
+		div.innerHTML=time;		
+	}
+//判断秒前缀带0
+function handle(s){
+	if(s>=0 &&s<10){
+		return "0"+s;
+	}else{
+		return s;
+	}
+}
+
+function minutes(min){
+	if(min>=0 &&min<10){
+		return "0"+min;
+	}else{
+		return min;
+	}
+	
+}
+</script>

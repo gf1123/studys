@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>正则表达式</title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	// 正则表达式 test(返回true或者false)
+	// 字符串方法 match(返回的 值)
+ 	// i 忽视大小写
+	// g 全局匹配
+	// m 多行匹配
+	// i g m 可组合用
+	// 转义字符      \
+	// 字符串换行符  \n
+	//^表示 第一个字符
+	//$ 最后一个开始
+	//[^] ^代表除了  
+	
+	var as = "ad\"fkj";
+	console.log(as);//ad"fkj
+	var test ="\
+	<div></div>\
+	<span></span>\
+	"
+	console.log(test);
+	console.log("----");
+	
+	//RefExp
+	 //第一种创建方法
+	 var reg = /ab/gi;//i g 
+	 var str = "abxcdce";
+	 var big = "ab ab ab ab ab abc Ab ABd";
+	 console.log(big.match(reg));//字符串.match(正则)
+	 console.log(reg.test(str))//正则.test(字符串)
+	 //第二种创建方法
+	 var regs = new RegExp("abc","g");
+	 var strs = "abc abc abcd";
+	 console.log(strs.match(regs));
+	 //m 多行匹配用法
+	 var  m = /^a/mg;
+	 var ms ="abda";
+	 var mss ="abd\na";
+	 console.log(ms.match(m));
+	 console.log(mss.match(m));
+	 //正则表达式 用法
+	 var reg1 = /[ab][df][qw]/g;
+	 var str1 ="abcdefsqdwbfw";
+	 console.log(str1.match(reg1));//bfw 
+	 console.log("----");
+	 var reg2 =/[^a][^b]/g;
+	 var str2 ="abcdeaf";
+	 console.log(str2.match(reg2));//bc de
+	 
+</script>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		#img {
+			background: url(../img/33.jpg) no-repeat;
+			background-size: cover;
+			width: 600px;
+			height: 400px;
+			margin: 0 auto;
+			position: relative;
+		}
+		
+		ul {
+			list-style: none;
+			position: absolute;
+			bottom: 5px;
+			left: 30%;
+		}
+		
+		li {
+			width: 20px;
+			height: 20px;
+			border: 1px solid red;
+			background: red;
+			color: white;
+			float: left;
+			margin-left: 10px;
+			border-radius: 50%;
+			text-align: center;
+			line-height: 20px;
+			cursor: pointer;
+		}
+		
+		.liBack {
+			background: black;
+			border: none;
+		}
+	</style>
+
+	<body>
+		<div id="img">
+			<ul>
+
+			</ul>
+		</div>
+	</body>
+
+</html>
+<script type="text/javascript">
+	//创建li 并添加样式
+	var ul = document.getElementsByTagName("ul");
+	for(var i = 1; i <= 4; i++) {
+		var ulLi = document.createElement("li");
+
+		ulLi.innerHTML = i;
+		if(i == 1) { //给第一个元素增加痒是
+			ulLi.className = "liBack";
+		}
+		ul[0].appendChild(ulLi);
+
+	}
+
+	//添加时间 点击轮播换图
+	var li = document.getElementsByTagName("li");
+	var imgs = document.getElementById("img");
+
+	for(j = 0; j < li.length; j++) {
+//		console.log(j);
+		li[j].onclick = function() {
+			//整体变红
+			lis();
+			//单独变黑
+			this.className = "liBack";
+			var num = this.innerHTML;
+			var str = String(num) + String(num);
+			imgs.style.backgroundImage = "url(../img/" + str + ".jpg)";
+
+		}
+
+	}
+
+	function lis() {
+		for(var i = 0; i < li.length; i++) {
+			li[i].className = "";
+		}
+
+	}
+</script>

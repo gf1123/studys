@@ -1,0 +1,148 @@
+  
+  
+  
+  
+  /*--------------所有的网站都能够用的，（包括 样式重置类 和 工具类）----------------*/
+  
+  
+ /*-------------------样式重置类(就是 覆盖一些元素的默认样式)-----------------------------*/
+  * {
+  	margin: 0 auto;
+  }
+  
+  html,
+  body,
+  header,
+  section,
+  footer,
+  div,
+  ul,
+  ol,
+  li,
+  img,
+  a,
+  span,
+  em,
+  del,
+  legend,
+  center,
+  strong,
+  var,
+  fieldset,
+  form,
+  label,
+  dl,
+  dt,
+  dd,
+  cite,
+  input,
+  hr,
+  time,
+  mark,
+  code,
+  figcaption,
+  figure,
+  textarea,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+  	margin: 0 auto;
+  	border: 0;
+  	padding: 0;
+  	font-style: normal;
+  	list-style: none;
+  	outline: 0;
+  	font-weight: normal;
+  }
+  /* 重置fieldset（表单分组）、图片的边框为0*/
+  
+  fieldset,
+  img {
+  	border: 0 none;
+  }
+  
+  dl,
+  ul,
+  ol,
+  menu,
+  li {
+  	list-style: none;
+  }
+  /* 重置表单控件垂直居中*/
+  
+  input,
+  select,
+  textarea,
+  button {
+  	vertical-align: middle;
+  }
+  
+  button {
+  	border: 0 none;
+  	background-color: transparent;
+  	cursor: pointer;
+  }
+  
+  caption {
+  	display: none;
+  }
+  /* 重置table属性 */
+  
+  table {
+  	width: 100%;
+  	border-collapse: collapse;
+  	border-spacing: 0;
+  	table-layout: fixed;
+  }
+  /* 图片在当前行内的垂直位置 */
+  
+  img {
+  	vertical-align: middle;
+  }
+  /* 取消a标签点击后的虚线框 */
+  
+a,
+a:focus,
+a:hover {
+text-decoration: none!important;
+outline: none!important;
+	
+}
+
+   /*-------------------样式重置类(就是 覆盖一些元素的默认样式)end-----------------------------*/
+  
+  
+  /*--------------------------工具类(就是功能已经写好，到时直接引用标签就可以)----------------------*/
+ 
+  /*清除浮动--推荐使用*/
+  .clearfix:before,
+  .clearfix:after {
+  	content: "";
+  	height: 0px;
+  	line-height: 0px;
+  	display: block;
+  	visibility: hidden;
+  	/*隐藏*/
+  	clear: both;
+  	/*清除浮动*/
+  }
+  .clearfix{
+  	*zoom:1;/*照顾ie兼容性*/
+  }
+  /*左浮动*/
+  
+  .fl {
+  	float: left;
+  }
+    /*右浮动*/
+  .fr {
+  	float: right;
+  }
+  
+
+
+/*--------------------------工具类(就是功能已经写好，到时直接引用标签就可以)end----------------------*/

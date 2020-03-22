@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<img src="../img/yx.png"/>
+	</body>
+</html>
+<script type="text/javascript">
+	//构造函数中 不 new的话 this指向 是 window
+	//构造函数  大驼峰式   构造函数是为了生产对象的，(创建的对象是相似但是不是一个属于双胞胎)
+	//原型也是对象  对象.prototype={}(属于隐士属性) 祖先对象  字辈可以访问他
+//	Person.prototype.height=170;
+//	Person.prototype.width=40;
+	Person.prototype={//原型 祖先0
+		like:"apple",
+	}
+	var obj={
+		like:"sun"
+	}
+	function Person(){
+		this.name="ad";
+	}
+
+	var person =new Person();
+	//	原型更换
+	person.__proto__= obj;//换祖先了 原来是 prototype现在换成 obj了
+	
+</script>

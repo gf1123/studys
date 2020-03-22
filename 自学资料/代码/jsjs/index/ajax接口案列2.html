@@ -1,0 +1,38 @@
+<html>
+
+	<head>
+		<title>aa</title>
+		<meta charset="UTF-8" />
+		<script src="jquery-3.2.1.min.js"></script>
+	</head>
+	<script type="text/javascript">
+		$(function() {
+			$("#input01").blur(function() {
+				var val = $(this).val();
+
+				$.ajax({
+						url: "https://www.apiopen.top/login?key=00d91e8e0cca2b76f515926a36db68f5&phone=13594347817&passwd=123456",
+						type: 'get',
+						dataType: 'json', //服务器返回的值
+//						data:"city="+val,
+						success:function(dat){
+							console.log(dat);
+							console.log(dat.data);
+							
+//							for (var i=0;i<dat.data.length;i++) {
+//								console.log(dat.data[i].image0);
+//							}
+							
+					}
+				});
+
+			});
+		});
+	</script>
+
+	<body>
+		<input type="text" id="input01" placeholder="ajax接口案例：输入:衣服" />
+		<ul id="list01"></ul>
+	</body>
+
+</html>

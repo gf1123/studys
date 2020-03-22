@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<style type="text/css">
+		#div,.div1,.div2,.div3,#div2{
+			border: 1px solid  black;
+			margin: 5px;
+		}
+	</style>
+	<body>
+		<img src="../img/qq.png"/>
+		<div id="div1">
+			<div class="div1">div1
+				<p>1-1</p>
+				<div class="div1-1">div-div</div>
+			</div>
+			<div class="div2">div2
+				<p>2-1</p>
+				<div class="div1-2">div-div</div>
+			</div>
+			<div class="div3">div3
+				<p>3-1</p>
+				<div class="div1-3">div-div</div>
+			</div>
+		</div>
+		<div id="div2">
+			<ul>
+				<li>1</li>
+				<li name="123">2</li>
+				<li name="123">3</li>
+				<li class="li-4">4</li>
+				<li>5</li>
+				<li>6</li>
+				<li>999999</li>
+				<li>8</li>
+				<li>999999</li>
+				<li>10</li>
+			</ul>
+		</div>
+		<div id="div3">
+			<ul>
+				<li>div3li</li>
+				<li>div3li</li>
+				<li>div3li</li>
+				<li>div3li</li>
+				<li>div3li</li>
+				<li>div3li</li>
+				<li gaofeng="shuai">div3li</li>
+			</ul>
+		</div>
+	</body>
+
+</html>
+<script type="text/javascript">
+	//层级选择器  
+	     //选择的是 #div1 的儿子(div)元素        id
+		$("#div1>div").css("color","red");
+		console.log($("#div1>div"));
+	    //选择的是 #div1 的所有包括孙子(div)元素       （空格）
+		$("#div1 div").css(" color","red");
+		console.log($("#div1 div"));
+	    //选择的是 #div1 里面紧挨着class 为div1的div 在这里案例中是 div2    + 挨着自己的弟弟
+		$("#div1>.div1+div").css("color","black");
+		console.log($("#div1>.div1+div"));	
+	    //选择 ul 里面class为li-4后面的所有兄弟为li的元素               ~后面所有弟弟
+		$("#div2>ul .li-4~li").css("color","white");		
+		
+		
+	//过滤选择器
+		//选择#id2里的ul 里的第一个li, 							:first
+		$("#div2>ul li:first").css("color","white");
+		//选择#id2里的ul 里的最后一个li,							:last
+		$("#div2>ul li:last").css("font-size","20px");
+		//选择#div1中的儿子为不是.div2的所有div					:not()
+		$("#div1>div:not(.div2)").css("font-size","20px");	
+	    //odd=>所有奇数       even=>所有偶数        eq(索引)    {都是以数组 索引形式展示}  :odd   :even    :eq(索引)
+		//所有索引为奇数的    odd
+		$("#div2>ul>li:odd").css("background","red");
+		//所有索引为偶数的    even
+		$("#div2>ul>li:even").css("background","blue");
+		//选择第一个和最后一个变为绿色    eq(index)                     eq
+		$("#div2>ul>li:eq(0),#div2>ul>li:eq(9)").css("background","green");
+		//:gt(index)代表选择大于index  :lt(index)代表小于indeindex===索引    ：gt() :lt()
+		//如果一起用这个元素 要记住 这个是依次执行的。
+		$("#div3").css("border","1px solid red");
+		$("#div3>ul>li:gt(0):lt(2)").css("background","red");
+		//nth-child(1)下标从1开始 不是从0开始
+		//first-child 		last-child
+		//only-child  选中的是独生子女  仅仅有这个一个元素
+		//:eq(0)这个和nth-child有2个区别:
+		 //第一个是下标
+//		 第二个是如果有2个ul都选要选中第一个li nth-child(1)这个会把2个ul
+//		 里面的第一个li都选中 而:eq(0)只会选择第一个ul里面的li
+		//fist-child   last-child
+		
+		
+		
+		
+		
+	//内容选择器
+		//选择ul里内容为999999的li
+		$("#div2>ul>li:contains('999999')").css("fontSize","22px");
+		//选择隐藏的元素						li:hideen
+		//选择有某个属性的元素             			arr[属性key]
+		$("#div3>ul>li[gaofeng]").css("background","blue");
+		//选择所有属性gaofeng为shuai的元素            arr[属性key=value]
+		$("#div3>ul>li[gaofeng=shuai]").css("fontSize","22px");
+	//表单选择器
+	:input
+	:password
+	:text
+	:radion 
+	....
+	
+//jquery	-----------------
+//添加之后 内部插入
+	父节点.appdend(字节点)
+	子节点.appendTo(父节点)
+
+//添加之前 内部插入
+prepend 父节点.prepend(子节点);
+prependTo 子节点 .prependTo(父节点)
+
+
+//添加之后  外部插入 after()  insertAfter()
+var child =$("<p>7787</p>");
+var div1 =$("#div1");
+//添加之前 外部插入
+$("#div1").before(child);
+child.insertBefore(div1);
+
+//清空  empty清空里面内容   remove把自己也移除
+
+</script>

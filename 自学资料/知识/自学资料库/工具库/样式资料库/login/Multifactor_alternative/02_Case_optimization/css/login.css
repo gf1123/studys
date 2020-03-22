@@ -1,0 +1,337 @@
+html {
+	height:100%;
+}
+body {
+	font-family:"Microsoft Yahei";
+	font-size:12px;
+	margin:0;
+}
+ul {
+	padding:0;
+	margin:0;
+}
+ul li {
+	list-style-type:none;
+}
+a {
+	text-decoration:none;
+}
+a:hover {
+	text-decoration:none;color:#f00;
+}
+.cl{ clear: both;}
+input[type="text"]:focus, input[type="password"]:focus {
+	outline:none;
+}
+input::-ms-clear {
+	display:none;
+}
+.login {
+	margin:0 auto;
+	width:370px;
+	border:2px solid #eee;
+	border-bottom:none;
+	position:relative;
+}
+.header-tab {
+	height:50px;
+	border-bottom:1px solid #e2e2e2;
+	position:relative;
+	font-family:"Microsoft Yahei";
+	width: 84%;
+	margin: 0 auto;
+}
+.header-tab .switch {
+	height:45px;
+	position:absolute;
+	left:60px;
+	bottom:0;
+	font-size:18px;
+}
+.header-tab .switch #switch_qlogin {
+	margin-right:75px;
+}
+.header-tab .switch .switch_btn {
+	color:#999;
+	display:inline-block;
+	height:45px;
+	line-height:45px;
+	outline:none;
+	*hide-focus:expression(this.hideFocus=true);
+}
+.header-tab .switch .switch_btn_focus {
+	color:#333;
+	display:inline-block;
+	height:45px;
+	line-height:45px;
+	outline:none;
+	*hide-focus:expression(this.hideFocus=true);
+}
+.header-tab .switch .switch_btn:hover {
+	color:#333;
+	text-decoration:none;
+}
+.header-tab .switch .switch_btn_focus:hover {
+	text-decoration:none;
+}
+#switch_bottom {
+	position:absolute;
+	bottom:-1px;_bottom:-2px;
+	border-bottom:2px solid #286090;
+	width: 75px;
+	position: absolute;
+	left: 0px;
+}
+#qlogin{ margin-top:25px;}
+.login2-email{ width: 84%; padding: 2% 3%; margin: 0 auto;}
+.login2-email img{ float:left;}
+.login2-yzm a{ line-height:30px; height: 30px; }
+
+.login2-email2{ width: 100%; margin: 0 auto;}
+.login2-email2 img{ float:left;}
+.text-muted{ margin-top:8%;}
+
+#qlogin .text-muted{ margin-top:11.8%;}
+
+.login2-title{
+	float: left;
+	margin-left: 5%;
+    margin-top: 45px;
+    overflow: hidden;
+    width:418px;
+	margin-bottom: 40px;
+	}
+.h400{ height: 400px;}
+
+
+
+.canvas-animate{ width:500px; height:430px; clear:both; overflow:hidden; position:fixed; top:154px; left:15%;}
+.canvas-animate img{ width:100%;}
+.earth{ width:500px; height:500px; position:absolute; bottom:-320px; -webkit-animation: clockwise 70s linear infinite; animation: clockwise 70s linear  infinite ;}
+
+@-webkit-keyframes clockwise{
+  0%  { -webkit-transform: rotate(0deg) ; }
+  100%{ -webkit-transform: rotate(360deg); }
+}
+
+@keyframes clockwise {
+  0%  { transform: rotate(0deg) ; }
+  100%{ transform: rotate(360deg); }
+}
+
+@-webkit-keyframes counter-clockwise {
+  0%  { -webkit-transform: rotate(360deg) ;  }
+  100%{ -webkit-transform: rotate(0deg); }
+}
+
+@keyframes counter-clockwise {
+  0%  { transform: rotate(360deg) ;  }
+  100%{ transform: rotate(0deg); }
+}
+
+
+.animate1-1{ 
+	width:30px;
+	position:absolute;
+	bottom:78px;
+	left:45px;
+	-webkit-animation-delay: 0.3s;
+	-moz-animation-delay: 0.3s;
+	-ms-animation-delay: 0.3s;
+	animation-delay: 0.3s;
+	}
+
+.animate1-2{ 
+	width:40px;
+	position:absolute;
+	top:145px;
+	left:27px;
+	-webkit-animation-delay: 0.5s;
+	-moz-animation-delay: 0.5s;
+	-ms-animation-delay: 0.5s;
+	animation-delay: 0.5s;
+	}
+
+.animate2-1{ 
+	width:15px;
+	position:absolute;
+	bottom:100px;
+	left:110px;
+	-webkit-animation-delay: 0.8s;
+	-moz-animation-delay: 0.8s;
+	-ms-animation-delay: 0.8s;
+	animation-delay: 0.8s;
+	}
+
+.animate2-2{ 
+	width:40px;
+	position:absolute;
+	top:82px;
+	left:98px;
+	-webkit-animation-delay: 1s;
+	-moz-animation-delay: 1s;
+	-ms-animation-delay: 1s;
+	animation-delay: 1s;
+	}
+
+.animate3-1{ 
+	width:24px;
+	position:absolute;
+	bottom:75px;
+	left:190px;
+	-webkit-animation-delay: 1.3s;
+	-moz-animation-delay: 1.3s;
+	-ms-animation-delay: 1.3s;
+	animation-delay: 1.3s;
+	}
+
+.animate3-2{ 
+	width:40px;
+	position:absolute;
+	left:171px;
+	top:40px;
+	-webkit-animation-delay: 1.5s;
+	-moz-animation-delay: 1.5s;
+	-ms-animation-delay: 1.5s;
+	animation-delay: 1.5s;
+	}
+
+.animate4-1{ 
+	width:15px;
+	position:absolute;
+	bottom:139px;
+	right:220px;
+	-webkit-animation-delay: 1.8s;
+	-moz-animation-delay: 1.8s;
+	-ms-animation-delay: 1.8s;
+	animation-delay: 1.8s;
+	}
+
+.animate4-2{ 
+	width:40px;
+	position:absolute;
+	top:38px;
+	right:206px;
+	-webkit-animation-delay: 2s;
+	-moz-animation-delay: 2s;
+	-ms-animation-delay: 2s;
+	animation-delay: 2s;
+	}
+
+.animate5-1{ 
+	width:20px;
+	position:absolute;
+	right:140px;
+	bottom:45px;
+	-webkit-animation-delay: 2.3s;
+	-moz-animation-delay: 2.3s;
+	-ms-animation-delay: 2.3s;
+	animation-delay: 2.3s;
+	}
+
+.animate5-2{ 
+	width:40px;
+	position:absolute;
+	right:123px;
+	top:80px;
+	-webkit-animation-delay: 2.5s;
+	-moz-animation-delay: 2.5s;
+	-ms-animation-delay: 2.5s;
+	animation-delay: 2.5s;
+	}
+
+.animate6-1{ 
+	width:25px;
+	position: absolute;
+	right: 65px;
+	bottom: 46px;
+	-webkit-animation-delay: 2.8s;
+	-moz-animation-delay: 2.8s;
+	-ms-animation-delay: 2.8s;
+	animation-delay: 2.8s;
+	}
+
+.animate6-2{ 
+	width:40px;
+	position: absolute;
+	right: 45px;
+	top: 142px;
+	-webkit-animation-delay: 3s;
+	-moz-animation-delay: 3s;
+	-ms-animation-delay: 3s;
+	animation-delay: 3s;
+	}
+
+.animate2 img{ transition: All 0.4s ease-in-out; -webkit-transition: All 0.4s ease-in-out; -moz-transition: All 0.4s ease-in-out; -o-transition: All 0.4s ease-in-out; cursor:pointer;}
+.animate2 img:hover{ transform: scale(1.1); -webkit-transform: scale(1.1); -moz-transform: scale(1.1); -o-transform: scale(1.1); -ms-transform: scale(1.1);}
+
+
+
+
+
+
+@media only screen and (max-width : 1300px) {
+	.canvas-animate{ left:7%;}
+	}
+
+
+@media (min-width:480px) and (max-width:1028px) { 
+	.login2-title{ margin:0 auto; width: 95%; float: none; height:auto;}
+	.h400{ height: 500px;}
+
+}
+
+@media (min-width:318px) and (max-width:479px) { 
+	.login2-title{ margin:0 auto; width: 95%; float: none; height:auto;}
+	.login2-title h1{ font-size:24px;}
+	.header-tab .switch{ left:20px;}
+}
+
+.login2-title{ display:block;}
+.login2-title2{ display:none;}
+h2{ display:none;}
+@media only screen and (max-width : 1028px) {
+	#large-header{ display:none}
+	.login2-title{ display:none;}
+	.login2-title2{ display:block;}
+	.login2-title2 img{ margin:20px auto; width:30%;}
+	.login2-content{ background:none; width:80%;}
+	.header-tab{ border-bottom:0px;}
+	.header-tab .switch{ width:100%; position:inherit; left:0px;}
+	.header-tab .switch .switch_btn_focus{ width:40%; background:#FFF; border:1px #0058af solid; border-radius:5px; color:#0059af;}
+	.header-tab .switch .switch_btn{ width:40%; background:#0059af; border:1px #0058af solid; border-radius:5px; color:#FFF;}
+	.header-tab .switch .switch_btn_focus:hover{ color:#0059af;}
+	.header-tab .switch .switch_btn:hover{ color:#FFF;}
+	#switch_bottom{ display:none;}
+	#switch_qlogin{ float:left;}
+	#switch_login{ float:right;}
+	.login2-email img{ display:none;}
+	.login2-form .form-control{ width:94%; border:1px #FFF solid; background:none; color:#FFF; border-radius:5px; height:40px; line-height:40px;}
+	.form-control2{ width:100% !important; }
+	.login2-form .text-muted{ text-align:left; width: 84%; margin:0 auto; padding-top: 15px;}
+	.login2-form .text-muted a{ color:#FFF;}
+	.login2-form .full-width{ width: 84% !important; background:#0058af; height:50px; border-radius:25px; margin: 20px auto;}
+	.login2-yzm a{ height:40px; line-height:40px; color:#FFF;}
+	.login2-form .full-width.btn-primary2{ width: 100% !important;}
+	.login2-form { margin-top: 10px;}
+	#qlogin{ margin-top:0;}
+	.header-tab .switch #switch_qlogin { margin-right: 0px;}
+	h2{ display:none;}
+	h2 img{ width:160px;}
+	.h400{ height:410px;}
+	.login3-bg{ background:#65c8b6 url(../img/bg.gif) repeat-x center;}
+	.canvas-animate{ display:none;}
+	.login2-yzm{ top:20%;}
+	#qlogin .form-group { margin-bottom: 4.9%;}
+	#qlogin .text-muted{ margin-top:0; float: left;}
+	#qlogin .login2-email2{ margin-bottom:2%;}
+	#qlogin .login2-form .full-width { margin: 20px auto;}
+	}
+	
+@media only screen and (max-width : 500px) {
+	.login2-content{ width:95%;}
+	.login2-yzm{ top:15%;}
+	.login2-title2{ width:80%;}
+	.header-tab .switch{ font-size:16px;}
+	.login2-form .form-control{ font-size:16px;}
+	}

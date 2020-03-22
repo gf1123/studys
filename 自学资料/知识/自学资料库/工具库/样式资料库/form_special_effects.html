@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>吉大正元UI前端框架V2.0</title>
+
+    <meta name="keywords" content="吉大正元UI前端框架V2.0">
+    <meta name="description" content="吉大正元UI前端框架V2.0">
+
+    <link rel="shortcut icon" href="favicon.ico"> <link href="css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+    <link href="css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+    <link href="css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/style.min862f.css?v=4.1.0" rel="stylesheet">
+	<link href="css/step.css?v=4.1.0" rel="stylesheet">
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight">
+      <div class="row">
+          <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>特效表单向导</h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="form_special_effects.html#">
+                                <i class="fa fa-wrench"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-user">
+                                <li><a href="form_special_effects.html#">选项1</a>
+                                </li>
+                                <li><a href="form_special_effects.html#">选项2</a>
+                                </li>
+                            </ul>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="ibox-content">
+                    	
+                        <div class="form-step">
+                            <div id="special_effects-step" class="special_effects-carousel">
+                              <div class="step complete"><label><span>1</span></label><p>验证身份</p></div>
+                              <div class="step while"><label><span>2</span></label><p>验证身份验证身份</p></div>
+                              <div class="step"><label><span>3</span></label><p>验证身份</p></div>
+                              <div class="step"><label><span>4</span></label><p>验证身份</p></div>
+                              <div class="step"><label><span>5</span></label><p>验证身份</p></div>
+                              <div class="step"><label><span>6</span></label><p>验证身份</p></div>
+                              <div class="step"><label><span>7</span></label><p>验证身份</p></div>
+                              <div class="step"><label><span>8</span></label><p>验证身份</p></div>
+                              <div class="step"><label><span>9</span></label><p>验证身份</p></div>
+                              <div class="step"><label><span>10</span></label><p>验证身份</p></div>
+                            </div>
+                            <div class="special_effects_line"></div>
+                        </div>
+                    	
+                        <form method="get" class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">普通</label>
+
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">带说明信息</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control"> <span class="help-block m-b-none">帮助文本，可能会超过一行，以块级元素显示</span>
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">密码</label>
+
+                                <div class="col-sm-10">
+                                    <input type="password" class="form-control" name="password">
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">提示</label>
+
+                                <div class="col-sm-10">
+                                    <input type="text" placeholder="提示信息" class="form-control">
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>                            
+                            <div class="form-group">
+                                <div class="col-sm-4 col-sm-offset-2">
+                                    <button class="btn btn-primary" type="submit">保存内容</button>
+                                    <button class="btn btn-white" type="submit">取消</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+    </div>
+    
+    <script src="js/jquery.min.js?v=2.1.4"></script>
+    <script src="js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="js/content.min.js?v=1.0.0"></script>
+    <script src="js/plugins/iCheck/icheck.min.js"></script>
+    <script>
+        $(document).ready(function(){$(".i-checks").iCheck({checkboxClass:"icheckbox_square-green",radioClass:"iradio_square-green",})});
+    </script>
+    <script type="text/javascript" src="js/tajs.js" charset="UTF-8"></script>
+    
+    
+    <script src="js/carousel.js"></script> 
+    <script>
+		$(document).ready(function() {
+		  $("#special_effects-step").special_effectsCarousel({
+			steps : 4,
+			lazyLoad : true,
+			navigation : true
+		  });
+	
+		});
+	</script>
+</body>
+</html>

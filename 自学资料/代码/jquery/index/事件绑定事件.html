@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/jquery-3.4.1.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<style type="text/css">
+		.div1,
+		.div2,
+		.div3,
+		.div5,
+		.nav,
+		.content {
+			width: 50px;
+			height: 50px;
+			border: 1px solid red;
+		}
+		
+		.div4 {
+			width: 50px;
+			height: 50px;
+			background: red;
+		}
+	</style>
+
+	<body>
+		<div class="div1" onclick="run(1)"></div>
+		<div class="div2">a</div>
+		<div class="div3">3</div>
+		<div class="div4">div4</div>
+		<div class="div5" onclick="div()"></div>
+		<div class="nav"></div>
+		<div class="content"></div>
+		<table border="" cellspacing="" cellpadding="">
+			<tr>
+				<th>Header</th>
+			</tr>
+			<tr>
+				<td>Data</td>
+			</tr>
+		</table>
+	</body>
+
+</html>
+<script type="text/javascript">
+	//	第一种 函数形式
+	function run(a) {
+		alert(a + "第一种");
+	}
+	//第二种 click()
+	$(".div2").click(function() {
+		alert("第二种");
+	})
+	// bind方法
+	$(".div3").bind("click", {
+		name: "shuai",
+		age: 14
+	}, function(asd) {
+		//	alert("第三种");
+		//第一个事件 ，第二个参数 ，第三个函数里面的是 接收的参数   接收参数.data.参数名
+		console.log((asd.data));
+	})
+	//hover 相当于 mouserover mouseout
+	$(".div3").hover(function() {
+		alert("移入了");
+	}, function() {
+		alert("移除了");
+	})
+	//	toggle  循环执行函数
+	//第一种 点击一下隐藏再点击隐藏
+	function div() {
+
+		$(".div4").toggle();
+	}
+	//这样写也可以
+	$(".nav").click(function() {
+		$(".content").toggle("slow");
+	});
+
+</script>
+
+
+<script type="text/javascript">
+	$(function() {
+		var indexs = 0;
+//		计时器
+//		var stops = setInterval(fun1, 1000);
+
+		var fun1 = function() {
+			indexs++;
+			if(indexs > 2) {
+				indexs = 0;
+			}
+			$(".lists").eq(index).fadeIn().siblings().fadeOut();
+			//小点切换
+			$(".slide_nav>li").eq(indexs).addClass("active").siblings().removeClass("active");
+
+		}
+		$(".video").hover(function() {
+			clearInterval(stops);
+			console.log("sss")
+		}, function() {
+			stops = setInterval(fun1, 1000);
+		})
+		$(".slide_nav>li").on("click", nums);
+
+		function nums() {
+			var index = $(this).index();
+			if(index == 0) {
+				$(".one").fadeIn(600).siblings().fadeOut();
+
+			} else if(index == 1) {
+				$(".two").fadeIn(600).siblings().fadeOut();
+			} else {
+				$(".three").fadeIn(600).siblings().fadeOut();
+			}
+			//小点切换
+			$(this).addClass("active").siblings().removeClass("active");
+		}
+
+	})
+</script>

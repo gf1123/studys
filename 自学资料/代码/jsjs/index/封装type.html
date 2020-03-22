@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	//判断类型的 相当于 typeof属性 start
+	function type(target){
+		var template={
+			"[object Array]":"array",
+			"[object Object]":"object",
+			"[object Number]":"number - object",
+			"[object Boolean]":"boolean - objecct",
+			"[object String]":"string -object"
+		}
+		if(target ===null){
+			return "null";
+		}
+		if(typeof(target)=="object"){
+			//数组
+			//对象
+			//包装类 Object.prototype.to.String
+			var str =Object.prototype.toString.call(target);
+			return template[str];
+		}else{
+			return typeof(target);
+		}
+	}
+	//判断类型的 相当于 typeof属性 end
+</script>

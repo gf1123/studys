@@ -1,0 +1,147 @@
+@charset "UTF-8";
+/* CSS Document */
+body{ font-family:"microsoft yahei" !important; background:#FFF; overflow-x:hidden; -webkit-text-size-adjust:none; background:#eff4f7;}
+*{ padding:0; margin:0; border:0; list-style:none; font-family:"microsoft yahei" !important;}
+a,a:hover{ text-decoration:none;}
+input, input:focus, button, button:focus { outline: none !important;}
+input[required]:invalid, input:focus:invalid, textarea[required]:invalid, textarea:focus:invalid{box-shadow: none;}
+
+
+header{ width:100%; height:80px; background:#053C7F;}
+
+header h1{ width:390px; height:50px; padding-top:10px;}
+header h1 img{ width:60px; float:left;}
+header h1 p{ float:left; color:#FFF; font-size:28px; padding-left:10px; font-weight: initial;}
+header h1 span{ float:left; color:#FFF; font-size:12px; padding-left:10px; font-weight: initial;}
+
+
+.contents{ width:90%; margin:0 auto;}
+
+.contents ul{ width:100%; padding:50px 0; clear:both; overflow:hidden;}
+.contents ul li{ width:45%; float:left; margin-bottom:50px;}
+
+.contents ul li dl{ width:80%; margin:0 auto; background:#FFF; border-radius:5px; overflow:hidden; transition: All 0.4s ease-in-out; -webkit-transition: All 0.4s ease-in-out; -moz-transition: All 0.4s ease-in-out; -o-transition: All 0.4s ease-in-out; position:relative;}
+.contents ul li dl:hover{ transform: scale(1.15); -webkit-transform: scale(1.15); -moz-transform: scale(1.15); -o-transform: scale(1.15); -ms-transform: scale(1.15);}
+.contents ul li dl dt{ width:100%;}
+.contents ul li dl dt img{ width:100%;border-radius:5px;}
+.contents ul li dl dd{ width:100%; height:64px; position:relative; display:hidden}
+.contents ul li dl dd a{ width:85px; height:34px; line-height:34px; text-align:center; margin:0 auto; border-radius:5px; background:#053C7F; color:#FFF; font-size:14px; cursor:pointer; margin-top:15px; position:absolute; left:50%; margin-left:-42.5px; transition: All 0.4s ease-in-out; -webkit-transition: All 0.4s ease-in-out; -moz-transition: All 0.4s ease-in-out; -o-transition: All 0.4s ease-in-out;}
+.contents ul li dl dd a:hover{ background:#08376f; cursor:pointer;}
+
+.new-pic{ width:50px !important; height:50px !important; position:absolute !important; top:0; right:0;}
+.new-pic img{ width:100%;}
+.new-text{ width:50px !important; height:50px !important; position:absolute !important; top:3px; right:3px; transform: rotateZ(-315deg); color:#FFF; font-size:12px; text-align:center;}
+
+
+
+.animated {
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both
+}
+.animated.infinite {
+	-webkit-animation-iteration-count: infinite;
+	animation-iteration-count: infinite
+}
+.animated.hinge {
+	-webkit-animation-duration: 2s;
+	animation-duration: 2s
+}
+
+
+@-webkit-keyframes fadeInDown {
+0% {
+opacity:0;
+-webkit-transform:translateY(-20px);
+transform:translateY(-20px)
+}
+100% {
+opacity:1;
+-webkit-transform:translateY(0);
+transform:translateY(0)
+}
+}
+@keyframes fadeInDown {
+0% {
+opacity:0;
+-webkit-transform:translateY(-20px);
+-ms-transform:translateY(-20px);
+transform:translateY(-20px)
+}
+100% {
+opacity:1;
+-webkit-transform:translateY(0);
+-ms-transform:translateY(0);
+transform:translateY(0)
+}
+}
+.fadeInDown {
+	-webkit-animation-name: fadeInDown;
+	animation-name: fadeInDown
+}
+
+
+@-webkit-keyframes fadeInUp {
+0% {
+opacity:0;
+-webkit-transform:translateY(20px);
+transform:translateY(20px)
+}
+100% {
+opacity:1;
+-webkit-transform:translateY(0);
+transform:translateY(0)
+}
+}
+@keyframes fadeInUp {
+0% {
+opacity:0;
+-webkit-transform:translateY(20px);
+-ms-transform:translateY(20px);
+transform:translateY(20px)
+}
+100% {
+opacity:1;
+-webkit-transform:translateY(0);
+-ms-transform:translateY(0);
+transform:translateY(0)
+}
+}
+.fadeInUp {
+	-webkit-animation-name: fadeInUp;
+	animation-name: fadeInUp
+}
+
+
+
+@media screen and (max-width:1920px) {
+	.contents ul li{ width:49%;}
+	}
+
+@media screen and (max-width:1366px) {
+	.contents ul li{ width:49%;}
+	}
+
+@media screen and (max-width:1024px) {
+	.contents ul li{ width:50%;}
+	}
+
+@media screen and (max-width:768px) {
+	.contents ul li{ width:100%;}
+	}
+
+@media screen and (max-width:480px) {
+	header h1 p{ font-size:24px; padding-top:3px;}
+	header h1 span{ font-size:10px;}
+	.contents ul li dl{ width:90%; }
+	}
+
+@media screen and (max-width:360px) {
+	header h1 p{ font-size:20px; padding-top:7px;}
+	header h1 span{ font-size:10px;}
+	}
+/*add by lihuazhen at20170901*/
+.back{float:right; margin-right:5%; margin-top:20px; color:#fff; vertical-align: middle; cursor:pointer; cursor:hand;}
+.back img{alignment-adjust:central; vertical-align: middle}
+.back span{ color:#fff;  padding-bottom:4px; border-bottom:1px dotted #fff}

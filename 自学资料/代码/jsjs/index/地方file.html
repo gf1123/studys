@@ -1,0 +1,95 @@
+<html>
+
+	<head>
+		<title></title>
+		<meta charset="UTF-8" />
+		<script src="jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<style type="text/css">
+		.chooseFile {
+			border: 1px solid #cccccc;
+			width: 97%;
+			height: 28px;
+			border-radius: 5px;
+			opacity: 0;
+			display: inline-block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			cursor: pointer;
+		}
+		
+		#uploadForm {
+			position: relative;
+			cursor: pointer;
+			border-color: #204d74;
+			border-radius: 4px;
+			/* overflow: hidden; */
+			width: 60px;
+			font-size: 14px;
+			background-color: #e8340c;
+			border-radius: 4px;
+			line-height: 30px;
+			color: white;
+			text-align: center;
+			margin: 0 7px;
+		}
+		
+		.inputName {
+			width: 60%;
+			height: 30px;
+			line-height: 30px;
+			padding: 0 5px;
+			border:none;
+			border-radius: 5px;
+		}
+	</style>
+
+	<body>
+		<div class="title">请选择翻译文件</div>
+		<div class="ibox-content piliangBox">
+			<input class="inputName"type="text" />
+			
+			<form id="uploadForm" enctype="multipart/form-data" style="display: inline-block; ">
+				<input class="chooseFile" id="reportXML" type="file" name="file" /> 浏览
+			</form>
+			<button class="scOks upload">上传</button>
+		</div>
+	</body>
+
+</html>
+<script type="text/javascript">
+	function choseFile() {
+		var fileInput = $('#reportXML').get(0).files[0];
+		if(fileInput) {
+			$(".inputName").val(fileInput.name);
+		}
+	}
+	$("#uploadForm").click(function() {
+		window.setInterval("choseFile()", 100); //采用定时给input赋值，否则光浏览按钮是无法同时既选择文件又同时赋值
+	})
+	//上传文件，这个用于上传代码到服务器，与样式无关，可忽略
+	$(".upload").click(function() {
+		var fileInput = $('#reportXML').get(0).files[0];
+		console.info(fileInput);
+		if(fileInput) {
+			var cover = 0;
+			var formData = new FormData($('#uploadForm')[0]);
+			// formData.append("p", "{'platformId':101,'useMonoid':" +
+			// localStorage.getItem("monoid") + ",'cover':" + cover +
+			// "}");
+			results = Common.prototype.callPostFile("/fileToDevice/uploadFileToDevice.shtml", formData);
+			var results = JSON.parse(results);
+			console.log(results, 44)
+			if(results.code == 8000) {
+				alert("上传成功");
+				localStorage.setItem("fid", results.body.fid);
+				$(".textOld").text(results.body.src);
+			} else if(results.code == 9014) {
+				alert("上传文件格式错误！")
+			}
+		} else {
+			alert("请选择上传文件！");
+		}
+	})
+</script>

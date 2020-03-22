@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+
+	</style>
+
+	<body>
+		<div id="">
+			<ul>
+				<li><input type="checkbox" name="xz" id="" value="" /></li>
+				<li><input type="checkbox" name="xz" id="" value="" /></li>
+				<li><input type="checkbox" name="xz" id="" value="" /></li>
+				<li><input type="checkbox" name="xz" id="" value="" /></li>
+				<li><input type="checkbox" name="xz" id="" value="" /></li>
+				<li><input type="checkbox" name="xz" id="" value="" /></li>
+				<li><input type="checkbox" name="xz" id="" value="" /></li>
+				<li><input type="checkbox" name="xz" id="" value="" /></li>
+			</ul>
+			<input type="button" name="all" id="all" value="全选" />
+			<input type="button" name="qx" id="qx" value="取消" />
+			<input type="button" name="qx" id="fx" value="反选" />
+		
+
+		</div>
+	</body>
+
+</html>
+<script type="text/javascript">
+	//全选
+	document.getElementById("all").onclick = function() {
+		var xz = document.getElementsByName("xz");
+		console.log(xz);
+		for(var i = 0; i < xz.length; i++) {
+			xz[i].checked = true;
+		}
+	}
+//取消
+	document.getElementById("qx").onclick = function() {
+		var xz = document.getElementsByName("xz");//获取之后是数组，不会是像id一样是单一的元素。
+		console.log(xz);
+		for(var i = 0; i < xz.length; i++) {
+			xz[i].checked = false;
+		}
+	}
+	//反选
+		document.getElementById("fx").onclick = function() {
+		var xz = document.getElementsByName("xz");//获取之后是数组，不会是像id一样是单一的元素。
+		console.log(xz);
+		for(var i = 0; i < xz.length; i++) {
+			 xz[i].checked?xz[i].checked = false:xz[i].checked = true;
+//			if(xz[i].checked){
+//				xz[i].checked = false;
+//			}else{
+//				xz[i].checked = true;
+//			}
+			
+		}
+	}
+</script>

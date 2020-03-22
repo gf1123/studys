@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		div {
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
+	</style>
+
+	<body>
+		<p>单击一下之后在在单机拖动</p>
+		<div class="div"></div>
+	</body>
+
+</html>
+<script type="text/javascript">
+	var div = document.getElementsByClassName("div")[0];
+	var fistTime = 0;
+	var lastTime = 0;
+	var key = false;
+	document.onmousedown = function() {
+		fistTime = new Date().getTime();
+//		div.style.backgroundColor = "green";
+//		console.log("dowm")
+	}
+	document.onmouseup = function() {
+		lastTime = new Date().getTime();
+
+		if(lastTime - fistTime < 300) {
+			key = true;
+		}
+		div.style.backgroundColor = "blue";
+		console.log("up")
+	}
+	document.onclick = function() {
+		if(key) {
+			div.style.backgroundColor = "yellow";
+			console.log("click");
+			key = false;
+		}
+
+	}
+</script>

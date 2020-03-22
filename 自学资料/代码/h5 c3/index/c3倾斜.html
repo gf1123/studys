@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		/*利用 translate 实现水平垂直居中*/
+		div{
+			margin: 200px;
+			width: 200px;
+			height: 200px;
+			background-color:red;
+			transition: all 0.5s;
+			transform-origin: left top;/*改变旋转中心点*/
+		}
+		div:hover{
+			transform: skew(20deg ,-20deg);/*正数为顺时针,负数为逆时针*/
+		}
+
+		
+		
+		
+		
+	</style>
+	<body>
+		<div></div>
+	</body>
+</html>

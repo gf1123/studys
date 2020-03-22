@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div>
+			<i></i>
+			<b></b>
+			<span></span>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	//写在原型链上 原理就是  假入要插入b的后面         b的后面就是 span的前面  利用insertBefore(targetNode,berforNode);
+//	就是插在兄弟节点的前面就可以了
+	Element.prototype.insertAfter=function(targetNode,afterNode){
+		//afterNode 参照物 ，targetNode 插入的对象
+		var berforNode= afterNode.nextElementSibling;
+		if(berforNode ==null){//判断他没有兄弟元素
+			this.appendChild(targetNode);
+		}else{
+			this.insertBefore(targetNode,berforNode);
+		}
+	}
+	var div=document.getElementsByTagName("div")[0];
+	var b=document.getElementsByTagName("b")[0];
+	var p=document.createElement("p");
+	div.insertAfter(p,b);//把p放在里div为b的后面
+</script>

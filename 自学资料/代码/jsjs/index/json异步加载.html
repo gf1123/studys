@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+
+	</head>
+
+	<body>
+	</body>
+
+</html>
+<script type="text/javascript">
+	//defer="defer" 异步加载 只在ie9以下，需等到dom文档全部解析完才会被执行，只有ie可用，也可以将代码写到内部。
+	//<script src="" type="text/javascript" charset="utf-8" >
+	//aysnc ="aysnc" script 异步加载 除了ie9以下 包括其他浏览器，只能加载外部脚本，加载完就执行。
+	//兼容 异步加载
+	
+//	window.onload=function(){}是文档解些并且下载玩图片什么的才执行
+//	jquery中的 $(function(){})代表文档解析完成 也就是dom树形成 但是还没有下载完.
+
+//封装 好的 异步加载 可兼容
+//异步加载就是 2方面同时开始做
+//同步加载就是 1做完在做2
+	function loadeScript(url, callback) {
+		var script = document.createElement("script");
+		script.type = "text/javascript";
+		if(script.readyState) {
+			//ie的
+			script.onreadystatechange = function() {
+				if(script.readyState == "complete" || script.readyState == "loaded") {
+					callback();
+				}
+			}
+		} else {
+			//除了ie都可以
+			script.onload = function() { //script 执行完在执行这里的
+				callback();
+			}
+		}
+		script.src = url;
+		document.head.appendChild(script);
+	}
+loadeScript("json1.js",function(){test();})
+</script>

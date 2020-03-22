@@ -1,0 +1,289 @@
+body {
+	color: rgb(102, 102, 102);
+	font: normal normal 16px/1 tahoma, arial, 'Hiragino San GB', '\5b8b\4f53', sans-serif;
+}
+
+.w1000 {
+	width: 1000px;
+	margin: 0 auto;
+}
+
+a {
+	color: rgb(102, 102, 102);
+}
+
+
+/*--------------------------顶部样式--------------*/
+
+.top {
+	height: 29px;
+	border-bottom: 1px solid #E9E9E9;
+	font-size: 14px;
+}
+
+.top .fr {
+	margin-top: 7px;
+}
+
+.top .fr .last {
+	border-right: none;
+}
+
+.top .fr li {
+	float: left;
+	border-right: 1px solid #e8e8e8;
+	line-height: 14px;
+	padding: 0 5px;
+}
+
+.top .fr li a:hover {
+	color: #c33;
+}
+
+
+/*这个位置放的是图片,首先是找到这个照片-51px -10px,之后悬浮在定位出-51px -148px这个位置.*/
+
+.top .fr li a .icon_phone {
+	background: url("../img/index-sp1.png") no-repeat -51px -10px;
+	width: 10px;
+	height: 16px;
+	display: inline-block;
+	/*行内块级元素*/
+	vertical-align: middle;
+	/*垂直对齐*/
+	margin-right: 5px;
+}
+
+.top .fr li a:hover .icon_phone {
+	background-position: -51px -148px;
+}
+
+.top .icon_hot {
+	background: url("../img/index-sp1.png") no-repeat -4px -5px;
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	/*行内块级元素*/
+	vertical-align: middle;
+	/*垂直对齐*/
+	margin-right: 5px;
+}
+
+.icon_wx,
+.icon_qq,
+.icon_wb,
+.icon_tb {
+	background: url("../img/index-sp1.png") no-repeat -6px -36px;
+	width: 18px;
+	height: 16px;
+	display: inline-block;
+	/*行内块级元素*/
+	vertical-align: middle;
+	/*垂直对齐*/
+	margin-right: 5px;
+}
+
+.icon_wx:hover {
+	background-position: -47px -36px;
+}
+
+.icon_qq {
+	background: url("../img/index-sp1.png") no-repeat -8px -64px;
+}
+
+.icon_qq:hover {
+	background-position: -49px -64px;
+}
+
+.icon_wb {
+	background: url("../img/index-sp1.png") no-repeat -5px -95px;
+}
+
+.icon_wb:hover {
+	background-position: -46px -95px;
+}
+
+.icon_tb {
+	background-position: -7px -124px;
+}
+
+.icon_tb:hover {
+	background-position: -48px -124px;
+}
+
+.icon_tri {
+	position: absolute;
+	background: url("../img/index-sp1.png") no-repeat -81px -2px;
+	width: 19px;
+	height: 4px;
+	top: -4px;
+	left: 66px;
+	/*vertical-align: middle;*/
+}
+
+.top .fl {
+	margin-top: 7px;
+}
+
+.top .fl li {
+	float: left;
+	margin-right: 10px;
+}
+
+.top .fl .li_wx {
+	position: relative;
+}
+
+.top .fl .li_wx div {
+	display: none;
+	position: absolute;
+	top: 20px;
+	left: -70px;
+	border: 1px solid #E9E9E9;
+	padding: 15px 20px;
+	background-color: #FFFFFF;
+	text-align: center;
+}
+
+.top .fl .li_wx:hover div {
+	display: block;
+}
+
+.top .fl .li_qq {
+	position: relative;
+}
+
+.top .fl .li_qq div {
+	display: none;
+	position: absolute;
+	top: 20px;
+	left: -70px;
+	width: 105px;
+	line-height: 2;
+	border: 1px solid #E9E9E9;
+	padding: 15px 20px;
+	background-color: #FFFFFF;
+	text-align: center;
+}
+
+.top .fl .li_qq:hover div {
+	display: block;
+}
+
+.icon_bigqq {
+	display: inline-block;
+	margin-right: 5px;
+	position: relative;
+	top: 3px;
+	background: url("../img/index-sp1.png") no-repeat -0px -146px;
+	width: 18px;
+	height: 20px;
+}
+/*-------------------logo部分------------------------*/
+.logo{
+	height: 90px;
+}
+.logo h1{
+	padding-top: 10px;
+}
+.logo h1 a{
+	display: block;
+	text-indent: -9999px;/*首行缩进*/
+	width: 123px;
+	height: 70px;
+	background: url(../img/nav_logo.png) no-repeat ;
+}
+.logo .current{
+	border-bottom:2px solid #c33;
+	color: #c33;
+}.logo .fr {
+	margin-top: 35px;
+}
+.logo .fr a{
+	padding:0px 5px 10px;
+}
+.logo .fr a:hover{
+    border-bottom:2px solid #c33;
+	color: #c33;;
+}
+
+/*-------------------logo部分  end------------------------*/
+/*footer*/
+.footer{
+	background: #E2E2E2;
+	font-size: 14px;
+}
+.footer .w1000{
+	height: 270px;
+	padding-top: 50px;
+}
+.mb20{
+	margin-bottom: 20px;
+}
+.mb15{
+	margin-bottom: 15px;
+}
+.p167{
+	    padding-left: 67px;
+}
+.footer em{
+	font-size: 20px;
+} 
+.footer .links{
+	width: 165px;
+	margin-left: 200px;
+}
+.footer .links li{
+	float: left;
+	margin: 10px 5px;
+}
+.footer .friend_links{
+	text-align: center;
+	margin-bottom: 24px;
+	margin-top: 40px;
+}
+.footer .icon_iphone,
+.footer .icon_ans{
+	text-indent: -9999px;
+	background: url(../img/index-sp1.png) no-repeat;
+	width: 88px;
+	height:25px;
+	display: block;
+	margin: 5px;
+}
+.footer .icon_iphone{
+	background-position: 0 -215px;
+}
+.footer .icon_ans{
+	background-position: 0 -288px;
+}
+.footer .mb25{
+	margin-right:25px;
+}
+.icon_footer1,
+.icon_footer2,
+.icon_footer3,
+.icon_footer4{
+	text-indent:-9999px;
+	background: url(../img/index-sp1.png) no-repeat;
+	display: inline-block;
+	width: 83px;
+	height:30px;
+	margin:0 30px;
+}
+.icon_footer1{
+	background-position:0 -330px;
+}
+.icon_footer2{
+	background-position:0 -375px;
+}
+.icon_footer3{
+	background-position:0 -420px;
+}
+.icon_footer4{
+	background-position:0 -375px;
+}
+.copyright{
+text-align: center;	
+}
+/*footer  end*/

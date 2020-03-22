@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<img src="../img/yby1.png"/>
+		<img src="../img/yby.png"/>
+	</body>
+
+</html>
+<script type="text/javascript">
+	//作用域链
+	//执行上下文
+
+//	1 [[scope]]:每个js函数都是一个对象,对象中有些属性我们可以访问,有些属性我们不能访问,,这些属性仅供js引擎存取,[[scope]]
+//	就是其中一个.
+//	2[[scope]]指的就是我们所说的 作用域,中存储了运行期上下文的集合.
+//	3作用域链:[[scope]]中所存储的执行上下文对象的集合,这个集合呈链式链接,我们把这种链式连接叫做作用域链.
+
+	 
+	//	重点 *********预编译发生在函数执行之前***************
+
+	//变量提升
+	//函数声明整体提升
+
+	//---------****预编译步骤 start*****-------------
+	// 1. 创建AO对象
+	// 2. 找 形参和 变量声明,将变量和形参名作为AO属性名,值为undefined
+	// 3. 将实参值和形参统一
+	// 4. 在函数体里面找函数声明，值赋予函数体
+	//---------****预编译步骤*****end-------------	
+	function a(){//那个先执行完哪个先销毁
+		function b(){
+			function c{
+				
+			}
+			c();
+		}
+		b();
+	}
+	a();
+	
+//	执行过程 
+// 函数默认是有属性的  如：name等， [[scope]]也是函数的属性
+//a执行之后 b定义时 b拿到了 a的全部
+//b在执行时先查看自己里的AO之后在看a的AO
+//
+ a defind a.[[scope]]-->0:GO//a 定义
+ 
+ a doing  a.[[scope]]-->0:aAO//a 执行
+ 						1:GO
+ 						
+ b defind b.[[scope]]-->0:aAO//b 定义
+ 						1:GO
+ 						
+ b doing  b.[[scope]]-->0:bAO//b 执行
+ 						1:aAO	
+ 						2:GO
+ 						
+ c defind c.[[scope]]-->0:bAO//c定义
+ 						1:aAo
+ 						2:GO
+ 						
+ c doing c.[[scope]]--> 0:cAO//c执行
+ 						1:bAO
+ 						2:aAo
+ 						3:GO	
+	
+	
+	
+//	function a() {
+//		function b() {
+//			var b = 234;
+//		}
+//		var a = 123;
+//		b();
+//	}
+//	var glob = 100;
+//	a();
+</script>

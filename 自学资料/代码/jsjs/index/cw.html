@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>菜鸟教程(runoob.com)</title>
+	</head>
+
+	<body>
+
+		<h2>JSON.stringify 将移除对象中的函数</h2>
+
+		<p>我们可以在执行 JSON.stringify() 函数前将函数转换为字符串来保留函数。</p>
+
+		<p id="demo"></p>
+
+		<script>
+			var obj = {
+				"name": "Runoob",
+				"alexa": function() {
+					return 10000;
+				},
+				"site": "www.runoob.com"
+			};
+			objs = obj.alexa.toString();
+			console.log(objs)
+			var myJSON = JSON.stringify(obj);
+			document.getElementById("demo").innerHTML = myJSON;
+		</script>
+
+	</body>
+
+</html>

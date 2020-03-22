@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery-ajax</title>
+</head>
+<body>
+<input type="button" value="get" id="gbtn">
+<input type="button" value="post" id="pbtn">
+
+<script type="text/javascript" src="jquery-1.11.2.js"></script>
+<script type="text/javascript">
+	$(function(){
+
+		$("#gbtn").click(function(){
+			$.ajax({
+				url:"Jquery5Servlet",
+				dataType:"text",
+				type:"get",
+				data:{name:"张三",pwd:"123"},
+				cache:false,
+				success:function(data){
+					alert(data);
+					
+				},
+				error:function(e){
+					console.log(e);
+				}
+			});
+		});
+		
+		$("#pbtn").click(function(){
+			$.ajax({
+				url:"Jquery5Servlet",
+				dataType:"json",
+				type:"post",
+				data:{name:"李四",pwd:"456"},
+				success:function(data){
+					
+					
+				},
+				error:function(e){
+					console.log(e);
+				}
+			});
+		});
+	
+	
+
+
+	});
+
+</script>
+</body>
+</html>

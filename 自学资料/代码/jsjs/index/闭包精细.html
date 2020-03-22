@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<img src="../img/bb.png"/>
+	</body> 
+</html>
+<script type="text/javascript">
+	//闭包小案列
+	//2个函数互相嵌套 把里面的函数在外面执行。
+	function test(){
+		var t=1000;
+		function b(){
+			console.log(t);
+		}
+		return b;
+	}
+	var demo =test();
+	demo();
+</script>

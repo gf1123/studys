@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			margin: 20px;
+			/*css样式名称,过渡时间,速度,延时*/
+			transition:transform 0.5s /*ease-in*/ /*2s*/;
+			
+		}
+		/*移动 translate*/
+		.trans:active{
+			/*width: 300px;/*/
+			/*一个值代表 x方向  2个值代表x方向和y方向*/
+			transform: translate(400px,200px);
+		}
+		/*缩放 scale*/
+		div:nth-child(2):active{
+			/*一个值代表 x和y方向都进行等比缩放	两个值就代表x 和 y*/
+			/*大于 1 扩大  小于1 缩小*/
+			/*transform: scale(1.2);*/
+			transform: scaleX(2);
+		}
+		/*旋转*/
+		.three:active{
+			transform: rotate(90deg);
+			/*transform: rotate(-90deg);*/
+		}
+	</style>
+	<body>
+		<div class="trans">移动</div>
+		<div class="two">缩放</div>
+		<div class="three">旋转</div>
+	</body>
+</html>

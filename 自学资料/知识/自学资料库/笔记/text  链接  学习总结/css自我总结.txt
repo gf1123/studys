@@ -1,0 +1,57 @@
+一、清除浮动
+方法：  
+　　1. 使用额外标签法：  
+　　　在需要清除浮动的地方加入一个额外的标签，然后使用clear:both来清除。（不推荐使用，因为会用到大量的额外标签）  
+　　2.使用overflow:hidden  
+　　在需要清除浮动的标签中加入一个overflow:hidden(不推荐使用，如果浮动与定位结合使用的话会出现冲突)  
+　　3.使用伪元素来清除浮动。
+    4.使用双伪元素清除
+
+二、
+绝对定位   position: absolute;
+相对定位   position: relative;
+固定定位   position:fixed;
+
+三、元素的隐藏和显示 
+  1.display:none;
+  2.dispaly:block;
+  3.visibility:hidden;
+  4.visibility:visible;
+
+四、sublime Text3快捷键使用 
+    输入以下快捷键后按tab键  
+　　1.html:xt  生成HTML4DTD文档  
+　　2.html:5  生成HTML5文档  或者使用!  
+　　3.div.class  可以生成类名叫做class的div标签  
+　　4.div#id   
+　　5.div+p+span  可以分别生成div，p和span标签  
+　　6.div>ul` 可以生成div标签，在div标签里边生成ul标签  
+　　7.div>ul>li>a*1^^p*1`
+    8.div*4  生成四个div标签
+
+五,用绝对定位实现div垂直居中？
+
+             例子:img { 
+		 width: 200px;
+		 height: 400px; 
+		 display: block;
+		 position: absolute;
+		 top: 50%; 
+		 left: 50%; 
+		 margin-left: -100px; /* 宽度的一半 */ 
+		 margin-top: -200px; /* 高度的一半 */ } 
+
+六,清楚浮动
+		.clearFlo:after{
+          		   content: '';
+           		  height: 0;
+            		  display: block;
+            		  visibility: hidden;
+             		 line-height: 0;
+            		 clear: both;
+       			  }
+
+七，css样式出现 小手 效果 
+cursor:pointer;
+white-space: nowrap;//防止文字跑版。
+

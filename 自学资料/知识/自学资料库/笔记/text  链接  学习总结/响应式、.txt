@@ -1,0 +1,18 @@
+		<!-- 加入viewport,保证移动式设备优先-->
+		<meta name="viewpoort" content="width=devicce-width,initial-scale=1" />
+		<!--引入bootstrop全局css样式和css组建-->
+		<link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+		<!--由于bootstrop.js完全一览与jquery,所以必须先移入jquery-->
+		<script src="../js/jquery-1.12.3.min.js"></script>
+		<!--引入bootstrop javascript插件-->
+		<script src="../bootstrap/js/bootstrap.js"></script>
+一栅格参数 
+
+超小屏幕 手机（ <768px xs）.container最大宽度 自适应.col-xs-
+  小屏幕 平板 （ >=768px sm）.container最大宽度 750px  .col-sm
+中等屏幕 桌面显示器（ >=992px md）.container最大宽度 970px .col-md-
+大屏幕 大桌面显示器 ( >=1200px lg).container最大宽度 1170px .ccol-lg-
+
+
+
+

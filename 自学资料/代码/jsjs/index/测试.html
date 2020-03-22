@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	//闭包最基础的效果
+	//闭包 就是 2个或多个 函数的嵌套 
+	//当内部函数被保存到外部时，将会生成闭包，闭包会导致原有作用域链不释放，造成内存泄漏（占内存）。
+		function tests(){
+			var temp=100;
+			function a(){
+				console.log(temp);
+			}
+			return a;
+		}
+		
+		var demo = tests();
+		demo();
+	
+	
+	
+	//闭包问题  10对1
+//		function test(){
+//			var arr=[];
+//			for(var i=0;i<10;i++){
+//				arr[i] =function(){
+//					document.write(i+" ");
+//				}
+//			}
+//			return arr;//[function(){document.write(i+"");},....]10个
+//		}
+//		
+//		var myArr =test();
+//		for(var j=0; j<10;j++){
+//			myArr[j]();//10 个 10
+//		}
+	document.write("-----")
+	//闭包问题  1对1
+//	function test(){
+//		var arr=[];
+//		for(var i=0;i<10;i++){
+//			(function (j){
+//				arr[j] =function(){
+//				document.write(j+" ");
+//			}
+//			}(i));
+//
+//		}
+//		return arr;//[function(){document.write(i+"");},....]10个
+//	}
+//	
+//	var myArr =test();
+//	for(var j=0; j<10;j++){
+//		myArr[j]();// 0-9
+//	}
+</script>

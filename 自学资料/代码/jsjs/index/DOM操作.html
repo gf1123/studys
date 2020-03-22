@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="div1">
+			s
+		</div>
+		<input class="div">
+			s
+		</input>
+		<div>
+			<span>
+				<strong class="demo">123</strong>
+			</span>
+		</div>		
+		<div>
+			<span>
+				<strong class="demo">123</strong>
+			</span>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	//通过id获取节点
+	 document.getElementById("id");
+	 //通过标签获取节点，获取结果为数组
+	 document.getElementsByTagName("div");
+	 //通过name属性来获取，name是一个属性 结果为数组
+	 document.getElementsByName("name");
+	 //通过clas来获取节点  有兼容性问题
+	 document.getElementsByClassName("class");
+	 //class 获取节点 兼容解决方法  获取 class="class1"节点
+	 clas("input");
+	 	function clas(class1) {
+		var arr = new Array();//创建数组
+		if(document.getElementsByTagName) {
+			//ie9以上
+			arr = document.getElementsByTagName(class1);
+		} else {
+			var all = document.getElementsByTagName("*");
+			for(var i = 0; i < all.length; i++) {
+				if(all[i].className == class1) {
+					arr.push(all[i]);
+				}
+			}
+
+		}
+		console.log(arr); //输出数组
+	
+	}
+	
+	//和css选择器一样 选择方法  缺点 无法实时更新 不怎么用
+	var strong=document.querySelector('div>soan strong.demo');
+	var strong1=document.querySelectorAll('div>span strong.demo');
+		//和css选择器一样 选择方法 end
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+//	 var div2 =new Array();
+//	 if(document.getElementsByTagName){
+//	 	div2 = document.getElementsByTagName("class1");
+//	 }else{
+//	 	var all = document.getElementsByTagName("*");
+//	 	for(var i =0;i<all.length;i++){
+//	 		if(all[i].className=="class1"){
+//	 			div2.push(all[i]);
+//	 		}
+//	 	}
+//	 	
+//	 }console.log(div2);//输出数组
+	 
+	 
+	 
+</script>

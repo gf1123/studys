@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script type="text/javascript">
+
+	function replaceReg(reg,str) {
+
+// 先转换为小写
+		
+		str = str.toLowerCase();
+
+		return str.replace(reg,function(m){
+			console.log("["+m+"]");
+			return m.toUpperCase();
+
+		});
+
+ 	}
+
+ var reg = /\b(\w)|\s(\w)/g;
+
+ var str = "aadfdfCC def abc";
+
+ console.log(replaceReg(reg,str)); // Aadfdfcc
+</script>

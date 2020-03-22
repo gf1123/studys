@@ -1,0 +1,48 @@
+<!DOCTYPE >
+<html>
+
+	<head>
+		<title></title>
+		<meta charset="UTF-8" />
+	</head>
+
+	<body>
+           <div id="">
+           	fdssfd
+           </div>
+           <div id="">
+           	fdsfd
+           </div>
+           <div id="">
+           	fdsfds
+           </div>
+           
+           <button>点击</button>
+	</body>
+
+</html>
+<script type="text/javascript">
+	//全局和局部，  
+	var c = "abc";
+
+	function abc() {
+		var c = "ab";
+		console.log(c); //就近原则，所以输出 是 ab
+	}
+	abc();
+	console.log(c); //访问全局无法访问函数内部的
+	console.log("-------------");
+
+	//全局和局部，  
+	var c = "abcd";
+
+	function abcd() {
+
+		console.log(c); //输出 是undefined,变量声明被提升
+		var c = "abc";
+		
+	}
+	abcd();
+	console.log(c); //访问全局无法访问函数内部的
+	console.log("-------------");
+</script>

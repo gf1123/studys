@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		div{
+			width: 100px;
+			height: 100px;
+			line-height: 100px;
+			background: red;
+			text-align: center;
+			font-size: 3em;
+			margin:5px 0px;
+			display: none;
+		}
+	</style>
+	<style type="text/css">
+		
+	</style>
+	<body>
+		<div id="div1"style="display: block;">
+			1
+		</div>
+		<div id="div2">
+			2
+			
+		</div>
+		<div id="div3">
+			3
+		</div>
+		<div id="div4">
+			4
+		</div>
+		<input type="button" name="" id=""onclick="f1(1)" value="显示盒子1" />
+		<input type="button" name="" id=""onclick="f1(2)" value="显示盒子2" />
+		<input type="button" name="" id=""onclick="f1(3)" value="显示盒子3" />
+		<input type="button" name="" id=""onclick="f1(4)" value="显示盒子4" />	
+	</body>
+</html>
+<script type="text/javascript">
+	//排他思想:所有的元素，都回归到同一个状态，然后是选择的这个更改
+	function f1(n){
+		var div =document.getElementById("div"+n);
+		for (var i=1;i<=4;i++) {
+			console.log(i);
+			document.getElementById("div"+i).style.display="none";
+		}
+		div.style.display="block"
+	}
+</script>

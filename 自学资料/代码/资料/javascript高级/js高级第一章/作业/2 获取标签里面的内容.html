@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script type="text/javascript">
+var str = "<div id=fdsa'>111</div>";
+
+str.match(/<([a-z]+)(\s*\w*?\s*=\s*('|")?.+?('|")?)*\s*?>([\s\S]*?)<\/\1>/);
+
+console.log(RegExp.$1);  
+console.log(RegExp.$2);  
+console.log(RegExp.$3);  
+console.log(RegExp.$4);  
+console.log(RegExp.$5);  
+</script>

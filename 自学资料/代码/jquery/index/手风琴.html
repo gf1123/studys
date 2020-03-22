@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<style type="text/css">
+				* {
+			margin: 0 auto;
+			padding: 0;
+		}
+		
+		.clearfix:after {
+			content: "";
+			display: block;
+			height: 0;
+			line-height: 0;
+			clear: both;
+		}
+		
+		ul {
+			list-style-type: none;
+		}
+		
+		.parentul{
+			width: 200px;
+			border:1px solid black;
+		}
+		.parentul li{
+			border-bottom:1px solid black;
+			background: lightcyan;
+			text-align: center;
+		}
+		.parentul li span{
+			display: block;
+			width: 100%;
+			border-bottom: 1px solid black;
+		}
+		.parentul li div{
+			height: 200px;
+			background: #FFFFFF;
+			display: none;
+		}
+	</style>
+	<body>
+		<ul class="parentul">
+			<li>
+				<span>标题1</span>
+				<div>我的内容div1</div>
+			</li>
+			<li>
+				<span>标题2</span>
+				<div>我的内容div2</div>
+			</li>
+			<li>
+				<span>标题3</span>
+				<div>我的内容div3</div>
+			</li>
+			<li>
+				<span>标题4</span>
+				<div>我的内容div4</div>
+			</li>
+			<li>
+				<span>标题5</span>
+				<div>我的内容div5</div>
+			</li>
+			<li>
+				<span>标题6</span>
+				<div>我的内容div6</div>
+			</li>
+		</ul>
+	</body>
+</html>
+<script type="text/javascript">
+	$(function(){
+		$(".parentul li").bind("click",blocks);
+		function blocks(){
+				$(this).children("div").slideToggle().parent().siblings("li").children("div").hide();
+		}
+		
+	})
+</script>

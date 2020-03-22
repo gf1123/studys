@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		div {
+			width: 100px;
+			height: 100px;
+			background: red;
+			position: absolute;
+			left: "0";
+		}
+	</style>
+
+	<body>
+		<div></div>
+	</body>
+</html>
+<script type="text/javascript">
+	var div = document.getElementsByTagName("div")[0];
+//	var counts = 0;
+//	div.onclick = function() {
+//		counts++;
+//		if(counts % 2 == 0) {
+//			this.style.backgroundColor = "green";
+//		} else {
+//			this.style.backgroundColor = "blue";
+//		}
+//	}
+	var timer = setInterval(function() {
+		
+		div.style.left = parseInt(getComputedStyle(div, null)["left"])  + 10 + "px";
+		if(parseInt(div.style.left) == 500) {
+			clearInterval(timer)
+		}
+	}, 100)
+	
+	
+
+</script>

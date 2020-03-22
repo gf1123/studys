@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		input{
+			font-size: 20px;
+			text-align:right;
+			font-weight: 700;
+		}
+	</style>
+	<body>
+		minutes:<input type="text" name="" id="" value="0" />
+		seconds:<input type="text" name="" id="" value="0" />
+	</body>
+</html>
+<script type="text/javascript">
+	var mN=document.getElementsByTagName("input")[0];
+	var sN=document.getElementsByTagName("input")[1];
+	
+	var minutes=0,seconds=0;
+	var timer=setInterval(function(){
+		seconds++;
+		if(seconds==60){
+			seconds=0;
+			minutes++;
+		}
+		sN.value=seconds;
+		mN.value=minutes;
+		if(minutes==3){
+			clearInterval(timer);
+		}
+	},1000)
+</script>

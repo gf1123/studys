@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+	</body>
+
+</html>
+<script type="text/javascript">
+	//闭包 会导致多个执行函数共用一个公有变量，如果不是特殊需要，应尽量防止这种情况发生 。
+	//闭包小案列
+	//2个函数互相嵌套 把里面的函数在外面执行。
+	//b被保存到了外部（weindow)
+	//	function test(){
+	//		var t=1000;
+	//		function b(){
+	//			console.log(t);
+	//		}
+	//		return b;
+	//	}
+	//	var demo =test();
+	//	demo();
+
+	function add() {
+		var num = 0;
+
+		function a() {
+			console.log(++num);
+		}
+		a();
+	}
+	add();
+	add();
+	add();
+	console.log("----");
+
+	function adds() {
+
+		function as() {
+			var nums = 0;
+
+			console.log(++nums);
+		}
+		return as;
+	}
+	var addss = adds(); //必须有参数接收
+	addss();//1
+	addss();//1
+	addss();//1
+//	因为这个操作的是自己AO,执行之后就被销毁(再进来就属于从新赋值)
+	console.log("----");
+
+
+
+	function addsss() {
+			var numss = 0;
+		function ass() {
+			console.log(++numss);
+		}
+		return ass;
+	}
+	var qq = addsss(); //必须有参数接收
+	qq();//1
+	qq();//2
+	qq()//3
+	//因为操作的是addsss的AO所以每次都会在此基础上操作不会被销毁保存到ass身上了。
+</script>

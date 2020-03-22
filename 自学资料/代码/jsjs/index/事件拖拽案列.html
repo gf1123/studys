@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<style type="text/css">
+		.div {
+			width: 100px;
+			height: 100px;
+			background: red;
+			position: absolute;
+			cursor: move;
+		}
+		.div1 {
+			width: 100px;
+			/*margin-left: 100px;*/
+			height: 100px;
+			background: blue;
+			position: absolute;
+			left: 110px;
+			cursor: move;
+		}		
+		#div {
+			width: 200px;
+			height: 200px;
+			background: gray;
+		}
+	</style>
+
+	<body>
+<p>移动的小方块</p>
+	<div class="div"></div> 
+	<div class="div1"></div>
+	</body>
+
+</html>
+<script type="text/javascript">
+	var div = document.getElementsByClassName("div")[0];
+	var div1 = document.getElementsByClassName("div1")[0];
+	var p = document.getElementById("div");
+	drag(div);
+	drag(div1);
+//在点击时触发mousemove
+	function drag(elem) {
+		addEvent(elem, "mousedown", function(e) {
+			//兼容 事件对象
+			var event = e || window.event;
+			//获取事件(鼠标)x坐标和y坐标
+			x = event.clientX;
+			y = event.clientY;
+
+			//获取左部和顶部的偏移量
+			l = elem.offsetLeft;
+			t = elem.offsetTop;
+			console.log("x="+x)
+			console.log("y="+y)
+			
+			console.log("l="+l)
+			
+			console.log("t="+t)
+			//设置样式  
+			div.style.cursor = 'move';
+			addEvent(document, "mousemove", mouseMove);
+			addEvent(document, "mouseup", mouseUp);
+			addEvent(div, "contextmenu",contextMenu);
+			// 取消 冒泡
+			stopBubble(event);
+
+		})
+
+		//移入mouseMove
+		function mouseMove(e) {
+			var event = e || window.event;
+			//获取x和y
+			var nx = event.clientX;
+			var ny = event.clientY;
+			console.log("nx="+nx)
+			console.log(ny)
+			//计算移动后的左偏移量和顶部的偏移量
+			var nl = nx - (x - l);
+			var nt = ny - (y - t);
+
+			elem.style.left = nl + 'px';
+			elem.style.top = nt + 'px';
+		}
+		//松开鼠标
+		function mouseUp(e) {
+			var event = e || window.event;
+//			removeEvent(document, "mousedown", mouseMove);
+			removeEvent(document, "mousemove", mouseMove);
+			removeEvent(document, "mouseup", mouseUp);
+			console.log("mosueup")
+		}
+		//取消右键出菜单
+		function contextMenu(e) {
+			var event = e || window.event;
+			cancelHandler(event);
+		}
+
+	}
+	
+	
+	//兼容 事件 方法start 如果有移除事件 需要使用函数里的 ie8一下
+	function addEvent(elem, type, handle) {
+		if(elem.addEventListener) {
+			//ie9以上
+			elem.addEventListener(type, handle, false);
+		} else if(elem.attachEvent) {
+			elem.attachEvent("on" + type, function() {
+				handle.call(elem); //操作this的,this指向自己，不是默认的指向全局
+			});
+		} else {
+			//通用的
+			elem["on" + type] = handle;
+		}
+	}
+	//兼容 事件 方法end
+
+	//兼容 事件  移除的方法 start
+	function removeEvent(elem, type, handler) {
+		if(elem.removeEventListener) {
+			elem.removeEventListener(type, handler, false);
+		} else if(elem.detachEvent) {
+			elem.detachEvent("on" + type, handler);
+		} else {
+			elem["on" + type] = null;
+		}
+	}
+	//兼容 事件 移除的方法 end	
+
+	//封装 取消 事件 冒泡  strat
+	function stopBubble(event) {
+		//event ===取消事件冒泡那个 事件对象
+		if(event.stopPropagation) {
+			event.stopPropagation();
+		} else {
+			event.cancelBubble = true;
+		}
+	}
+	//封装 取消 事件 冒泡  end
+
+	//默认事件 取消浏览器点击右键出菜单 start
+	function cancelHandler(event) {
+		//oncontextmenu 事件是 右键
+		if(event.preventDefault) {
+			//ie9以上
+			event.preventDefault();
+		} else {
+			//			ie 9一下
+			event.returnValue = false;
+		}
+	}
+	//默认事件 取消浏览器 点击右键出菜单 end
+</script>

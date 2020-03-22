@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		.div {
+			width: 100px;
+			height: 100px;
+			background: red;
+			position: absolute;
+		}
+		
+		#div {
+			width: 200px;
+			height: 200px;
+			background: gray;
+		}
+	</style>
+
+	<body>
+		<div id="div">asddf
+			<div class="div"></div>
+		</div>
+</html>
+<script type="text/javascript">
+	var div = document.getElementsByTagName("div")[0];
+	div.addEventListener("mousedown",function(e){
+		console.log(e)
+		if(e.button ==2){
+			console.log("右键");
+		}else if(e.button==0){
+			console.log("左键");
+		}
+	},false)
+</script>

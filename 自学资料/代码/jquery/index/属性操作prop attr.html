@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<style type="text/css">
+input{
+	margin-left: 300px;
+	border: none;
+}
+:disabled{
+	background: red;
+}
+	</style>
+
+	<body>
+		<input type="button" id="aa"  value="submit" style="width: 50px; height: 50px;" />
+		<input type="checkbox"  />
+		<button>选中</button>
+		<button>取消</button>
+	</body>
+
+</html>
+<script type="text/javascript">
+	//	$("button").click(function(){
+	//		var disabled =$("input[type=checkbox]").prop("checked");
+	//		console.log(disabled);
+	//	})
+
+			$("button").eq(0).click(function(){
+			$("#aa").prop("disabled",true);
+		
+		})
+//	$("button").eq(0).click(function() {
+//		 $("input[type=submit]").prop("name","ddd");
+//		
+//	})
+//
+	$("button").eq(1).click(function() {
+	$("#aa").prop("disabled",false);
+	
+	})
+</script>

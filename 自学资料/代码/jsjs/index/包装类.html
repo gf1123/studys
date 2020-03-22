@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+
+	</body>
+</html>
+<script type="text/javascript">
+	//数组 对象 包装类 都是 对象
+	//属性是对象原有
+	//原始值是没有属性和方法的，对象可以有
+	//数字和字符串分为2中   如：123  var num= new Number();
+	//系统自带 new Object(); Array(); Number(); Boolean(); String(); Date();
+	//一个对象没有属性 访问就是 underfined
+	function funn(){
+		var num = new Number(231); //new Number 有属性和方法,  var Number=123; Number没有属性和方法.
+	var str = new String("adf");
+	var bol = new Boolean("true");
+	
+	var a =5;
+	function test(){
+		a=0;
+		alert(a);
+		alert(this.a);
+		var a;
+		alert(a);
+	}test();// 0 50  //new test(); 0 undefined 0	
+	}
+
+	
+	
+	
+	//包装类 (隐士发生)
+	
+	var num =4;
+	
+	num.len=3;
+	//1 和2 两步都是隐士的 这个过程就叫做包装类
+	
+	//1 new Number(4).len=3; 之后 删除 delete
+	//1 2 不是一个对象了
+	//2new Number(4).len
+	console.log(num.len);//undefined
+	console.log("----");
+	
+	
+	
+	var str="abcd";
+	
+	str.length=2;
+	//1 new String(abcd).length=2; 之后 删除 delete
+			//1 2 不是一个对象了
+			
+	//2 new (abcd);
+	console.log(str);//abcd
+	
+	//2 new String(abcd【str】).length;
+	console.log(str.length);
+</script>

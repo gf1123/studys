@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <title>吉大正元UI前端框架V2.0</title>
+	
+    <meta name="keywords" content="吉大正元UI前端框架V2.0">
+    <meta name="description" content="吉大正元UI前端框架V2.0">
+    <link rel="shortcut icon" href="favicon.ico"> <link href="css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+    <link href="css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+    <link href="css/plugins/morris/morris-0.4.3.min.css" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/style.min862f.css?v=4.1.0" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+</head>
+
+<body class="gray-bg"> 
+
+    	<!--主显示区内容    start-->
+			<div class="content_all">
+				<div class="fixed_top">
+				<!--顶部快捷图标   start-->
+				<div class="hotbox"><a href="#" class="attract40px addmore">…</a>
+					<dl class="flo" onmousemove="image_mouse_over(this);" onmouseout="image_mouse_out(this);">
+						<a class="J_menuItem_cet" href="agile_board.html"><dt><img src="img/gwcl.png" class="animated bounceIn hand"  onmouseover="this.className='animated tada hand';" onmouseout="this.className='animated '" /></dt>
+						<dd class="xiaozi">公文处理</dd>
+						<dd class="xiaozi_1">公文流转</dd></a>
+					</dl>
+					
+					<dl class="flo" onmousemove="image_mouse_over(this);" onmouseout="image_mouse_out(this);">
+						<a class="J_menuItem_cet" href="agile_board.html"><dt><img src="img/sqhy.png" class="animated bounceIn hand"  onmouseover="this.className='animated wobble hand';" onmouseout="this.className='animated '" /></dt>
+						<dd class="xiaozi">申请会议</dd>
+						<dd class="xiaozi_1">公文流转</dd></a>
+					</dl>
+					
+					<dl class="flo" onmousemove="image_mouse_over(this);" onmouseout="image_mouse_out(this);">
+						<a class="J_menuItem_cet" href="mail_compose.html"><dt><img src="img/xyj.png" class="animated bounceIn hand"  onmouseover="this.className='animated wobble hand';" onmouseout="this.className='animated '"  /></dt>
+						<dd class="xiaozi">写邮件</dd>
+						<dd class="xiaozi_1">公文流转</dd></a>
+					</dl>
+					
+					<dl class="flo" onmousemove="image_mouse_over(this);" onmouseout="image_mouse_out(this);">
+						<a class="J_menuItem_cet" href="agile_board.html"><dt><img src="img/xjsw-04.png" class="animated bounceIn hand"  onmouseover="this.className='animated wobble hand';" onmouseout="this.className='animated '"  /></dt>
+						<dd class="xiaozi">新建事物</dd>
+						<dd class="xiaozi_1">公文流转</dd></a>
+					</dl>
+					
+					<dl class="flo" onmousemove="image_mouse_over(this);" onmouseout="image_mouse_out(this);">
+						<a class="J_menuItem_cet" href="contacts.html"><dt><img src="img/xjsw.png" class="animated bounceIn hand"  onmouseover="this.className='animated tada hand';" onmouseout="this.className='animated '"  /></dt>
+						<dd class="xiaozi">内部通讯录</dd>
+						<dd class="xiaozi_1">公文流转</dd></a>
+					</dl>	
+				</div>
+				<!--顶部快捷图标   end-->
+				
+				<div class="draggable-element draggable-element-none"></div>
+                
+				<!--四个模块  start-->
+				<div class="m_result">
+					<div class="daiban animated flipInX hand"  onmouseover="this.className='daiban animated bounce hand';" onmouseout="this.className='daiban animated '"  ><a class="J_menuItem_cet" href="agile_board.html">
+						<div class="gongwen"><i class="fa fa-clock-o"></i><span>待办公文</span></div>
+						<dl>
+							<dt><span>19</span><i class="fa fa-caret-right sanjiao_fa" aria-hidden="true"></i></dt>
+							<dd>未处理公文 &nbsp;<span>19</span>&nbsp;件</dd>
+							<dd>完成度 &nbsp;<span>90%</span></dd>
+						</dl>
+						<ul>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li class="dan"></li>
+						</ul></a>
+					</div>
+					
+					<div  class="daiban animated flipInX hand"  onmouseover="this.className='daiban animated bounce hand';" onmouseout="this.className='daiban animated '"  ><a class="J_menuItem_cet" href="agile_board.html">
+						<div class="gongwen"><i class="fa fa-pencil"></i><span>公文签收</span></div>
+						<dl>
+							<dt><span>08</span><i class="fa fa-caret-right sanjiao_fa" aria-hidden="true"></i></dt>
+							<dd>未处理公文 &nbsp;<span>08</span>件</dd>
+							<dd>完成度 &nbsp;<span>60%</span></dd>
+						</dl>
+						<ul>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li class="dan"></li>
+							<li class="dan"></li>
+							<li class="dan"></li>
+							<li class="dan"></li>
+						</ul></a>
+					</div>
+					
+					<div  class="daiban animated flipInX hand"  onmouseover="this.className='daiban animated bounce hand';" onmouseout="this.className='daiban animated '"  ><a class="J_menuItem_cet" href="agile_board.html">
+						<div class="gongwen"><i class="fa fa-file-text-o"></i><span>事物待办</span></div>
+						<dl>
+							<dt><span>02</span><i class="fa fa-caret-right sanjiao_fa" aria-hidden="true"></i></dt>
+							<dd>未处理公文 &nbsp;<span>02</span>&nbsp;件</dd>
+							<dd>完成度 &nbsp;<span>80%</span></dd>
+						</dl>
+						<ul>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li class="dan"></li>
+							<li class="dan"></li>
+						</ul></a>
+					</div>
+					
+					<div  class="daiban animated flipInX hand"  onmouseover="this.className='daiban animated bounce hand';" onmouseout="this.className='daiban animated '"  ><a class="J_menuItem_cet" href="agile_board.html">
+
+						<div class="gongwen"><i class="fa fa-pencil-square-o"></i><span>事物签收</span></div>
+						<dl>
+							<dt><span>11</span><i class="fa fa-caret-right sanjiao_fa" aria-hidden="true"></i></dt>
+							<dd>未处理公文 &nbsp;<span>11</span>&nbsp;件</dd>
+							<dd>完成度 &nbsp;<span>70%</span></dd>
+						</dl>
+						<ul>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li class="dan"></li>
+							<li class="dan"></li>
+							<li class="dan"></li>
+						</ul></a>
+					</div>
+				</div>
+				<!--四个模块  end-->
+				</div>
+				<!--邮件  工作待办  消息通知     star-->
+				<div class="databox">
+					<div class="databox_l draggable-element">
+                 
+                
+                <div class="tabs-container index_table_xyh">
+						<ul class="nav nav-tabs">
+                            <span class="pull-right small">您有5条新邮件，未读邮件22条</span>
+							<li class="active"><a  data-toggle="tab" href="#tab-1" aria-expanded="true">邮件<span>5</span></a></li>
+							<li class=""><a data-toggle="tab" href="#tab-2" aria-expanded="false">工作待办<span>1</span></a></li>
+						</ul>
+                        <div class="tab-content"><div id="tab-1" class="mailtable tab-pane active" >
+						<table border="0" cellspacing="0" class="mailtable " >
+							  <tr class="biaoti">
+							    <th width="54" height="37" bgcolor="#f7f8f9" scope="col">&nbsp;</th>
+							    <th width="60" align="left" bgcolor="#f7f8f9" scope="col">发件人</th>
+							    <th align="left" bgcolor="#f7f8f9" scope="col" style="text-align: center">主题</th>
+							    <th align="left" bgcolor="#f7f8f9" scope="col">&nbsp;</th>
+							    <th width="105" align="left" bgcolor="#f7f8f9" style="text-align: center" scope="col">&nbsp;&nbsp;时间</th>
+							  </tr>
+							  <tr class="neirong ">
+							    <td height="60" align="center" valign="middle">&nbsp;&nbsp;<i class="fa fa-envelope-o index_neirong_fa" aria-hidden="true"></i></td>
+							    <td>杨鑫男</td>
+							    <td width="251"><a class="J_menuItem_cet" href="mail_detail.html">对“国家电投网络安全隔离建设项目”投标团队的通报表扬 - 在国家电力</a></td>
+							    <td width="5">&nbsp;</td>
+							    <td style="text-align: center">2016年5月25日5:31</td>
+							  </tr>
+							  <tr class="neirong">
+							    <td height="60" align="center" valign="middle">&nbsp;&nbsp;<i class="fa fa-envelope-o index_neirong_fa" aria-hidden="true"></i></td>
+							    <td>王秀峰</td>
+							    <td><a class="J_menuItem_cet" href="mail_detail.html">对“国家电投网络安全隔离建设项目”投标团队的通报表扬 - 在国家电力</a></td>
+							    <td>&nbsp;</td>
+							    <td style="text-align: center">2016年5月25日5:31</td>
+							  </tr>
+							  <tr class="neirong">
+							    <td height="60" align="center" valign="middle">&nbsp;&nbsp;<i class="fa fa-envelope-open-o index_neirong_fa2" aria-hidden="true"></i></td>
+							    <td>刘双龙</td>
+							    <td><a class="J_menuItem_cet" href="mail_detail.html">对“国家电投网络安全隔离建设项目”投标团队的通报表扬 - 在国家电力</a></td>
+							    <td>&nbsp;</td>
+							    <td style="text-align: center">2016年5月25日5:31</td>
+							  </tr>
+							  <tr class="neirong">
+							    <td height="60" align="center" valign="middle">&nbsp;&nbsp;<i class="fa fa-envelope-open-o index_neirong_fa2" aria-hidden="true"></i></td>
+							    <td>郭明光</td>
+							    <td><a class="J_menuItem_cet" href="mail_detail.html">对“国家电投网络安全隔离建设项目”投标团队的通报表扬 - 在国家电力</a></td>
+							    <td>&nbsp;</td>
+							    <td style="text-align: center">2016年5月25日5:31</td>
+							  </tr>		
+						</table></div>
+                        <div id="tab-2" class="tab-pane " >
+                        <table border="0" cellspacing="0" class="mailtable" >
+							  <tr class="biaoti">
+							    
+							    <th width="90" height="37" align="center" valign="middle" style="text-align:center;" bgcolor="#f7f8f9" scope="col">流程节点</th>
+							    <th align="center" bgcolor="#f7f8f9" scope="col" style="text-align: center">标题</th>
+							    <th align="left" bgcolor="#f7f8f9" scope="col" >&nbsp;</th>
+							    <th width="105" align="left" bgcolor="#f7f8f9" style="text-align: center" scope="col">&nbsp;&nbsp;时间</th>
+							  </tr>
+							  <tr class="neirong">
+							   
+							    <td height="60" align="center" valign="middle">拟稿</td>
+							    <td width="251"><a class="J_menuItem_cet" href="article.html">对“国家电投网络安全隔离建设项目”投标团队的通报表扬 - 在国家电力</a></td>
+							    <td width="5">&nbsp;</td>
+							    <td style="text-align: center">2016年5月25日5:31</td>
+							  </tr>
+							  <tr class="neirong">
+							    
+							    <td height="60" align="center" valign="middle">签收</td>
+							    <td><a class="J_menuItem_cet" href="article.html">对“国家电投网络安全隔离建设项目”投标团队的通报表扬 - 在国家电力</a></td>
+							    <td>&nbsp;</td>
+							    <td style="text-align: center">2016年5月25日5:31</td>
+							  </tr>
+							  <tr class="neirong">
+							   
+							    <td height="60" align="center" valign="middle">会签</td>
+							    <td><a class="J_menuItem_cet" href="article.html">对“国家电投网络安全隔离建设项目”投标团队的通报表扬 - 在国家电力</a></td>
+							    <td>&nbsp;</td>
+							    <td style="text-align: center">2016年5月25日5:31</td>
+							  </tr>
+							  <tr class="neirong">
+							    
+							    <td height="60" align="center" valign="middle">审批</td>
+							    <td><a class="J_menuItem_cet" href="article.html">对“国家电投网络安全隔离建设项目”投标团队的通报表扬 - 在国家电力</a></td>
+							    <td>&nbsp;</td>
+							    <td style="text-align: center">2016年5月25日5:31</td>
+							  </tr>		
+						</table></div></div></div>
+						<div class="xiayi">1/2  下一页    ></div>
+					</div>
+					
+					
+					<div class="databox_r draggable-element">
+						<div class="shang">
+							<h3>消息通知</h3>
+							<a class="J_menuItem_cet" href="article.html"><p>蒋超良主持召开省政府常务会议研究部署全省经济运行等工作</p>
+							<p class="xiaodan">蒋超良主持召开省政府常务会议研究前三季度全省经济运行及下一步安排部署等工作</p></a>
+							<p class="zhengfu">吉林省人民政府<span class="shijian">2016-08-16</span></p>	
+						</div>
+						
+						<div class="xiam">
+							<h3>统计数据</h3>
+							<div class="zhexian"><div class="zhexian_img"></div></div>
+							<table  height="100" cellspacing="0">
+								  <tr>
+								    <th width="150" height="28" scope="col">月份</th>
+								    <th width="150" scope="col">总值</th>
+								    <th width="150" scope="col">百分比</th>
+								  </tr>
+								  <tr>
+								    <td class="buttom" height="30" align="center">一月</td>
+								    <td class="buttom" align="center" style="">12134</td>
+								    <td class="buttom" align="center">90%</td>
+								  </tr>
+								  <tr>
+								    <td class="buttom" height="30" align="center">二月</td>
+								    <td class="buttom" align="center">12134</td>
+								    <td class="buttom" align="center">90%</td>
+								  </tr>
+								  <tr>
+								    <td class="buttom" height="30" align="center">三月</td>
+								    <td class="buttom" align="center">12134</td>
+								    <td class="buttom" align="center">90%</td>
+								  </tr>
+							</table>
+
+						</div>
+					</div>
+				</div>
+				<!--邮件  工作待办  消息通知     end-->
+				
+				<!--three     star-->
+				<div class="three">
+						<!--three  左侧   star-->
+					<div class="three_l draggable-element">
+						<div class="ding">
+							<h3>日程安排</h3>
+							<div class="pull-right marright_25"><div data-toggle="buttons" class="btn-group">
+                                    <label class="btn btn-sm btn-white">
+                                        <input type="radio" id="option1" name="options">今天</label>
+                                    <label class="btn btn-sm btn-white active">
+                                        <input type="radio" id="option2" name="options">明天</label>
+                            </div></div>
+						</div>
+						
+						<div class="ding_1">
+							<div class="lef">
+								<p>2017年3月2日<br />星期四</p>
+							</div>
+							<div class="rig">
+								<div class="huiyi"><h5>会议</h5><span>3</span></div>
+								<div class="dianhua"><h5>电话</h5><span>1</span></div>
+							</div>
+						</div>
+						
+						<div class="ibox-content timeline timeline_indx">
+
+                        <div class="timeline-item">
+                            <div class="row">
+                                <div class="col-xs-3 date">
+                                    <i class="fa fa-briefcase"></i> 8:00
+                                    <br>
+                                    <small class="text-navy">会议</small>
+                                </div>
+                                <div class="col-xs-7 content no-top-border">
+                                    <p class="m-b-xs"><strong>服务器已彻底崩溃</strong>
+                                    </p>
+
+                                    <p>还未检查出错误</p>
+
+                                    <p><span data-diameter="40" class="updating-chart" style="display: none;">9,6,5,9,4,7,3,2,9,8,7,4,5,1,2,9,5,4,7,2,7,7,3,5,2,2,10,8,2,8,4,4,4,9,1,7,4</span>
+                                        <svg class="peity" height="16" width="64">
+                                            <polygon fill="#adc7e8" points="0 15 0 2 1.7777777777777777 6.5 3.5555555555555554 8 5.333333333333333 2 7.111111111111111 9.5 8.88888888888889 5 10.666666666666666 11 12.444444444444443 12.5 14.222222222222221 2 16 3.5 17.77777777777778 5 19.555555555555554 9.5 21.333333333333332 8 23.11111111111111 14 24.888888888888886 12.5 26.666666666666664 2 28.444444444444443 8 30.22222222222222 9.5 32 5 33.77777777777778 12.5 35.55555555555556 5 37.33333333333333 5 39.11111111111111 11 40.888888888888886 8 42.666666666666664 12.5 44.44444444444444 12.5 46.22222222222222 0.5 48 3.5 49.77777777777777 12.5 51.55555555555555 3.5 53.33333333333333 9.5 55.11111111111111 9.5 56.888888888888886 9.5 58.666666666666664 2 60.44444444444444 14 62.22222222222222 5 64 9.5 64 15"></polygon>
+                                            <polyline fill="transparent" points="0 2 1.7777777777777777 6.5 3.5555555555555554 8 5.333333333333333 2 7.111111111111111 9.5 8.88888888888889 5 10.666666666666666 11 12.444444444444443 12.5 14.222222222222221 2 16 3.5 17.77777777777778 5 19.555555555555554 9.5 21.333333333333332 8 23.11111111111111 14 24.888888888888886 12.5 26.666666666666664 2 28.444444444444443 8 30.22222222222222 9.5 32 5 33.77777777777778 12.5 35.55555555555556 5 37.33333333333333 5 39.11111111111111 11 40.888888888888886 8 42.666666666666664 12.5 44.44444444444444 12.5 46.22222222222222 0.5 48 3.5 49.77777777777777 12.5 51.55555555555555 3.5 53.33333333333333 9.5 55.11111111111111 9.5 56.888888888888886 9.5 58.666666666666664 2 60.44444444444444 14 62.22222222222222 5 64 9.5" stroke="#169c81" stroke-width="1" stroke-linecap="square"></polyline>
+                                        </svg>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="row">
+                                <div class="col-xs-3 date">
+                                    <i class="fa fa-file-text"></i> 9:00
+                                    <br>
+                                    <small class="text-navy"></small>
+                                </div>
+                                <div class="col-xs-7 content">
+                                    <p class="m-b-xs"><strong>修复bug</strong>
+                                    </p>
+                                    <p>重启服务</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="row">
+                                <div class="col-xs-3 date">
+                                    <i class="fa fa-coffee"></i> 9:30
+                                    <br>
+                                    <small class="text-navy">会议</small>
+                                </div>
+                                <div class="col-xs-7 content">
+                                    <p class="m-b-xs"><strong>关于测试</strong>
+                                    </p>
+                                    <p>控制台输出2324个页面错误，神啊，带我走吧
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="row">
+                                <div class="col-xs-3 date">
+                                    <i class="fa fa-phone"></i> 11:00
+                                    <br>
+                                    <small class="text-navy">电话</small>
+                                </div>
+                                <div class="col-xs-7 content">
+                                    <p class="m-b-xs"><strong>给项目经理打电话</strong>
+                                    </p>
+                                    <p>
+                                       巧妇难为无米之炊，再不给我加人我拿不出来东西啦！！！
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="row">
+                                <div class="col-xs-3 date">
+                                    <i class="fa fa-user-md"></i> 13:00
+                                    <br>
+                                    <small class="text-navy">会议</small>
+                                </div>
+                                <div class="col-xs-7 content">
+                                    <p class="m-b-xs"><strong>开会</strong>
+                                    </p>
+                                    <p>
+                                        开你妹会，老子还有897894个兼容bug没有修复
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="row">
+                                <div class="col-xs-3 date">
+                                    <i class="fa fa-comments"></i> 14:30
+                                    <br>
+                               
+                                </div>
+                                <div class="col-xs-7 content">
+                                    <p class="m-b-xs"><strong>开启深度投入模式</strong>
+                                    </p>
+                                    <p>
+                                        又是非常可爱的，红彤彤的像朝霞一样美丽的我的每一天！
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div> 
+					</div>
+					<!--three  左侧  end-->
+					
+					<div class="three_r draggable-element">
+						<div class="zhu">
+							<h3>折线图</h3>
+                            <div class="ibox-content index_echarts">
+                                <div class="echarts" id="echarts-line-chart"></div>
+                            </div>
+						</div>
+						
+						<div class="pie">
+							<h3>柱状图</h3>
+							<div class="ibox-content index_echarts">
+                                <div class="echarts" id="echarts-bar-chart"></div>
+                            </div>
+						</div>
+					</div>
+				</div>
+				<!--three     end-->
+				
+			</div>
+			<!--右边区域内容    end-->
+	
+    
+  	<script src="js/html5.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/respond.min.js" type="text/javascript" charset="utf-8"></script>
+	
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	  	<script src="js/html5shiv.js"></script>
+	  	<script src="js/respond.min.js"></script>
+	<![endif]-->
+	
+    <script src="js/jquery.min.js?v=2.1.4"></script>
+    <script src="js/bootstrap.min.js?v=3.3.6"></script>
+    <script type="text/javascript" src="js/contabs.min.js"></script>
+    <script src="js/plugins/layer/layer.min.js"></script>
+    <script src="js/content.min.js"></script>
+    <script src="js/welcome.min.js"></script>
+	<script>
+    	$(function(){
+			$(".addmore").click(function(){
+				$(".hotbox").toggleClass('addmore-active');
+			}); 
+		});
+    </script>
+    <script src="js/plugins/echarts/echarts-all.js"></script>
+    <script src="js/demo/echarts-demo.min.js"></script>
+    <script type="text/javascript" src="js/drag-arrange.js"></script>
+</body>
+</html>

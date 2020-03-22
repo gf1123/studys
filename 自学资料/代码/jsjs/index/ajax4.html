@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.ajax {
+			width: 300px;
+			height: 250px;
+			background: lightsalmon;
+			margin: 50px auto;
+			padding-top: 10px;
+			text-align: center;
+		}
+		ul{
+			list-style-type: none;
+			overflow: hidden;
+			border: 1px soli red ;
+			background: green;
+			
+		}
+		li{
+			float: left;
+			width: 100%;
+			text-align: left;
+			color: white;
+			font-size: 16px;
+		}
+		/*li:hover{
+			background: red;
+		}*/
+	</style>
+
+	<body>
+		<div class="ajax">
+			<input type="text" name="" id="ipt" value="" />
+			<input type="button" name="" id="search" value="搜索" />
+			<ul id="demo"></ul>
+		</div>
+	</body>
+</html>
+
+<script type="text/javascript">
+	$("#ipt").keyup(function() {
+
+		var val = $(this).val();
+		$.ajax({
+			type: "get",
+			url: "https://www.apiopen.top/novelSearchApi?",
+			dataType: "json",
+			data: {
+				name: val
+			}, //json方法
+			success: function(data) {
+				console.log(data);
+				var data =data.data;
+				if(data && data.length) {
+					var li="";
+					$.each(data, function(key,value) {
+						$("#demo").empty();						
+						 li +="<li>"+value+"</li>";
+						$("#demo").append(li);
+					});
+				}
+				else{
+						$("#demo").empty();
+					
+					$("#demo").append("没有找到资料，请重试");
+				}
+			}
+
+		});
+	})
+	
+</script>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script type="text/javascript">
+	var arr1=[1,1,1,2,3,43,2,3]
+	//在原型上创建的 调用时直接 写上调用的    数组名.unique即可  start
+	Array.prototype.unique=function(){
+		var temp={},arr=[],len=this.length;
+		for(var i=0;i<len;i++){
+			if(!temp[this[i]]){//加入i=0 this[o]=arr1[0]=1
+				temp[this[i]]="123";
+				arr.push(this[i]);//this指的是调用它的这个变量(对象)
+			}
+		}
+		return arr;
+	}
+	//在原型上创建的 调用时直接 写上调用的 数  组名.unique即可  end
+</script>

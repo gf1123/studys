@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+	</body>
+
+</html>
+<script type="text/javascript">
+	//查看 arguments 页面
+	var obj = {
+		name: "abc",
+		age: 12,
+		sex: "female"
+	}
+	var obj1 = {}
+
+	function clone(origin, target) {
+		var target = target || {};
+		for(var prop in origin) {
+			target[prop] = origin[prop];
+		}
+		return target;
+	}
+	clone(obj, obj1);
+	console.log(obj1); //克隆的
+</script>

@@ -1,0 +1,4 @@
+百度搜索URL：https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su
+参数
+   wd：搜索的关键字
+   cb:回调jsonp参数名
