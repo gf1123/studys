@@ -1,0 +1,94 @@
+
+git命令
+查看文件夹：
+pwd 现在所操作的目录
+ll    查看当前 目录有多少文件
+ls -A  查看当前目录的隐藏文件
+ll 目录名(a) 查看a里面的文件'
+访问文件
+cat 文件路径/文件名
+cd ~ 进入系统文件目录c
+ll|less 查看当前显示的文件
+ls - lA|less 查看当前隐藏的文件
+
+
+git config --global user.name "用户名"
+git config --global user.email "邮箱地址"
+系统的用户名和邮箱是在 【系统的.gitconfig里 如上面带有global】
+
+
+git config "用户名"
+git config "邮箱地址"
+本地的用户名和邮箱是在[.git文件夹里的config中]
+
+
+git用户名:gf1123
+git邮箱:常用qq
+gi密码:...0010
+
+mkdir gitStudys   创建仓库
+
+cd 文件夹名称 进入仓库
+cd .. 返回上一个目录
+git init 初始话仓库
+
+git add 【提交到暂存区】
+git rm git rm --cached 文件git名【从暂存区删除】
+git add . 提交全部文件
+git add 文件1 文件2 ... 提交了多个文件
+git  add 文件 提交一个文件
+
+
+git commit [提交的文件/文件加]->（:set nu显示行）（i）进入编译模式->(编写注释)->(esc键退出)->(:wq退出当前)
+git commit [提交的文件/文件加]  ===  git commit -m "这段代码代表我是注释"给i他
+git commit -m "这段代码代表我是注释"
+git status  查看当前操作的状添
+
+git config --global user.name "用户名"
+git config --global user.email "邮箱地址"
+
+
+git log                             查看历史版本 1
+git  log --pretty=oneline  查看版本  2
+git  log --=oneline 3
+git  reflog 都是查看历史记录【最好】
+git log 后 按（q）退出，b向上翻页， 空格向下翻页
+
+
+
+ git reset --hard  提交编号  【直接加上黄色的索引值就可以了  前进+后退】
+ git reset --hard HEAD^(一个^就代表退回一步，几个就是退回几步)
+ git reset --hard HEAD~3（~数字，数字代表退回几步）
+ git reflog  回到最新版本
+
+版本比较:
+git diff 文件名 和缓存区比较
+git diff HEAD 文件名 和本地库进行比较
+git diff HEAD^文件名 和历史文件进行比较
+
+
+
+
+git clone 【http地址】克隆仓库
+
+git push  提交到线上仓库
+
+git pull 拉取线上仓库内容
+
+分支：
+ git branch   查看分支(功能)
+ git branch   分支名
+git checkout 分知名  切换分支
+
+ git merge 要合并的分知名 合并分支 【必须在主分支合并】
+git branch -d dev 删除分支
+
+
+
+
+提交文件忽略一些文件：
+touch .gitignore 添加文件并且在这个文件中写上提交到线上时不用提交的文件或者文件夹
+touch 文件名 添加文件
+
+解决冲突:
+修改冲突部分，重新提交
