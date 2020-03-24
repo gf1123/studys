@@ -22,6 +22,12 @@ git config "邮箱地址"
 本地的用户名和邮箱是在[.git文件夹里的config中]
 
 
+关联远程仓库
+git remote add origin HTTP网址//关联远程仓库
+git remote rm origin//删除原先的连
+git push -u origin master//master为分支名字，假设用的是主分支
+
+
 git用户名:gf1123
 git邮箱:常用qq
 gi密码:...0010
